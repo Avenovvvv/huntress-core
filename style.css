@@ -364,3 +364,115 @@ button:hover{
 
     text-shadow:0 0 10px rgba(255,0,0,0.3);
 }
+/* LOADING SCREEN */
+
+.loading-body{
+
+    background:black;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+    overflow:hidden;
+}
+
+.loading-container{
+
+    text-align:center;
+}
+
+.loading-logo{
+
+    width:260px;
+
+    margin-bottom:40px;
+
+    animation:pulse 2s infinite;
+}
+
+.loading-text p{
+
+    color:#999;
+
+    letter-spacing:3px;
+
+    margin:12px 0;
+
+    font-size:0.8rem;
+}
+
+.loading-bar{
+
+    width:320px;
+
+    height:8px;
+
+    background:#111;
+
+    margin:auto;
+
+    margin-top:40px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,0,0,0.2);
+}
+
+.loading-progress{
+
+    width:0%;
+
+    height:100%;
+
+    background:red;
+
+    animation:loadBar 10s linear forwards;
+
+    box-shadow:0 0 20px red;
+}
+
+/* ANIMATIONS */
+
+@keyframes loadBar{
+
+    from{
+
+        width:0%;
+    }
+
+    to{
+
+        width:100%;
+    }
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:0.9;
+    }
+
+    50%{
+
+        transform:scale(1.03);
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:0.9;
+    }
+}
