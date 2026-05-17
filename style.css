@@ -476,3 +476,123 @@ button:hover{
         opacity:0.9;
     }
 }
+/* ACCESS GATEWAY */
+
+.gateway-body{
+
+    background:black;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    overflow:hidden;
+}
+
+.gateway-container{
+
+    width:700px;
+
+    max-width:90%;
+
+    padding:60px;
+
+    border:1px solid rgba(255,0,0,0.25);
+
+    background:rgba(10,10,10,0.95);
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:
+    0 0 40px rgba(255,0,0,0.1);
+}
+
+.gateway-container h1{
+
+    font-size:2.5rem;
+
+    margin-bottom:30px;
+
+    letter-spacing:5px;
+
+    text-shadow:0 0 20px rgba(255,0,0,0.4);
+}
+
+.gateway-warning{
+
+    color:#999;
+
+    line-height:2;
+
+    margin-bottom:50px;
+
+    font-size:0.9rem;
+}
+
+/* BUTTONS */
+
+.gateway-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+    margin-bottom:50px;
+}
+
+.gateway-buttons button{
+
+    padding:18px;
+
+    border:none;
+
+    background:#111;
+
+    color:white;
+
+    font-family:'Orbitron', sans-serif;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    border:1px solid rgba(255,0,0,0.3);
+
+    transition:0.3s;
+}
+
+.gateway-buttons button:hover{
+
+    background:red;
+
+    box-shadow:0 0 25px red;
+
+    transform:scale(1.02);
+}
+
+/* CLEARANCE BOX */
+
+.clearance-box{
+
+    border-top:1px solid rgba(255,255,255,0.1);
+
+    padding-top:30px;
+
+    color:#ffcc00;
+
+    line-height:2;
+
+    letter-spacing:2px;
+
+    font-size:0.8rem;
+}
