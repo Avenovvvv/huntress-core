@@ -35,3 +35,33 @@ document.getElementById("enterBtn")
     window.location.href = "main.html";
 
 });
+/* DYNAMIC SLOGANS */
+
+const slogans = [
+
+    "Built for the evolving battlefield.",
+
+    "Precision through intelligence.",
+
+    "Observe. Hunt. Neutralize.",
+
+    "Where cyber intelligence evolves.",
+
+    "Operational discipline meets digital warfare.",
+
+    "Intelligence is the first line of defense.",
+
+    "Engineered for modern threat landscapes."
+
+];
+
+const sloganElement = document.getElementById("dynamicSlogan");
+
+if(sloganElement){
+
+    const randomSlogan =
+    slogans[Math.floor(Math.random() * slogans.length)];
+
+    sloganElement.innerText =
+    `"${randomSlogan}"`;
+}
