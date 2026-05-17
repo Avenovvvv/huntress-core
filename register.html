@@ -21,40 +21,59 @@ rel="stylesheet">
 
 <div class="gateway-container">
 
-<h1>PRE-INITIATE REGISTRATION</h1>
+    <h1>PRE-INITIATE<br>REGISTRATION</h1>
 
-<p class="gateway-warning">
+    <p class="gateway-warning">
 
-H.U.N.T.R.E.S.S NETWORK ACCESS REQUIRES
-IDENTITY INITIALIZATION.
+        H.U.N.T.R.E.S.S NETWORK ACCESS REQUIRES
+        IDENTITY INITIALIZATION.
 
-</p>
+    </p>
 
-<input
-type="text"
-placeholder="ENTER USERNAME"
-class="gateway-input">
+    <input
+    type="email"
+    placeholder="ENTER EMAIL"
+    class="gateway-input">
 
-<input
-type="email"
-placeholder="ENTER EMAIL"
-class="gateway-input">
+    <input
+    type="password"
+    placeholder="ENTER PASSWORD"
+    class="gateway-input">
 
-<div class="gateway-buttons">
+    <div class="gateway-buttons">
 
-<button
-type="button"
-class="gateway-btn"
-onclick="window.location.href='main.html'">
+        <button
+        type="button"
+        class="gateway-btn"
+        onclick="generateHunterID()">
 
-INITIALIZE ACCESS
+        INITIALIZE ACCESS
 
-</button>
+        </button>
+
+    </div>
+
+    <p id="generated-id" class="hunter-id"></p>
 
 </div>
 
-</div>
+<script>
+
+function generateHunterID() {
+
+    const randomNum =
+    Math.floor(100 + Math.random() * 900);
+
+    const hunterID =
+    "hunter_" + randomNum;
+
+    document.getElementById("generated-id")
+    .innerText =
+    "ASSIGNED OPERATIVE ID: " + hunterID;
+
+}
+
+</script>
 
 </body>
-
 </html>
