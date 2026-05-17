@@ -32,7 +32,7 @@ typeWriter();
 document.getElementById("enterBtn")
 .addEventListener("click", () => {
 
-    window.location.href = "main.html";
+    window.location.href = "gateway.html";
 
 });
 /* DYNAMIC SLOGANS */
