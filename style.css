@@ -788,3 +788,135 @@ button:hover{
     position: relative;
     top: 35px;
 }
+/* CONTACT SECTION */
+
+.contact-section{
+
+    padding: 120px 10%;
+    text-align: center;
+
+}
+
+.contact-section h2{
+
+    color: white;
+
+    font-size: 42px;
+
+    letter-spacing: 8px;
+
+    text-shadow:
+    0 0 20px red;
+
+}
+
+.contact-text{
+
+    color: rgba(255,255,255,0.6);
+
+    margin-top: 25px;
+
+    line-height: 1.8;
+
+    letter-spacing: 2px;
+
+}
+
+.contact-box{
+
+    margin-top: 50px;
+
+    border: 1px solid rgba(255,0,0,0.2);
+
+    background: rgba(0,0,0,0.85);
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+    0 0 30px rgba(255,0,0,0.15);
+
+}
+
+.contact-box p{
+
+    color: white;
+
+    margin: 20px 0;
+
+    letter-spacing: 3px;
+
+}
+
+/* JOIN SECTION */
+
+.join-section{
+
+    padding: 120px 10%;
+    text-align: center;
+
+}
+
+.join-section h2{
+
+    color: white;
+
+    font-size: 42px;
+
+    letter-spacing: 8px;
+
+    text-shadow:
+    0 0 20px red;
+
+}
+
+.join-text{
+
+    color: rgba(255,255,255,0.6);
+
+    margin-top: 25px;
+
+    line-height: 1.8;
+
+    letter-spacing: 2px;
+
+}
+
+.join-btn{
+
+    margin-top: 50px;
+
+    padding: 22px 50px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #ff0000;
+
+    color: white;
+
+    font-family: Orbitron, sans-serif;
+
+    font-size: 16px;
+
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    box-shadow:
+    0 0 25px rgba(255,0,0,0.7);
+
+    transition: 0.3s;
+
+}
+
+.join-btn:hover{
+
+    transform: scale(1.05);
+
+    box-shadow:
+    0 0 40px red;
+
+}
