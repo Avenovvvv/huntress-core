@@ -94,3 +94,44 @@ if(accountBtn){
 
     });
 }
+// ENTER SYSTEM BUTTON
+
+const enterBtn = document.getElementById("enterBtn");
+
+if (enterBtn) {
+
+    enterBtn.addEventListener("click", () => {
+
+        window.location.href = "loading.html";
+
+    });
+
+}
+
+// GUEST BUTTON
+
+const guestBtn = document.getElementById("guestBtn");
+
+if (guestBtn) {
+
+    guestBtn.addEventListener("click", () => {
+
+        window.location.href = "main.html";
+
+    });
+
+}
+
+// ACCOUNT BUTTON
+
+const accountBtn = document.getElementById("accountBtn");
+
+if (accountBtn) {
+
+    accountBtn.addEventListener("click", () => {
+
+        window.location.href = "register.html";
+
+    });
+
+}
