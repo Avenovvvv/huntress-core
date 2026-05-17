@@ -1,14 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Access Gateway</title>
+    <title>Pre-Initiate Registration</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -16,48 +16,40 @@
 
 </head>
 
-<body class="gateway-body">
+<body class="register-body">
 
-    <div class="gateway-container">
+    <div class="register-container">
 
-        <h1>ACCESS GATEWAY</h1>
+        <h1>PRE-INITIATE REGISTRATION</h1>
 
-        <p class="gateway-warning">
+        <p class="register-warning">
 
-            UNAUTHORIZED ACCESS TO RESTRICTED
-            H.U.N.T.R.E.S.S NETWORKS IS PROHIBITED.
+            H.U.N.T.R.E.S.S NETWORK ACCESS REQUIRES
+            IDENTITY INITIALIZATION.
 
         </p>
 
-        <div class="gateway-buttons">
+        <form class="register-form">
 
-            <button id="guestBtn">
+            <input type="text" placeholder="ENTER CODENAME" required>
 
-                CONTINUE AS GUEST
+            <input type="email" placeholder="ENTER EMAIL" required>
+
+            <input type="password" placeholder="CREATE PASSWORD" required>
+
+            <button type="submit">
+
+                INITIALIZE ACCESS
 
             </button>
 
-            <button id="accountBtn">
+        </form>
 
-                CREATE PRE-INITIATE ACCOUNT
-
-            </button>
-
-        </div>
-
-        <div class="clearance-box">
-
-            <p>LEVEL 0 — GUEST</p>
-
-            <p>LIMITED NETWORK ACCESS</p>
-
-            <p>CLASSIFIED FILES REDACTED</p>
-
-        </div>
+        <div class="scan-line"></div>
 
     </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
