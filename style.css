@@ -1,1 +1,174 @@
- 
+ *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050505;
+    color:white;
+    font-family:'Orbitron', sans-serif;
+    overflow:hidden;
+    height:100vh;
+    position:relative;
+}
+
+/* RED CURSOR GLOW */
+
+.cursor-glow{
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(255,0,0,0.08);
+
+    pointer-events:none;
+
+    transform:translate(-50%, -50%);
+
+    filter:blur(60px);
+
+    z-index:0;
+}
+
+/* HEADER */
+
+header{
+    text-align:center;
+    padding-top:70px;
+    position:relative;
+    z-index:2;
+}
+
+h1{
+    font-size:4rem;
+    letter-spacing:10px;
+    color:white;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.2),
+    0 0 20px rgba(255,0,0,0.2);
+}
+
+.subtitle{
+    margin-top:20px;
+    width:70%;
+    margin-inline:auto;
+
+    color:#a30000;
+
+    line-height:1.8;
+
+    font-size:0.95rem;
+}
+
+/* HERO */
+
+.hero{
+    height:70vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+    z-index:2;
+}
+
+/* TERMINAL */
+
+.terminal-box{
+    width:750px;
+    max-width:90%;
+
+    height:320px;
+
+    background:rgba(10,10,10,0.95);
+
+    border:1px solid rgba(255,0,0,0.4);
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,0.15),
+    inset 0 0 20px rgba(255,0,0,0.05);
+
+    border-radius:12px;
+
+    padding:35px;
+
+    position:relative;
+
+    backdrop-filter:blur(10px);
+}
+
+/* TERMINAL TEXT */
+
+.typing-text{
+    color:#00ff88;
+
+    font-size:1rem;
+
+    line-height:2;
+
+    white-space:pre-line;
+}
+
+/* BUTTON */
+
+button{
+    position:absolute;
+
+    bottom:35px;
+    left:35px;
+
+    background:#8b0000;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 32px;
+
+    font-family:'Orbitron', sans-serif;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+    border-radius:5px;
+
+    letter-spacing:2px;
+}
+
+button:hover{
+
+    background:red;
+
+    box-shadow:
+    0 0 10px red,
+    0 0 30px rgba(255,0,0,0.5);
+
+    transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2.5rem;
+    }
+
+    .subtitle{
+        width:90%;
+        font-size:0.8rem;
+    }
+
+    .terminal-box{
+        height:350px;
+    }
+
+    .typing-text{
+        font-size:0.85rem;
+    }
+
+}
