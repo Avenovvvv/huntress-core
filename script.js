@@ -32,6 +32,6 @@ typeWriter();
 document.getElementById("enterBtn")
 .addEventListener("click", () => {
 
-    alert("ACCESS GRANTED");
+    window.location.href = "main.html";
 
 });
