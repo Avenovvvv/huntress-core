@@ -65,3 +65,32 @@ if(sloganElement){
     sloganElement.innerText =
     `"${randomSlogan}"`;
 }
+/* ACCESS GATEWAY */
+
+const guestBtn =
+document.getElementById("guestBtn");
+
+const accountBtn =
+document.getElementById("accountBtn");
+
+if(guestBtn){
+
+    guestBtn.addEventListener("click", () => {
+
+        localStorage.setItem("clearance", "guest");
+
+        window.location.href = "main.html";
+
+    });
+}
+
+if(accountBtn){
+
+    accountBtn.addEventListener("click", () => {
+
+        localStorage.setItem("clearance", "pre-initiate");
+
+        window.location.href = "register.html";
+
+    });
+}
