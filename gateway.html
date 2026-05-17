@@ -1,56 +1,67 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>Pre-Initiate Registration</title>
+<title>ACCESS GATEWAY</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+rel="stylesheet">
 
 </head>
 
-<body class="register-body">
+<body class="gateway-body">
 
-    <div class="register-container">
+<div class="gateway-container">
 
-        <h1>PRE-INITIATE REGISTRATION</h1>
+    <h1>ACCESS GATEWAY</h1>
 
-        <p class="register-warning">
+    <p class="gateway-warning">
 
-            H.U.N.T.R.E.S.S NETWORK ACCESS REQUIRES
-            IDENTITY INITIALIZATION.
+        UNAUTHORIZED ACCESS TO
+        H.U.N.T.R.E.S.S NETWORKS
+        IS PROHIBITED.
 
-        </p>
+    </p>
 
-        <form class="register-form">
+    <div class="gateway-buttons">
 
-            <input type="text" placeholder="ENTER CODENAME" required>
+        <button
+        class="gateway-btn"
+        onclick="window.location.href='main.html'">
 
-            <input type="email" placeholder="ENTER EMAIL" required>
+        CONTINUE AS GUEST
 
-            <input type="password" placeholder="CREATE PASSWORD" required>
+        </button>
 
-            <button type="submit">
+        <button
+        class="gateway-btn"
+        onclick="window.location.href='register.html'">
 
-                INITIALIZE ACCESS
+        CREATE PRE-INITIATE ACCOUNT
 
-            </button>
-
-        </form>
-
-        <div class="scan-line"></div>
+        </button>
 
     </div>
 
-    <script src="script.js"></script>
+    <div class="clearance-box">
+
+        <p>LEVEL 0 — GUEST</p>
+
+        <p>LIMITED NETWORK ACCESS</p>
+
+        <p>CLASSIFIED FILES REDACTED</p>
+
+    </div>
+
+</div>
 
 </body>
-
 </html>
