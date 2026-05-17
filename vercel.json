@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/loading.html",
+      "permanent": false
+    }
+  ]
+}
