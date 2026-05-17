@@ -608,3 +608,161 @@ button:hover{
 
     font-size:0.8rem;
 }
+/* REGISTER PAGE */
+
+.register-body{
+
+    background:black;
+
+    font-family:'Orbitron', sans-serif;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    overflow:hidden;
+}
+
+.register-container{
+
+    width:90%;
+
+    max-width:500px;
+
+    padding:40px;
+
+    background:rgba(0,0,0,0.9);
+
+    border:1px solid rgba(255,0,0,0.3);
+
+    border-radius:20px;
+
+    box-shadow:0 0 40px rgba(255,0,0,0.2);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.register-container h1{
+
+    text-align:center;
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+    color:white;
+
+    text-shadow:0 0 20px red;
+}
+
+.register-warning{
+
+    text-align:center;
+
+    color:#888;
+
+    margin-bottom:40px;
+
+    line-height:1.8;
+}
+
+.register-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+.register-form input{
+
+    padding:18px;
+
+    background:#111;
+
+    border:1px solid rgba(255,0,0,0.3);
+
+    color:white;
+
+    border-radius:10px;
+
+    font-family:'Orbitron', sans-serif;
+
+    outline:none;
+}
+
+.register-form input:focus{
+
+    border-color:red;
+
+    box-shadow:0 0 15px red;
+}
+
+.register-form button{
+
+    padding:18px;
+
+    background:red;
+
+    border:none;
+
+    color:white;
+
+    border-radius:10px;
+
+    font-family:'Orbitron', sans-serif;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.register-form button:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:0 0 25px red;
+}
+
+/* SCAN EFFECT */
+
+.scan-line{
+
+    position:absolute;
+
+    top:-100px;
+
+    left:0;
+
+    width:100%;
+
+    height:80px;
+
+    background:rgba(255,0,0,0.08);
+
+    animation:scan 4s linear infinite;
+}
+
+@keyframes scan{
+
+    0%{
+
+        top:-100px;
+    }
+
+    100%{
+
+        top:100%;
+    }
+}
