@@ -261,3 +261,106 @@ button:hover{
 
     font-size:0.95rem;
 }
+/* VISION SECTION */
+
+.vision-section{
+
+    padding:120px 20px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.vision-section h2{
+
+    text-align:center;
+
+    font-size:2.5rem;
+
+    color:white;
+
+    margin-bottom:60px;
+
+    letter-spacing:5px;
+
+    text-shadow:0 0 20px rgba(255,0,0,0.3);
+}
+
+.vision-card{
+
+    width:950px;
+
+    max-width:90%;
+
+    margin:auto;
+
+    background:rgba(10,10,10,0.95);
+
+    border:1px solid rgba(255,0,0,0.25);
+
+    padding:60px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 0 30px rgba(255,0,0,0.08);
+
+    text-align:center;
+}
+
+.vision-text{
+
+    color:#cccccc;
+
+    line-height:2.2;
+
+    font-size:1rem;
+
+    margin-bottom:50px;
+}
+
+/* VALUES */
+
+.vision-values{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:50px;
+}
+
+.vision-values span{
+
+    border:1px solid rgba(255,0,0,0.3);
+
+    padding:12px 24px;
+
+    border-radius:30px;
+
+    color:#00ff88;
+
+    font-size:0.85rem;
+
+    letter-spacing:2px;
+
+    background:rgba(255,0,0,0.03);
+}
+
+/* DYNAMIC SLOGAN */
+
+.dynamic-slogan{
+
+    color:#ff2a2a;
+
+    font-size:1.1rem;
+
+    letter-spacing:3px;
+
+    text-shadow:0 0 10px rgba(255,0,0,0.3);
+}
