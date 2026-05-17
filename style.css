@@ -775,3 +775,16 @@ button:hover{
 .gateway-btn{
     margin-top: 20px;
 }
+/* REGISTER PAGE BUTTON FIX */
+
+.gateway-buttons{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.gateway-buttons .gateway-btn{
+    margin-top: 35px !important;
+    position: relative;
+    top: 35px;
+}
