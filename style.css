@@ -1583,3 +1583,182 @@ display: inline-block;
 
     z-index:-1;
 }
+.terms-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.88),
+        rgba(0,0,0,0.94)
+    ),
+
+    url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    z-index:-2;
+}
+
+.scan-line{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:2px;
+    background:#00ffcc;
+
+    animation:scan 4s linear infinite;
+
+    z-index:999;
+}
+
+@keyframes scan{
+
+0%{
+top:0;
+}
+
+100%{
+top:100%;
+}
+
+}
+
+.terms-box{
+    width:90%;
+    max-width:850px;
+
+    margin:60px auto;
+
+    padding:50px;
+
+    background:rgba(0,0,0,0.82);
+
+    border:1px solid rgba(0,255,204,0.4);
+
+    border-radius:18px;
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+}
+
+.terms-tag{
+    color:#00ffcc;
+    letter-spacing:4px;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+.terms-box h1{
+    font-size:60px;
+    margin-bottom:10px;
+}
+
+.terms-subtitle{
+    color:#00ffcc;
+    margin-bottom:40px;
+    font-size:22px;
+}
+
+.typing-box{
+    border-left:3px solid #00ffcc;
+
+    padding-left:20px;
+
+    margin-bottom:40px;
+
+    line-height:2;
+
+    color:#dcdcdc;
+
+    white-space:pre-line;
+}
+
+.terms-content ul{
+    margin-top:20px;
+    padding-left:25px;
+}
+
+.terms-content li{
+    margin-bottom:15px;
+    line-height:1.8;
+    color:#d0d0d0;
+}
+
+.accept-btn,
+.deny-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-top:15px;
+
+    border:none;
+
+    font-size:16px;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+}
+
+.accept-btn{
+    background:#00ffcc;
+    color:black;
+}
+
+.deny-btn{
+    background:#111;
+    color:white;
+}
+
+.denied-box{
+
+    width:90%;
+
+    max-width:700px;
+
+    margin:140px auto;
+
+    text-align:center;
+
+    padding:60px;
+
+    background:rgba(0,0,0,0.82);
+
+    border:1px solid rgba(255,0,0,0.4);
+
+    border-radius:16px;
+
+    color:white;
+}
+
+.denied-box h1{
+    color:red;
+    font-size:55px;
+    margin-bottom:30px;
+}
+
+.return-btn{
+
+    display:inline-block;
+
+    padding:16px 30px;
+
+    background:#00ffcc;
+
+    color:black;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    font-weight:bold;
+}
