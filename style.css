@@ -1092,13 +1092,25 @@ button:hover{
 }
 
 .info-section p{
-   margin-bottom: 20px;
+
     font-size: 17px;
+
     line-height: 1.8;
+
     color: #d7d7d7;
+
+    margin-bottom: 40px;
+
+    max-width: 90%;
+
+    margin-left: auto;
+
+    margin-right: auto;
 }
 
 .info-section button{
+    position: relative;
+z-index: 2;
 display: inline-block;
     margin-top: 25px;
 
