@@ -41,3 +41,10 @@ function draw()
 }
 
 setInterval(draw, 35);
+const enterBtn = document.getElementById("enterBtn");
+
+enterBtn.addEventListener("click", () => {
+
+    alert("ACCESS GRANTED");
+
+});
