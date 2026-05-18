@@ -124,6 +124,7 @@ h1{
 /* BUTTON */
 
 button{
+    transition: 0.3s ease;
     position:absolute;
 
     bottom:35px;
@@ -146,6 +147,10 @@ button{
     border-radius:5px;
 
     letter-spacing:2px;
+}
+button:hover{
+    box-shadow: 0 0 20px red;
+    transform: scale(1.05);
 }
 
 button:hover{
