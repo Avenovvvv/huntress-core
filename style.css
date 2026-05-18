@@ -1856,3 +1856,60 @@ top:100%;
 .deny-access{
     flex:1;
 }
+.menu-container{
+    position:relative;
+}
+
+.menu-btn{
+    background:none;
+    border:none;
+    color:#00ffcc;
+    font-size:38px;
+    cursor:pointer;
+}
+
+.dropdown-menu{
+    position:absolute;
+    right:0;
+    top:60px;
+
+    background:rgba(0,0,0,0.96);
+
+    border:1px solid #00ffcc;
+
+    border-radius:12px;
+
+    width:220px;
+
+    display:none;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    z-index:9999;
+}
+
+.dropdown-menu a{
+    color:white;
+
+    padding:15px 20px;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.dropdown-menu a:hover{
+    background:#00ffcc;
+    color:black;
+}
+
+.dropdown-menu hr{
+    border:0;
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.show-menu{
+    display:flex;
+}
