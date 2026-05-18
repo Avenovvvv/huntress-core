@@ -45,6 +45,14 @@ const enterBtn = document.getElementById("enterBtn");
 
 enterBtn.addEventListener("click", () => {
 
-    alert("ACCESS GRANTED");
+    document.body.innerHTML = `
+<div class="loading-screen">
+    <h1>ACCESSING H.U.N.T.R.E.S.S...</h1>
+</div>
+`;
+
+setTimeout(() => {
+    window.location.href = "dashboard.html";
+}, 3000);
 
 });
