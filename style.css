@@ -1240,3 +1240,107 @@ display: inline-block;
 
     transform: scale(1.03);
 }
+/* HUNTRESS AI */
+
+.ai-terminal{
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 100px auto;
+
+    padding: 30px;
+
+    background: rgba(0,0,0,0.85);
+
+    border: 1px solid #00ff00;
+
+    border-radius: 20px;
+}
+
+.ai-terminal h2{
+
+    color: #00ff00;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+#chat-container{
+
+    height: 500px;
+
+    overflow-y: auto;
+
+    background: black;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    color: white;
+
+    font-family: monospace;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #00ff00;
+}
+
+.message{
+
+    margin-bottom: 20px;
+
+    line-height: 1.7;
+}
+
+.user{
+
+    color: #00ff00;
+}
+
+.ai{
+
+    color: white;
+}
+
+.input-area{
+
+    display: flex;
+
+    gap: 15px;
+}
+
+#prompt{
+
+    flex: 1;
+
+    padding: 15px;
+
+    background: black;
+
+    border: 1px solid #00ff00;
+
+    color: white;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+}
+
+.input-area button{
+
+    padding: 15px 25px;
+
+    background: #00ff00;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
