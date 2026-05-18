@@ -1762,3 +1762,87 @@ top:100%;
 
     font-weight:bold;
 }
+.terms-popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.terms-overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.88);
+    backdrop-filter:blur(6px);
+}
+
+.terms-modal{
+    position:relative;
+    width:90%;
+    max-width:800px;
+    background:#050505;
+    border:1px solid rgba(0,255,204,0.4);
+    border-radius:18px;
+    padding:45px;
+    color:white;
+    z-index:2;
+    box-shadow:0 0 40px rgba(0,255,204,0.15);
+}
+
+.terms-warning{
+    color:#00ffcc;
+    letter-spacing:4px;
+    margin-bottom:20px;
+    font-size:13px;
+}
+
+.terms-modal h1{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.terms-quote{
+    color:#00ffcc;
+    margin-bottom:30px;
+    font-size:20px;
+}
+
+.terms-scroll{
+    max-height:300px;
+    overflow-y:auto;
+    line-height:2;
+    color:#d0d0d0;
+}
+
+.terms-scroll ul{
+    margin-top:20px;
+    padding-left:25px;
+}
+
+.accept-access,
+.deny-access{
+    width:100%;
+    padding:16px;
+    margin-top:20px;
+    border:none;
+    cursor:pointer;
+    font-size:15px;
+    letter-spacing:3px;
+}
+
+.accept-access{
+    background:#00ffcc;
+    color:black;
+}
+
+.deny-access{
+    background:#111;
+    color:white;
+    border:1px solid rgba(255,255,255,0.1);
+}
