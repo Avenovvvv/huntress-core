@@ -1,155 +1,88 @@
-/* =========================
-   HUNTRESS AI TERMINAL CSS
-========================= */
-
-body{
-    margin: 0;
-    padding: 0;
-    background: black;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
+.ai-section{
+    width: 100%;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* MATRIX BACKGROUND */
-
-canvas{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+.ai-section h2{
+    color: #00ff00;
+    font-size: 42px;
+    margin-bottom: 40px;
+    text-align: center;
+    text-shadow: 0 0 15px #00ff00;
 }
 
-/* MAIN AI CONTAINER */
+.ai-popup{
+    width: 95%;
+    max-width: 1000px;
 
-.ai-terminal{
+    background: rgba(0,0,0,0.92);
 
-    width: 90%;
-    max-width: 1200px;
+    border: 2px solid #00ff00;
 
-    margin: 80px auto;
+    border-radius: 25px;
 
     padding: 30px;
 
-    background: rgba(0,0,0,0.85);
+    box-shadow:
+    0 0 25px #00ff00,
+    inset 0 0 20px rgba(0,255,0,0.15);
+}
+
+.chat-box{
+    width: 100%;
+    height: 500px;
+
+    background: black;
 
     border: 1px solid #00ff00;
 
     border-radius: 20px;
 
-    box-shadow: 0 0 25px rgba(0,255,0,0.3);
-}
-
-/* TITLE */
-
-.ai-terminal h1{
-
-    color: #00ff00;
-
-    text-align: center;
-
-    font-size: 45px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 30px;
-}
-
-/* CHAT AREA */
-
-#responseBox{
-
-    height: 500px;
-
     overflow-y: auto;
 
-    background: rgba(0,0,0,0.9);
-
-    border: 1px solid #00ff00;
-
-    border-radius: 15px;
-
-    padding: 20px;
-
-    color: white;
-
-    font-family: monospace;
-
-    line-height: 1.8;
-
-    margin-bottom: 30px;
-}
-
-/* USER TEXT */
-
-.user-response{
-
-    color: #00ff00;
-
-    margin-bottom: 20px;
-
-    word-wrap: break-word;
-}
-
-/* AI TEXT */
-
-.ai-response{
-
-    color: white;
-
-    margin-bottom: 25px;
-
-    word-wrap: break-word;
-}
-
-.user-response span,
-.ai-response span{
-
-    font-weight: bold;
-}
-
-/* INPUT CONTAINER */
-
-.ai-input-box{
-
-    display: flex;
-
-    align-items: flex-end;
-
-    gap: 20px;
-
-    width: 100%;
-}
-
-/* INPUT FIELD */
-
-#userInput{
-
-    flex: 1;
-
-    height: 65px;
-
-    padding: 0 20px;
-
-    background: rgba(0,0,0,0.95);
-
-    border: 1px solid #00ff00;
-
-    border-radius: 15px;
+    padding: 25px;
 
     color: white;
 
     font-size: 18px;
 
-    outline: none;
-
-    box-sizing: border-box;
+    margin-bottom: 30px;
 }
 
-/* EXECUTE BUTTON */
+.ai-input-area{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#userInput{
+    flex: 1;
+
+    height: 65px;
+
+    background: black;
+
+    border: 2px solid #00ff00;
+
+    border-radius: 15px;
+
+    color: white;
+
+    padding: 0 20px;
+
+    font-size: 18px;
+}
+
+#userInput:focus{
+    outline: none;
+
+    box-shadow: 0 0 15px #00ff00;
+}
 
 #executeBtn{
-position: relative;
-top: 70px;
     min-width: 180px;
 
     height: 65px;
@@ -171,69 +104,29 @@ top: 70px;
     cursor: pointer;
 
     transition: 0.3s;
-
-    white-space: nowrap;
-   margin-top: 40px;
 }
 
 #executeBtn:hover{
-
     transform: scale(1.05);
 
     box-shadow: 0 0 20px #00ff00;
 }
 
-/* SCROLLBAR */
+@media(max-width:768px){
 
-#responseBox::-webkit-scrollbar{
-
-    width: 8px;
-}
-
-#responseBox::-webkit-scrollbar-thumb{
-
-    background: #00ff00;
-
-    border-radius: 10px;
-}
-
-/* MOBILE RESPONSIVE */
-
-@media screen and (max-width: 768px){
-
-    .ai-terminal{
-
-        width: 92%;
-
-        padding: 20px;
-    }
-
-    .ai-terminal h1{
-
-        font-size: 30px;
-    }
-
-    #responseBox{
-
-        height: 400px;
-
-        font-size: 14px;
-    }
-
-    .ai-input-box{
-
+    .ai-input-area{
         flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    #userInput{
-
-        width: 100%;
     }
 
     #executeBtn{
-
         width: 100%;
+    }
+
+    .chat-box{
+        height: 400px;
+    }
+
+    .ai-section h2{
+        font-size: 30px;
     }
 }
