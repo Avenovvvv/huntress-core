@@ -985,3 +985,53 @@ button:hover{
     margin-bottom: 30px;
     line-height: 1.8;
 }
+/* DASHBOARD */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(0,0,0,0.7);
+    border-bottom: 1px solid #00ff00;
+}
+
+.navbar h1{
+    color: #00ff00;
+}
+
+.navbar ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover{
+    color: #00ff00;
+}
+
+.dashboard-hero{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.dashboard-hero h2{
+    font-size: 60px;
+    color: #00ff00;
+}
+
+.dashboard-hero p{
+    margin-top: 20px;
+    font-size: 20px;
+}
