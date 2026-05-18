@@ -66,3 +66,27 @@
     }
 
 }
+.ai-section{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 380px;
+    max-width: 92%;
+
+    background: rgba(0,0,0,0.95);
+
+    border: 2px solid #00ff00;
+    border-radius: 20px;
+
+    padding: 20px;
+
+    z-index: 9999;
+
+    resize: both;
+    overflow: auto;
+
+    box-shadow:
+    0 0 20px #00ff00,
+    0 0 40px #00ff00;
+}
