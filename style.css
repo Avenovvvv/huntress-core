@@ -1306,11 +1306,12 @@ display: inline-block;
     color: white;
 }
 
-.input-area{
-
+.input-area {
     display: flex;
+    align-items: center;
+    gap: 20px;
 
-    gap: 15px;
+    margin-top: 45px;
 }
 
 #prompt{
