@@ -1346,3 +1346,48 @@ display: inline-block;
 
     cursor: pointer;
 }
+.ai-section{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    z-index: 9999;
+}
+
+.ai-popup{
+    background: rgba(0,0,0,0.95);
+    border: 2px solid #00ff00;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+.chat-box{
+    height: 250px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    color: #00ff00;
+    font-family: monospace;
+}
+
+.ai-input-area{
+    display: flex;
+    gap: 10px;
+}
+
+#userInput{
+    flex: 1;
+    background: black;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 10px;
+}
+
+#executeBtn{
+    background: #00ff00;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
