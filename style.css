@@ -1437,3 +1437,78 @@ display: inline-block;
     letter-spacing:2px;
     font-size:14px;
 }
+.classified-banner{
+    width:100%;
+    background:#00ffcc;
+    color:black;
+    text-align:center;
+    padding:12px;
+    font-weight:bold;
+    letter-spacing:4px;
+}
+
+.blog-container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:60px 20px;
+    color:white;
+}
+
+.blog-header{
+    margin-bottom:60px;
+}
+
+.intel-small{
+    color:#00ffcc;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.blog-header h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.blog-subtitle{
+    color:#cfcfcf;
+    line-height:1.8;
+    font-size:20px;
+}
+
+.blog-content h2{
+    color:#00ffcc;
+    margin-top:50px;
+    margin-bottom:20px;
+}
+
+.blog-content p{
+    line-height:2;
+    color:#d6d6d6;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+.redacted-box{
+    border-left:4px solid #00ffcc;
+    background:rgba(255,255,255,0.03);
+    padding:30px;
+    margin:40px 0;
+    line-height:2;
+}
+
+.timeline{
+    border-left:2px solid #00ffcc;
+    padding-left:30px;
+    margin-top:40px;
+}
+
+.timeline-item{
+    margin-bottom:35px;
+}
+
+.timeline-item span{
+    color:#00ffcc;
+    font-size:22px;
+    font-weight:bold;
+}
