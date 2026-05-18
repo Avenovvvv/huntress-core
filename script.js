@@ -56,3 +56,120 @@ setTimeout(() => {
 }, 3000);
 
 });
+async function sendPrompt(){
+
+    const promptInput =
+    document.getElementById("prompt");
+
+    const chatContainer =
+    document.getElementById("chat-container");
+
+    const userText =
+    promptInput.value;
+
+    if(!userText) return;
+
+    chatContainer.innerHTML += `
+        <div class="message user">
+            <strong>YOU ></strong>
+            ${userText}
+        </div>
+    `;
+
+    promptInput.value = "";
+
+    const loadingMessage = document.createElement("div");
+
+    loadingMessage.className = "message ai";
+
+    loadingMessage.innerHTML =
+    "<strong>HUNTRESS AI ></strong> Thinking...";
+
+    chatContainer.appendChild(loadingMessage);
+
+    chatContainer.scrollTop =
+    chatContainer.scrollHeight;
+
+    try{
+
+        const response = await fetch(
+            "https://openrouter.ai/api/v1/chat/completions",
+            {
+
+                method: "POST",
+
+                headers: {
+
+                    "Authorization":
+                    "Bearer k-or-v1-090e83d88d1ab06f209d61f63d32cb17ca58e2ead7a731c558bd71cce3f568bc",
+
+                    "Content-Type":
+                    "application/json"
+                },
+
+                body: JSON.stringify({
+
+                    model:
+                    "anthropic/claude-3-sonnet",
+
+                    messages: [
+
+                        {
+
+                            role: "system",
+
+                            content: `
+You are HUNTRESS AI.
+
+An elite cybersecurity,
+OSINT,
+malware analysis,
+digital reconnaissance,
+and intelligence assistant.
+
+You specialize in:
+- penetration testing
+- exploit analysis
+- reverse engineering
+- OPSEC
+- cyber intelligence
+- darknet investigations
+- threat hunting
+- malware behavior analysis
+
+Respond technically,
+clearly,
+and analytically.
+`
+                        },
+
+                        {
+
+                            role: "user",
+
+                            content: userText
+                        }
+                    ]
+                })
+            }
+        );
+
+        const data =
+        await response.json();
+
+        loadingMessage.innerHTML = `
+            <strong>HUNTRESS AI ></strong>
+            ${data.choices[0].message.content}
+        `;
+
+        chatContainer.scrollTop =
+        chatContainer.scrollHeight;
+
+    }catch(error){
+
+        loadingMessage.innerHTML = `
+            <strong>HUNTRESS AI ></strong>
+            ERROR CONNECTING TO AI
+        `;
+    }
+}
