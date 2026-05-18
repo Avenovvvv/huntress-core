@@ -1,0 +1,237 @@
+/* =========================
+   HUNTRESS AI TERMINAL CSS
+========================= */
+
+body{
+    margin: 0;
+    padding: 0;
+    background: black;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* MATRIX BACKGROUND */
+
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* MAIN AI CONTAINER */
+
+.ai-terminal{
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 80px auto;
+
+    padding: 30px;
+
+    background: rgba(0,0,0,0.85);
+
+    border: 1px solid #00ff00;
+
+    border-radius: 20px;
+
+    box-shadow: 0 0 25px rgba(0,255,0,0.3);
+}
+
+/* TITLE */
+
+.ai-terminal h1{
+
+    color: #00ff00;
+
+    text-align: center;
+
+    font-size: 45px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+}
+
+/* CHAT AREA */
+
+#responseBox{
+
+    height: 500px;
+
+    overflow-y: auto;
+
+    background: rgba(0,0,0,0.9);
+
+    border: 1px solid #00ff00;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    color: white;
+
+    font-family: monospace;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+/* USER TEXT */
+
+.user-response{
+
+    color: #00ff00;
+
+    margin-bottom: 20px;
+
+    word-wrap: break-word;
+}
+
+/* AI TEXT */
+
+.ai-response{
+
+    color: white;
+
+    margin-bottom: 25px;
+
+    word-wrap: break-word;
+}
+
+.user-response span,
+.ai-response span{
+
+    font-weight: bold;
+}
+
+/* INPUT CONTAINER */
+
+.ai-input-box{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+/* INPUT FIELD */
+
+#userInput{
+
+    flex: 1;
+
+    height: 65px;
+
+    padding: 0 20px;
+
+    background: rgba(0,0,0,0.95);
+
+    border: 1px solid #00ff00;
+
+    border-radius: 15px;
+
+    color: white;
+
+    font-size: 18px;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+/* EXECUTE BUTTON */
+
+#executeBtn{
+
+    min-width: 180px;
+
+    height: 65px;
+
+    background: #00ff00;
+
+    color: black;
+
+    border: none;
+
+    border-radius: 15px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    white-space: nowrap;
+}
+
+#executeBtn:hover{
+
+    transform: scale(1.05);
+
+    box-shadow: 0 0 20px #00ff00;
+}
+
+/* SCROLLBAR */
+
+#responseBox::-webkit-scrollbar{
+
+    width: 8px;
+}
+
+#responseBox::-webkit-scrollbar-thumb{
+
+    background: #00ff00;
+
+    border-radius: 10px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media screen and (max-width: 768px){
+
+    .ai-terminal{
+
+        width: 92%;
+
+        padding: 20px;
+    }
+
+    .ai-terminal h1{
+
+        font-size: 30px;
+    }
+
+    #responseBox{
+
+        height: 400px;
+
+        font-size: 14px;
+    }
+
+    .ai-input-box{
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    #userInput{
+
+        width: 100%;
+    }
+
+    #executeBtn{
+
+        width: 100%;
+    }
+}
