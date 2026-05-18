@@ -1067,3 +1067,94 @@ button:hover{
     }
 
 }
+/* INFO SECTIONS */
+
+.info-section{
+    width: 90%;
+    margin: 60px auto;
+    padding: 40px 20px;
+
+    background: rgba(0,0,0,0.7);
+
+    border: 1px solid #00ff00;
+    border-radius: 15px;
+
+    text-align: center;
+    color: white;
+
+    backdrop-filter: blur(4px);
+}
+
+.info-section h2{
+    color: #00ff00;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.info-section p{
+    font-size: 17px;
+    line-height: 1.8;
+    color: #d7d7d7;
+}
+
+.info-section button{
+
+    margin-top: 25px;
+
+    padding: 14px 30px;
+
+    background: #00ff00;
+
+    color: black;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.info-section button:hover{
+
+    transform: scale(1.05);
+
+    box-shadow: 0 0 15px #00ff00;
+}
+
+
+/* MOBILE FIX */
+
+@media(max-width:768px){
+
+    .navbar{
+
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul{
+
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dashboard-hero h2{
+
+        font-size: 50px;
+    }
+
+    .dashboard-hero p{
+
+        font-size: 16px;
+    }
+
+    .info-section h2{
+
+        font-size: 28px;
+    }
+
+}
