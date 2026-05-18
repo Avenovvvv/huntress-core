@@ -1,96 +1,43 @@
-const glow = document.querySelector(".cursor-glow");
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
 
-document.addEventListener("mousemove", (e) => {
-    glow.style.left = e.clientX + "px";
-    glow.style.top = e.clientY + "px";
-});
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
 
-const text =
-`> Initializing H.U.N.T.R.E.S.S...
-> Establishing encrypted channels...
-> Threat database connected...
-> Access Level: CONTROLLER
-> System Ready`;
+const letters = "01HUNTRESSVICTORREZNOV";
+const matrix = letters.split("");
 
-let i = 0;
-const typing = document.querySelector(".typing-text");
+const fontSize = 14;
+const columns = canvas.width / fontSize;
 
-function typeWriter() {
+const drops = [];
 
-    if(i < text.length){
+for(let x = 0; x < columns; x++)
+{
+    drops[x] = 1;
+}
 
-        typing.innerHTML += text.charAt(i);
+function draw()
+{
+    ctx.fillStyle = "rgba(0,0,0,0.05)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
 
-        i++;
+    ctx.fillStyle = "red";
+    ctx.font = fontSize + "px monospace";
 
-        setTimeout(typeWriter, 40);
+    for(let i = 0; i < drops.length; i++)
+    {
+        const text = matrix[Math.floor(Math.random()*matrix.length)];
+
+        ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+
+        if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
+        {
+            drops[i] = 0;
+        }
+
+        drops[i]++;
     }
 }
 
-typeWriter();
-
-document.getElementById("enterBtn")
-.addEventListener("click", () => {
-
-    window.location.href = "gateway.html";
-
-});
-/* DYNAMIC SLOGANS */
-
-const slogans = [
-
-    "Built for the evolving battlefield.",
-
-    "Precision through intelligence.",
-
-    "Observe. Hunt. Neutralize.",
-
-    "Where cyber intelligence evolves.",
-
-    "Operational discipline meets digital warfare.",
-
-    "Intelligence is the first line of defense.",
-
-    "Engineered for modern threat landscapes."
-
-];
-
-const sloganElement = document.getElementById("dynamicSlogan");
-
-if(sloganElement){
-
-    const randomSlogan =
-    slogans[Math.floor(Math.random() * slogans.length)];
-
-    sloganElement.innerText =
-    `"${randomSlogan}"`;
-}
-/* ACCESS GATEWAY */
-
-const guestBtn =
-document.getElementById("guestBtn");
-
-const accountBtn =
-document.getElementById("accountBtn");
-
-if(guestBtn){
-
-    guestBtn.addEventListener("click", () => {
-
-        localStorage.setItem("clearance", "guest");
-
-        window.location.href = "main.html";
-
-    });
-}
-
-if(accountBtn){
-
-    accountBtn.addEventListener("click", () => {
-
-        localStorage.setItem("clearance", "pre-initiate");
-
-        window.location.href = "register.html";
-
-    });
-}
+setInterval(draw, 35);
