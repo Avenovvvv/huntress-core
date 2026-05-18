@@ -1,62 +1,38 @@
-.ai-section{
-    width: 100%;
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.ai-section h2{
-    color: #00ff00;
-    font-size: 42px;
-    margin-bottom: 40px;
-    text-align: center;
-    text-shadow: 0 0 15px #00ff00;
-}
-
-.ai-popup{
-    width: 95%;
-    max-width: 1000px;
-
-    background: rgba(0,0,0,0.92);
-
+#huntressAI{
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    width: 350px;
+    background: rgba(0,0,0,0.96);
     border: 2px solid #00ff00;
-
-    border-radius: 25px;
-
-    padding: 30px;
-
-    box-shadow:
-    0 0 25px #00ff00,
-    inset 0 0 20px rgba(0,255,0,0.15);
+    border-radius: 18px;
+    padding: 15px;
+    z-index: 99999;
+    box-shadow: 0 0 25px #00ff00;
+    font-family: monospace;
 }
 
-.chat-box{
-    width: 100%;
-    height: 500px;
+.huntress-header{
+    color: #00ff00;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
 
-    background: black;
-
-    border: 1px solid #00ff00;
-
-    border-radius: 20px;
-
+#chatBox{
+    height: 260px;
     overflow-y: auto;
-
-    padding: 25px;
-
-    color: white;
-
-    font-size: 18px;
-
-    margin-bottom: 30px;
+    background: black;
+    border: 1px solid #00ff00;
+    padding: 10px;
+    color: #00ff00;
+    margin-bottom: 15px;
 }
 
-.ai-input-area{
+.huntress-input{
     display: flex;
-    align-items: center;
     gap: 10px;
-    margin-top: 15px;
 }
 
 #userInput{
@@ -64,77 +40,29 @@
     background: black;
     border: 1px solid #00ff00;
     color: #00ff00;
-    padding: 14px;
-    font-size: 14px;
+    padding: 12px;
     outline: none;
-}
-
-#userInput:focus{
-    outline: none;
-
-    box-shadow: 0 0 15px #00ff00;
 }
 
 #executeBtn{
     background: #00ff00;
     color: black;
     border: none;
-    padding: 14px 22px;
+    padding: 12px 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
-    white-space: nowrap;
-}
-
-#executeBtn:hover{
-    transform: scale(1.05);
-
-    box-shadow: 0 0 20px #00ff00;
 }
 
 @media(max-width:768px){
 
-    .ai-input-area{
-        flex-direction: column;
-    }
-
-    #executeBtn{
-        width: 100%;
-    }
-
-    .chat-box{
-    height: 300px;
-    overflow-y: auto;
-    background: black;
-    border: 1px solid #00ff00;
-    padding: 15px;
-    color: #00ff00;
-    }
-
-    .ai-section h2{
-        font-size: 30px;
-    }
-}
-@media (max-width: 768px){
-
-    .ai-popup{
+    #huntressAI{
         width: 90%;
         right: 5%;
-        bottom: 20px;
-        padding: 20px;
+        bottom: 10px;
     }
 
-    .chat-box{
-        height: 220px;
-    }
-
-    .ai-input-area{
-        flex-direction: row;
-    }
-
-    #executeBtn{
-        padding: 14px 16px;
-        font-size: 12px;
+    #chatBox{
+        height: 200px;
     }
 
 }
