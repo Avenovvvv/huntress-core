@@ -115,3 +115,26 @@
         font-size: 30px;
     }
 }
+@media (max-width: 768px){
+
+    .ai-popup{
+        width: 90%;
+        right: 5%;
+        bottom: 20px;
+        padding: 20px;
+    }
+
+    .chat-box{
+        height: 220px;
+    }
+
+    .ai-input-area{
+        flex-direction: row;
+    }
+
+    #executeBtn{
+        padding: 14px 16px;
+        font-size: 12px;
+    }
+
+}
