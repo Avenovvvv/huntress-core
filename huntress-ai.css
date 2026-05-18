@@ -113,7 +113,7 @@ canvas{
 
     display: flex;
 
-    align-items: center;
+    align-items: flex-end;
 
     gap: 20px;
 
@@ -148,7 +148,8 @@ canvas{
 /* EXECUTE BUTTON */
 
 #executeBtn{
-
+position: relative;
+top: 20px;
     min-width: 180px;
 
     height: 65px;
