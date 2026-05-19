@@ -768,3 +768,91 @@ width:260px;
         translateY(0);
     }
 }
+/* =========================
+   LOADING TERMINAL
+========================= */
+
+.loading-terminal{
+
+    width:100%;
+
+    max-width:700px;
+
+    margin:40px auto;
+
+    padding:30px;
+
+    background:rgba(0,0,0,0.78);
+
+    border:1px solid rgba(0,255,136,0.18);
+
+    border-radius:18px;
+
+    text-align:left;
+
+    box-shadow:
+    0 0 30px rgba(0,255,136,0.08);
+
+    backdrop-filter:blur(10px);
+}
+
+.loading-terminal p{
+
+    color:#00ff88;
+
+    font-family:monospace;
+
+    font-size:15px;
+
+    margin:14px 0;
+
+    letter-spacing:1px;
+
+    text-shadow:
+    0 0 8px rgba(0,255,136,0.35);
+
+    animation:flicker 2s infinite;
+}
+
+.blink{
+
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0.2;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes flicker{
+
+    0%{
+        opacity:1;
+    }
+
+    5%{
+        opacity:0.85;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    15%{
+        opacity:0.9;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
