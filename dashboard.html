@@ -4,200 +4,248 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>H.U.N.T.R.E.S.S Dashboard</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+<title>
+H.U.N.T.R.E.S.S Dashboard
+</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- SIDE MENU BUTTON -->
+<!-- MATRIX -->
 
-<div class="menu-btn" onclick="toggleMenu()">
-⋮
+<canvas id="matrix"></canvas>
+
+<!-- MENU BUTTON -->
+
+<div
+class="menu-btn"
+onclick="toggleMenu()">
+
+☰
+
 </div>
 
 <!-- SIDE MENU -->
 
-<div class="side-menu" id="sideMenu">
+<div
+class="side-menu"
+id="sideMenu">
 
-<a href="#who">Who We Are</a>
+<a href="#overview">
+Overview
+</a>
 
-<a href="#blogs">Blog Archive</a>
+<a href="#who">
+Who We Are
+</a>
 
-<a href="#courses">Courses</a>
+<a href="#blogs">
+Dossier Archive
+</a>
 
-<a href="#hire">Hire Us</a>
+<a href="#courses">
+Courses
+</a>
 
-<a href="#join">Join Us</a>
+<a href="#hire">
+Hire Us
+</a>
 
-<a href="#contact">Contact Us</a>
+<a href="join.html">
+Join Us
+</a>
 
-</div>
-
-<!-- TERMS POPUP -->
-
-<div id="termsPopup" class="terms-popup">
-
-<div class="terms-overlay"></div>
-
-<div class="terms-modal">
-
-<p class="terms-warning">
-RESTRICTED ACCESS GATEWAY
-</p>
-
-<h1>
-H.U.N.T.R.E.S.S
-</h1>
-
-<p class="terms-quote">
-Question Everything.
-</p>
-
-<div class="terms-scroll">
-
-<p>
-By entering this platform you acknowledge that:
-</p>
-
-<ul>
-
-<li>
-All cybersecurity content is educational and research-oriented.
-</li>
-
-<li>
-Political dossiers are independent analytical investigations.
-</li>
-
-<li>
-H.U.N.T.R.E.S.S promotes critical thinking and anti-propaganda awareness.
-</li>
-
-<li>
-No extremist or political affiliations are endorsed.
-</li>
-
-<li>
-Users are responsible for ethical use of information.
-</li>
-
-</ul>
+<a href="#contact">
+Contact
+</a>
 
 </div>
-
-<div class="terms-buttons">
-
-<button onclick="acceptTerms()" class="accept-access">
-ACCEPT & CONTINUE
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- MATRIX -->
-
-<canvas id="matrix"></canvas>
 
 <!-- NAVBAR -->
 
 <nav class="navbar">
 
-<h1>H.U.N.T.R.E.S.S</h1>
+<h1>
+
+H.U.N.T.R.E.S.S
+
+</h1>
 
 </nav>
 
 <!-- HERO -->
 
-<section class="dashboard-hero">
+<section
+id="overview"
+class="dashboard-hero">
 
-<h2>WELCOME TO H.U.N.T.R.E.S.S</h2>
+<h2>
+
+WELCOME TO H.U.N.T.R.E.S.S
+
+</h2>
 
 <p>
+
 Cybersecurity • Intelligence • Reconnaissance
+
 </p>
+
+<div
+style="
+margin-top:40px;
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+">
+
+<a
+href="join.html"
+class="join-btn">
+
+JOIN OPERATIONS
+
+</a>
+
+</div>
 
 </section>
 
 <!-- WHO WE ARE -->
 
-<section id="who" class="info-section">
+<section
+id="who"
+class="info-section">
 
-<h2>WHO WE ARE</h2>
+<h2>
+
+WHO WE ARE
+
+</h2>
 
 <p>
-H.U.N.T.R.E.S.S is an independent cybersecurity
-initiative focused on intelligence gathering,
-offensive security research,
-digital reconnaissance,
-and cyber awareness.
+
+H.U.N.T.R.E.S.S is an independent
+cybersecurity and intelligence initiative
+focused on:
+
+<br><br>
+
+• Offensive Security Research  
+• Digital Reconnaissance  
+• OSINT Operations  
+• Threat Intelligence  
+• Cyber Awareness  
+• Propaganda Analysis  
+
+<br><br>
+
+Built with a philosophy combining
+military precision,
+hacker methodology,
+and intelligence-driven operations.
+
 </p>
 
 </section>
 
-<!-- BLOGS -->
+<!-- DOSSIER ARCHIVE -->
 
-<section id="blogs" class="info-section">
+<section
+id="blogs"
+class="info-section">
 
-<h2>BLOG ARCHIVE</h2>
+<h2>
+
+DOSSIER ARCHIVE
+
+</h2>
 
 <p>
-Intelligence dossiers,
+
+Cyber investigations,
 political analysis,
-cyber investigations,
-OSINT case studies
-and propaganda breakdowns.
+OSINT case studies,
+and intelligence dossiers.
+
 </p>
 
 <div class="blog-archive">
 
-<a href="india-2040.html" class="blog-card">
+<a
+href="india-2040.html"
+class="blog-card">
 
 <span class="intel-label">
+
 NEW DOSSIER
+
 </span>
 
-<h3>INDIA 2040</h3>
+<h3>
+
+INDIA 2040
+
+</h3>
 
 <p>
+
 Corruption,
-criminal politicians,
-propaganda systems
+criminal politics,
+propaganda systems,
 and the future of Indian democracy.
+
 </p>
 
 <div class="access-btn">
+
 ACCESS FILE →
+
 </div>
 
 </a>
 
-<a href="india-unfiltered.html" class="blog-card">
+<a
+href="india-unfiltered.html"
+class="blog-card">
 
 <span class="intel-label">
+
 ACTIVE DOSSIER
+
 </span>
 
-<h3>INDIA UNFILTERED</h3>
+<h3>
+
+INDIA UNFILTERED
+
+</h3>
 
 <p>
-BJP vs INC.
-Development,
-propaganda,
-democracy,
-media influence
-and political analysis.
+
+Political analysis,
+media influence,
+development narratives,
+and propaganda ecosystems.
+
 </p>
 
 <div class="access-btn">
+
 ACCESS FILE →
+
 </div>
 
 </a>
@@ -208,116 +256,150 @@ ACCESS FILE →
 
 <!-- COURSES -->
 
-<section id="courses" class="info-section">
+<section
+id="courses"
+class="info-section">
 
-<h2>COURSES</h2>
+<h2>
+
+COURSES
+
+</h2>
 
 <p>
+
 Practical cybersecurity learning modules,
 ethical hacking walkthroughs,
-and real-world intelligence operations training.
+OSINT tradecraft,
+and operational security training.
+
 </p>
 
 <button>
-Coming Soon!
+
+COMING SOON
+
 </button>
 
 </section>
 
 <!-- HIRE -->
 
-<section id="hire" class="info-section">
+<section
+id="hire"
+class="info-section">
 
-<h2>HIRE US</h2>
+<h2>
+
+HIRE US
+
+</h2>
 
 <p>
-Need cybersecurity research,
+
+Cybersecurity consulting,
 OSINT investigations,
-security analysis,
-or digital threat assessment?
+threat intelligence,
+digital reconnaissance,
+and analytical operations.
+
 </p>
 
 <button>
-Coming Soon!
+
+COMING SOON
+
 </button>
 
 </section>
 
 <!-- JOIN -->
 
-<section id="join" class="info-section">
+<section
+id="join"
+class="info-section">
 
-<h2>JOIN US</h2>
+<h2>
+
+JOIN OPERATIONS
+
+</h2>
 
 <p>
-Recruitment for analysts,
+
+Applications for analysts,
 researchers,
 developers,
-and intelligence operatives.
+and cyber operatives
+are now open.
+
 </p>
 
-<button>
+<a
+href="join.html"
+class="join-btn">
+
 APPLY NOW
-</button>
+
+</a>
 
 </section>
 
 <!-- CONTACT -->
 
-<section id="contact" class="info-section">
+<section
+id="contact"
+class="info-section">
 
-<h2>CONTACT US</h2>
+<h2>
+
+CONTACT US
+
+</h2>
 
 <p>
+
 For collaborations,
-cybersecurity services,
 research partnerships,
+cybersecurity services,
 or recruitment inquiries.
+
 </p>
 
-<form action="https://formspree.io/f/mredgaqn" method="POST" class="contact-form">
+<form
+action="https://formspree.io/f/mredgaqn"
+method="POST"
+class="contact-form">
 
-<input type="text" name="name" placeholder="Your Name" required>
+<input
+type="text"
+name="name"
+placeholder="Your Name"
+required>
 
-<input type="email" name="email" placeholder="Your Email" required>
+<input
+type="email"
+name="email"
+placeholder="Your Email"
+required>
 
-<textarea name="message" placeholder="Your Message" required></textarea>
+<textarea
+name="message"
+placeholder="Your Message"
+required></textarea>
 
 <button type="submit">
+
 SEND MESSAGE
+
 </button>
 
 </form>
 
 </section>
 
-<!-- SCRIPTS -->
-
-<script>
-
-function acceptTerms(){
-
-document
-.getElementById("termsPopup")
-.style.display = "none";
-
-}
-
-function denyTerms(){
-
-window.location.href = "denied.html";
-
-}
-
-function toggleMenu(){
-
-document
-.getElementById("sideMenu")
-.classList.toggle("active");
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
