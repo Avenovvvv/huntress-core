@@ -25,67 +25,72 @@ const drops = [];
 
 for(let i = 0; i < columns; i++){
 
-    drops[i] = 1;
+drops[i] = 1;
+
 }
 
 function drawMatrix(){
 
-    ctx.fillStyle =
-    "rgba(0,0,0,0.08)";
+ctx.fillStyle =
+"rgba(0,0,0,0.08)";
 
-    ctx.fillRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+ctx.fillRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
-    ctx.fillStyle = "#00ff88";
+ctx.fillStyle = "#00ff88";
 
-    ctx.font =
-    fontSize + "px monospace";
+ctx.font =
+fontSize + "px monospace";
 
-    for(let i = 0; i < drops.length; i++){
+for(let i = 0; i < drops.length; i++){
 
-        const text =
-        matrix[
-            Math.floor(
-                Math.random() *
-                matrix.length
-            )
-        ];
+const text =
+matrix[
+Math.floor(
+Math.random() *
+matrix.length
+)
+];
 
-        ctx.fillText(
-            text,
-            i * fontSize,
-            drops[i] * fontSize
-        );
+ctx.fillText(
+text,
+i * fontSize,
+drops[i] * fontSize
+);
 
-        if(
-            drops[i] * fontSize >
-            canvas.height &&
-            Math.random() > 0.975
-        ){
+if(
+drops[i] * fontSize >
+canvas.height &&
+Math.random() > 0.975
+){
 
-            drops[i] = 0;
-        }
+drops[i] = 0;
 
-        drops[i]++;
-    }
+}
+
+drops[i]++;
+
+}
+
 }
 
 setInterval(drawMatrix, 40);
 
 window.addEventListener(
-    "resize",
-    () => {
+"resize",
+() => {
 
-        canvas.width =
-        window.innerWidth;
+canvas.width =
+window.innerWidth;
 
-        canvas.height =
-        window.innerHeight;
-    }
+canvas.height =
+window.innerHeight;
+
+}
 );
 
 }
@@ -96,17 +101,19 @@ window.addEventListener(
 
 function toggleMenu(){
 
-    const sideMenu =
-    document.getElementById(
-        "sideMenu"
-    );
+const sideMenu =
+document.getElementById(
+"sideMenu"
+);
 
-    if(sideMenu){
+if(sideMenu){
 
-        sideMenu.classList.toggle(
-            "active"
-        );
-    }
+sideMenu.classList.toggle(
+"active"
+);
+
+}
+
 }
 
 /* =========================
@@ -114,31 +121,33 @@ function toggleMenu(){
 ========================= */
 
 document.addEventListener(
-    "click",
-    function(event){
+"click",
+function(event){
 
-        const sideMenu =
-        document.getElementById(
-            "sideMenu"
-        );
+const sideMenu =
+document.getElementById(
+"sideMenu"
+);
 
-        const menuBtn =
-        document.querySelector(
-            ".menu-btn"
-        );
+const menuBtn =
+document.querySelector(
+".menu-btn"
+);
 
-        if(
-            sideMenu &&
-            menuBtn &&
-            !sideMenu.contains(event.target) &&
-            !menuBtn.contains(event.target)
-        ){
+if(
+sideMenu &&
+menuBtn &&
+!sideMenu.contains(event.target) &&
+!menuBtn.contains(event.target)
+){
 
-            sideMenu.classList.remove(
-                "active"
-            );
-        }
-    }
+sideMenu.classList.remove(
+"active"
+);
+
+}
+
+}
 );
 
 /* =========================
@@ -147,103 +156,114 @@ document.addEventListener(
 
 function acceptTerms(){
 
-    const popup =
-    document.getElementById(
-        "termsPopup"
-    );
+window.location.href =
+"gateway-loading.html";
 
-    if(popup){
-
-        popup.style.display = "none";
-    }
 }
 
 function denyTerms(){
 
-    window.location.href =
-    "denied.html";
+window.location.href =
+"denied.html";
+
 }
 
 /* =========================
-   LOADING TRANSITION
+   ENTER SYSTEM TRANSITION
 ========================= */
 
 const enterBtn =
 document.getElementById(
-    "enterBtn"
+"enterBtn"
 );
 
 if(enterBtn){
 
 enterBtn.addEventListener(
-    "click",
-    () => {
+"click",
+() => {
 
-        document.body.innerHTML = `
+document.body.innerHTML = `
 
-        <div class="loading-screen">
+<div class="loading-screen"
+style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:black;
+color:#00ff88;
+font-family:Orbitron,sans-serif;
+letter-spacing:4px;
+">
 
-            <h1>
-            ACCESSING H.U.N.T.R.E.S.S...
-            </h1>
+<h1>
 
-        </div>
+ACCESSING H.U.N.T.R.E.S.S...
 
-        `;
+</h1>
 
-        setTimeout(() => {
+</div>
 
-            window.location.href =
-            "dashboard.html";
+`;
 
-        }, 2500);
-    }
+setTimeout(() => {
+
+window.location.href =
+"loading.html";
+
+}, 2500);
+
+}
 );
 
 }
 
 /* =========================
-   DOSSIER CARD ANIMATION
+   DOSSIER CARD EFFECT
 ========================= */
 
 const cards =
 document.querySelectorAll(
-    ".blog-card"
+".blog-card"
 );
 
 cards.forEach((card) => {
 
-    card.addEventListener(
-        "mousemove",
-        (e) => {
+card.addEventListener(
+"mousemove",
+(e) => {
 
-            const rect =
-            card.getBoundingClientRect();
+const rect =
+card.getBoundingClientRect();
 
-            const x =
-            e.clientX - rect.left;
+const x =
+e.clientX - rect.left;
 
-            const y =
-            e.clientY - rect.top;
+const y =
+e.clientY - rect.top;
 
-            card.style.background = `
-            radial-gradient(
-                circle at ${x}px ${y}px,
-                rgba(255,0,0,0.12),
-                rgba(10,10,10,0.96)
-            )
-            `;
-        }
-    );
+card.style.background = `
+radial-gradient(
+circle at ${x}px ${y}px,
+rgba(255,0,0,0.12),
+rgba(10,10,10,0.96)
+)
+`;
 
-    card.addEventListener(
-        "mouseleave",
-        () => {
+}
+);
 
-            card.style.background =
-            "rgba(10,10,10,0.95)";
-        }
-    );
+card.addEventListener(
+"mouseleave",
+() => {
+
+card.style.background =
+"rgba(10,10,10,0.95)";
+
+}
+);
+
 });
 
 /* =========================
@@ -252,40 +272,44 @@ cards.forEach((card) => {
 
 const revealElements =
 document.querySelectorAll(
-    ".info-section"
+".info-section"
 );
 
 function revealOnScroll(){
 
-    revealElements.forEach((el) => {
+revealElements.forEach((el) => {
 
-        const top =
-        el.getBoundingClientRect().top;
+const top =
+el.getBoundingClientRect().top;
 
-        if(top < window.innerHeight - 100){
+if(top < window.innerHeight - 100){
 
-            el.style.opacity = "1";
+el.style.opacity = "1";
 
-            el.style.transform =
-            "translateY(0)";
-        }
-    });
+el.style.transform =
+"translateY(0)";
+
+}
+
+});
+
 }
 
 revealElements.forEach((el) => {
 
-    el.style.opacity = "0";
+el.style.opacity = "0";
 
-    el.style.transform =
-    "translateY(40px)";
+el.style.transform =
+"translateY(40px)";
 
-    el.style.transition =
-    "all 0.8s ease";
+el.style.transition =
+"all 0.8s ease";
+
 });
 
 window.addEventListener(
-    "scroll",
-    revealOnScroll
+"scroll",
+revealOnScroll
 );
 
 revealOnScroll();
