@@ -1,38 +1,72 @@
+/* =========================
+   MATRIX EFFECT
+========================= */
+
 const canvas = document.getElementById("matrix");
+
+if(canvas){
+
 const ctx = canvas.getContext("2d");
 
-canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-const letters = "01HUNTRESSVICTORREZNOV";
+const letters =
+"01HUNTRESSVICTORREZNOV";
+
 const matrix = letters.split("");
 
-const fontSize = 14;
-const columns = canvas.width / fontSize;
+const fontSize = 16;
+
+const columns =
+canvas.width / fontSize;
 
 const drops = [];
 
-for(let x = 0; x < columns; x++)
-{
-    drops[x] = 1;
+for(let i = 0; i < columns; i++){
+
+    drops[i] = 1;
 }
 
-function draw()
-{
-    ctx.fillStyle = "rgba(0,0,0,0.05)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
+function drawMatrix(){
 
-    ctx.fillStyle = "#00ff00";
-    ctx.font = fontSize + "px monospace";
+    ctx.fillStyle =
+    "rgba(0,0,0,0.08)";
 
-    for(let i = 0; i < drops.length; i++)
-    {
-        const text = matrix[Math.floor(Math.random()*matrix.length)];
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
 
-        ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+    ctx.fillStyle = "#00ff88";
 
-        if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
-        {
+    ctx.font =
+    fontSize + "px monospace";
+
+    for(let i = 0; i < drops.length; i++){
+
+        const text =
+        matrix[
+            Math.floor(
+                Math.random() *
+                matrix.length
+            )
+        ];
+
+        ctx.fillText(
+            text,
+            i * fontSize,
+            drops[i] * fontSize
+        );
+
+        if(
+            drops[i] * fontSize >
+            canvas.height &&
+            Math.random() > 0.975
+        ){
+
             drops[i] = 0;
         }
 
@@ -40,143 +74,218 @@ function draw()
     }
 }
 
-setInterval(draw, 35);
-const enterBtn = document.getElementById("enterBtn");
+setInterval(drawMatrix, 40);
 
-enterBtn.addEventListener("click", () => {
+window.addEventListener(
+    "resize",
+    () => {
 
-    document.body.innerHTML = `
-<div class="loading-screen">
-    <h1>ACCESSING H.U.N.T.R.E.S.S...</h1>
-</div>
-`;
+        canvas.width =
+        window.innerWidth;
 
-setTimeout(() => {
-    window.location.href = "dashboard.html";
-}, 3000);
+        canvas.height =
+        window.innerHeight;
+    }
+);
 
-});
-async function sendPrompt(){
+}
 
-    const promptInput =
-    document.getElementById("prompt");
+/* =========================
+   SIDE MENU
+========================= */
 
-    const chatContainer =
-    document.getElementById("chat-container");
+function toggleMenu(){
 
-    const userText =
-    promptInput.value;
+    const sideMenu =
+    document.getElementById(
+        "sideMenu"
+    );
 
-    if(!userText) return;
+    if(sideMenu){
 
-    chatContainer.innerHTML += `
-        <div class="message user">
-            <strong>YOU ></strong>
-            ${userText}
-        </div>
-    `;
-
-    promptInput.value = "";
-
-    const loadingMessage = document.createElement("div");
-
-    loadingMessage.className = "message ai";
-
-    loadingMessage.innerHTML =
-    "<strong>HUNTRESS AI ></strong> Thinking...";
-
-    chatContainer.appendChild(loadingMessage);
-
-    chatContainer.scrollTop =
-    chatContainer.scrollHeight;
-
-    try{
-
-        const response = await fetch(
-            "https://openrouter.ai/api/v1/chat/completions",
-            {
-
-                method: "POST",
-
-                headers: {
-
-                    "Authorization":
-                    "Bearer k-or-v1-090e83d88d1ab06f209d61f63d32cb17ca58e2ead7a731c558bd71cce3f568bc",
-
-                    "Content-Type":
-                    "application/json"
-                },
-
-                body: JSON.stringify({
-
-                    model:
-                    "anthropic/claude-3-sonnet",
-
-                    messages: [
-
-                        {
-
-                            role: "system",
-
-                            content: `
-You are HUNTRESS AI.
-
-An elite cybersecurity,
-OSINT,
-malware analysis,
-digital reconnaissance,
-and intelligence assistant.
-
-You specialize in:
-- penetration testing
-- exploit analysis
-- reverse engineering
-- OPSEC
-- cyber intelligence
-- darknet investigations
-- threat hunting
-- malware behavior analysis
-
-Respond technically,
-clearly,
-and analytically.
-`
-                        },
-
-                        {
-
-                            role: "user",
-
-                            content: userText
-                        }
-                    ]
-                })
-            }
+        sideMenu.classList.toggle(
+            "active"
         );
-
-        const data =
-        await response.json();
-
-        loadingMessage.innerHTML = `
-            <strong>HUNTRESS AI ></strong>
-            ${data.choices[0].message.content}
-        `;
-
-        chatContainer.scrollTop =
-        chatContainer.scrollHeight;
-
-    }catch(error){
-
-        loadingMessage.innerHTML = `
-            <strong>HUNTRESS AI ></strong>
-            ERROR CONNECTING TO AI
-        `;
     }
 }
-function toggleMenu() {
 
-    const menu = document.getElementById("sideMenu");
+/* =========================
+   CLOSE MENU OUTSIDE CLICK
+========================= */
 
-    menu.classList.toggle("active");
+document.addEventListener(
+    "click",
+    function(event){
+
+        const sideMenu =
+        document.getElementById(
+            "sideMenu"
+        );
+
+        const menuBtn =
+        document.querySelector(
+            ".menu-btn"
+        );
+
+        if(
+            sideMenu &&
+            menuBtn &&
+            !sideMenu.contains(event.target) &&
+            !menuBtn.contains(event.target)
+        ){
+
+            sideMenu.classList.remove(
+                "active"
+            );
+        }
+    }
+);
+
+/* =========================
+   TERMS POPUP
+========================= */
+
+function acceptTerms(){
+
+    const popup =
+    document.getElementById(
+        "termsPopup"
+    );
+
+    if(popup){
+
+        popup.style.display = "none";
+    }
+}
+
+function denyTerms(){
+
+    window.location.href =
+    "denied.html";
+}
+
+/* =========================
+   LOADING TRANSITION
+========================= */
+
+const enterBtn =
+document.getElementById(
+    "enterBtn"
+);
+
+if(enterBtn){
+
+enterBtn.addEventListener(
+    "click",
+    () => {
+
+        document.body.innerHTML = `
+
+        <div class="loading-screen">
+
+            <h1>
+            ACCESSING H.U.N.T.R.E.S.S...
+            </h1>
+
+        </div>
+
+        `;
+
+        setTimeout(() => {
+
+            window.location.href =
+            "dashboard.html";
+
+        }, 2500);
+    }
+);
 
 }
+
+/* =========================
+   DOSSIER CARD ANIMATION
+========================= */
+
+const cards =
+document.querySelectorAll(
+    ".blog-card"
+);
+
+cards.forEach((card) => {
+
+    card.addEventListener(
+        "mousemove",
+        (e) => {
+
+            const rect =
+            card.getBoundingClientRect();
+
+            const x =
+            e.clientX - rect.left;
+
+            const y =
+            e.clientY - rect.top;
+
+            card.style.background = `
+            radial-gradient(
+                circle at ${x}px ${y}px,
+                rgba(255,0,0,0.12),
+                rgba(10,10,10,0.96)
+            )
+            `;
+        }
+    );
+
+    card.addEventListener(
+        "mouseleave",
+        () => {
+
+            card.style.background =
+            "rgba(10,10,10,0.95)";
+        }
+    );
+});
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+document.querySelectorAll(
+    ".info-section"
+);
+
+function revealOnScroll(){
+
+    revealElements.forEach((el) => {
+
+        const top =
+        el.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 100){
+
+            el.style.opacity = "1";
+
+            el.style.transform =
+            "translateY(0)";
+        }
+    });
+}
+
+revealElements.forEach((el) => {
+
+    el.style.opacity = "0";
+
+    el.style.transform =
+    "translateY(40px)";
+
+    el.style.transition =
+    "all 0.8s ease";
+});
+
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
+
+revealOnScroll();
