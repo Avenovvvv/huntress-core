@@ -8,7 +8,7 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>ACCESS GATEWAY</title>
+<title>H.U.N.T.R.E.S.S Gateway</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,49 +19,76 @@ rel="stylesheet">
 
 <body class="gateway-body">
 
+<!-- MATRIX -->
+
+<canvas id="matrix"></canvas>
+
+<!-- GATEWAY -->
+
 <div class="gateway-container">
 
-    <h1>ACCESS GATEWAY</h1>
+<div class="intel-label">
+RESTRICTED NETWORK ACCESS
+</div>
 
-    <p class="gateway-warning">
+<h1>
+ACCESS GATEWAY
+</h1>
 
-        UNAUTHORIZED ACCESS TO
-        H.U.N.T.R.E.S.S NETWORKS
-        IS PROHIBITED.
+<p class="gateway-warning">
 
-    </p>
+Unauthorized access to
+H.U.N.T.R.E.S.S systems
+is prohibited.
 
-    <div class="gateway-buttons">
+<br><br>
 
-        <button
-        class="gateway-btn"
-        onclick="window.location.href='main.html'">
+All activity may be monitored,
+logged,
+and analyzed.
 
-        CONTINUE AS GUEST
+</p>
 
-        </button>
+<div class="gateway-buttons">
 
-        <button
-        class="gateway-btn"
-        onclick="window.location.href='register.html'">
+<button
+class="gateway-btn"
+onclick="window.location.href='main.html'">
 
-        CREATE PRE-INITIATE ACCOUNT
+CONTINUE AS GUEST
 
-        </button>
+</button>
 
-    </div>
+<button
+class="gateway-btn"
+onclick="window.location.href='register.html'">
 
-    <div class="clearance-box">
+CREATE INITIATE ACCOUNT
 
-        <p>LEVEL 0 — GUEST</p>
-
-        <p>LIMITED NETWORK ACCESS</p>
-
-        <p>CLASSIFIED FILES REDACTED</p>
-
-    </div>
+</button>
 
 </div>
 
+<div class="clearance-box">
+
+<p>
+LEVEL 0 — GUEST CLEARANCE
+</p>
+
+<p>
+LIMITED NETWORK ACCESS
+</p>
+
+<p>
+CLASSIFIED DOSSIERS REDACTED
+</p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
