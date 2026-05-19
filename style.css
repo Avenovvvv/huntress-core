@@ -672,3 +672,99 @@ width:260px;
 }
 
 }
+/* =========================================
+   ADVANCED LOADING TERMINAL
+========================================= */
+
+.loading-terminal{
+
+    margin-top:40px;
+
+    background:
+    rgba(0,0,0,0.82);
+
+    border:
+    1px solid rgba(0,255,136,0.15);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:left;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 0 35px rgba(0,255,136,0.08);
+}
+
+.loading-terminal p{
+
+    color:#00ff88;
+
+    margin:18px 0;
+
+    font-family:monospace;
+
+    letter-spacing:2px;
+
+    font-size:15px;
+
+    animation:
+    fadeInUp 0.6s ease forwards;
+}
+
+.loading-status{
+
+    margin-top:25px;
+
+    color:#00ffcc;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+}
+
+.blink{
+
+    animation:
+    blink 1s infinite;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes blink{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0.2;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes fadeInUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(10px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
