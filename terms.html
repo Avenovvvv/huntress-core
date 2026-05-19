@@ -4,100 +4,159 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Authorization Required | H.U.N.T.R.E.S.S</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>AUTHORIZATION REQUIRED | H.U.N.T.R.E.S.S</title>
 
 <link rel="stylesheet" href="style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+rel="stylesheet">
+
 </head>
 
-<body>
+<body class="gateway-body">
 
-<div class="terms-bg"></div>
+<!-- MATRIX -->
 
-<div class="scan-line"></div>
+<canvas id="matrix"></canvas>
 
-<div class="terms-box">
+<div class="gateway-overlay"></div>
 
-<p class="terms-tag">
-RESTRICTED ACCESS GATEWAY
-</p>
+<!-- TERMS -->
+
+<div class="gateway-container">
+
+<div class="intel-label">
+RESTRICTED ACCESS PROTOCOL
+</div>
 
 <h1>
-H.U.N.T.R.E.S.S
+AUTHORIZATION REQUIRED
 </h1>
 
-<p class="terms-subtitle">
-Question Everything.
+<p class="gateway-warning">
+
+Security clearance verification
+is required before accessing
+H.U.N.T.R.E.S.S systems.
+
 </p>
 
-<div class="typing-box" id="typingText"></div>
+<!-- TERMINAL -->
+
+<div
+id="typingText"
+class="typing-box">
+
+</div>
+
+<!-- TERMS -->
 
 <div class="terms-content">
 
 <p>
-By entering this platform you acknowledge that:
+
+By entering this platform
+you acknowledge that:
+
 </p>
 
 <ul>
 
 <li>
-All cybersecurity material is educational and research-oriented.
+All cybersecurity material
+is educational and research-oriented.
 </li>
 
 <li>
-Political dossiers are independent analytical content.
+Political dossiers are independent analytical investigations.
 </li>
 
 <li>
-H.U.N.T.R.E.S.S does not promote extremism or political affiliation.
+OSINT and intelligence material
+exist for awareness and discussion.
 </li>
 
 <li>
-OSINT and intelligence content are published for awareness and discussion.
+No extremist or political affiliation is endorsed.
 </li>
 
 <li>
-Users are responsible for ethical and lawful usage of information.
+Users are responsible for ethical usage of information.
 </li>
 
 <li>
-Propaganda analysis exists to encourage critical thinking and verification.
+Critical thinking and propaganda analysis
+are core platform principles.
 </li>
 
 </ul>
 
 </div>
 
-<button onclick="acceptAccess()" class="accept-btn">
+<!-- BUTTONS -->
+
+<div class="gateway-buttons">
+
+<button
+onclick="acceptAccess()"
+class="gateway-btn">
+
 ACCEPT & CONTINUE
+
 </button>
 
-<button onclick="denyAccess()" class="deny-btn">
+<button
+onclick="denyAccess()"
+class="gateway-btn secondary-btn">
+
 DECLINE ACCESS
+
 </button>
 
 </div>
+
+<div class="clearance-box">
+
+<p>
+STATUS — PENDING AUTHORIZATION
+</p>
+
+<p>
+SYSTEM MONITORING ENABLED
+</p>
+
+<p>
+UNAUTHORIZED ACCESS PROHIBITED
+</p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
 
 <script>
 
 const text = `
 
-SECURITY CLEARANCE REQUIRED...
+INITIALIZING SECURITY PROTOCOL...
 
-INITIALIZING INTELLIGENCE GATEWAY...
+VERIFYING USER AUTHORIZATION...
 
 THIS PLATFORM CONTAINS:
 
 • CYBERSECURITY RESEARCH
-• OSINT ANALYSIS
+• DIGITAL INTELLIGENCE
+• OSINT INVESTIGATIONS
 • POLITICAL DOSSIERS
-• PROPAGANDA INVESTIGATIONS
-• DIGITAL INTELLIGENCE MATERIAL
+• PROPAGANDA ANALYSIS
 
-PROCEED ONLY IF YOU UNDERSTAND
-AND ACCEPT THE TERMS.
+PROCEED ONLY IF YOU ACCEPT
+THE TERMS OF ACCESS.
 
 `;
 
@@ -107,11 +166,13 @@ function typeWriter(){
 
 if(i < text.length){
 
-document.getElementById("typingText").innerHTML += text.charAt(i);
+document.getElementById(
+"typingText"
+).innerHTML += text.charAt(i);
 
 i++;
 
-setTimeout(typeWriter,20);
+setTimeout(typeWriter, 18);
 
 }
 
@@ -121,17 +182,20 @@ window.onload = typeWriter;
 
 function acceptAccess(){
 
-window.location.href = "dashboard.html";
+window.location.href =
+"dashboard.html";
 
 }
 
 function denyAccess(){
 
-window.location.href = "denied.html";
+window.location.href =
+"denied.html";
 
 }
 
 </script>
 
 </body>
-  </html>
+
+</html>
