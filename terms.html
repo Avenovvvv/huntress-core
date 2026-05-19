@@ -8,9 +8,12 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>AUTHORIZATION REQUIRED | H.U.N.T.R.E.S.S</title>
+<title>
+Authorization Required | H.U.N.T.R.E.S.S
+</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
 rel="stylesheet">
@@ -23,29 +26,34 @@ rel="stylesheet">
 
 <canvas id="matrix"></canvas>
 
+<!-- OVERLAY -->
+
 <div class="gateway-overlay"></div>
 
-<!-- TERMS -->
+<!-- TERMS CONTAINER -->
 
 <div class="gateway-container">
 
 <div class="intel-label">
+
 RESTRICTED ACCESS PROTOCOL
+
 </div>
 
 <h1>
+
 AUTHORIZATION REQUIRED
+
 </h1>
 
 <p class="gateway-warning">
 
-Security clearance verification
-is required before accessing
-H.U.N.T.R.E.S.S systems.
+Security clearance verification is required
+before accessing H.U.N.T.R.E.S.S systems.
 
 </p>
 
-<!-- TERMINAL -->
+<!-- TERMINAL BOX -->
 
 <div
 id="typingText"
@@ -53,22 +61,21 @@ class="typing-box">
 
 </div>
 
-<!-- TERMS -->
+<!-- TERMS CONTENT -->
 
 <div class="terms-content">
 
 <p>
 
-By entering this platform
-you acknowledge that:
+By entering this platform you acknowledge:
 
 </p>
 
 <ul>
 
 <li>
-All cybersecurity material
-is educational and research-oriented.
+All cybersecurity material is educational
+and research-oriented.
 </li>
 
 <li>
@@ -76,8 +83,8 @@ Political dossiers are independent analytical investigations.
 </li>
 
 <li>
-OSINT and intelligence material
-exist for awareness and discussion.
+OSINT and intelligence material exist for
+awareness and discussion.
 </li>
 
 <li>
@@ -85,7 +92,7 @@ No extremist or political affiliation is endorsed.
 </li>
 
 <li>
-Users are responsible for ethical usage of information.
+Users are responsible for ethical use of information.
 </li>
 
 <li>
@@ -97,7 +104,7 @@ are core platform principles.
 
 </div>
 
-<!-- BUTTONS -->
+<!-- ACTION BUTTONS -->
 
 <div class="gateway-buttons">
 
@@ -118,6 +125,8 @@ DECLINE ACCESS
 </button>
 
 </div>
+
+<!-- CLEARANCE INFO -->
 
 <div class="clearance-box">
 
@@ -140,6 +149,10 @@ UNAUTHORIZED ACCESS PROHIBITED
 <script src="script.js"></script>
 
 <script>
+
+/* =========================
+   TYPEWRITER EFFECT
+========================= */
 
 const text = `
 
@@ -180,10 +193,14 @@ setTimeout(typeWriter, 18);
 
 window.onload = typeWriter;
 
+/* =========================
+   ACCESS CONTROL
+========================= */
+
 function acceptAccess(){
 
 window.location.href =
-"dashboard.html";
+"gateway-loading.html";
 
 }
 
