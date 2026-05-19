@@ -8,7 +8,7 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>Pre-Initiate Registration</title>
+<title>H.U.N.T.R.E.S.S Registration</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,41 +19,62 @@ rel="stylesheet">
 
 <body class="gateway-body">
 
+<!-- MATRIX -->
+
+<canvas id="matrix"></canvas>
+
+<!-- REGISTER -->
+
 <div class="gateway-container">
 
-    <h1>PRE-INITIATE<br>REGISTRATION</h1>
+<div class="intel-label">
+PRE-INITIATE REGISTRATION
+</div>
 
-    <p class="gateway-warning">
+<h1>
+IDENTITY INITIALIZATION
+</h1>
 
-        H.U.N.T.R.E.S.S NETWORK ACCESS REQUIRES
-        IDENTITY INITIALIZATION.
+<p class="gateway-warning">
 
-    </p>
+H.U.N.T.R.E.S.S network access
+requires operative initialization.
 
-    <input
-    type="email"
-    placeholder="ENTER EMAIL"
-    class="gateway-input">
+<br><br>
 
-    <input
-    type="password"
-    placeholder="ENTER PASSWORD"
-    class="gateway-input">
+All registered users are assigned
+a temporary operative designation.
 
-    <div class="gateway-buttons">
+</p>
 
-        <button
-        type="button"
-        class="gateway-btn"
-        onclick="generateHunterID()">
+<input
+type="email"
+placeholder="ENTER EMAIL"
+class="gateway-input">
 
-        INITIALIZE ACCESS
+<input
+type="password"
+placeholder="ENTER PASSWORD"
+class="gateway-input">
 
-        </button>
+<div class="gateway-buttons">
 
-    </div>
+<button
+type="button"
+class="gateway-btn"
+onclick="generateHunterID()">
 
-    <p id="generated-id" class="hunter-id"></p>
+INITIALIZE ACCESS
+
+</button>
+
+</div>
+
+<div
+id="generated-id"
+class="hunter-id">
+
+</div>
 
 </div>
 
@@ -61,19 +82,39 @@ rel="stylesheet">
 
 function generateHunterID() {
 
-    const randomNum =
-    Math.floor(100 + Math.random() * 900);
+const randomNum =
+Math.floor(100 + Math.random() * 900);
 
-    const hunterID =
-    "hunter_" + randomNum;
+const hunterID =
+"HUNTER_" + randomNum;
 
-    document.getElementById("generated-id")
-    .innerText =
-    "ASSIGNED OPERATIVE ID: " + hunterID;
+document.getElementById(
+"generated-id"
+).innerHTML = `
+
+ACCESS GRANTED
+<br><br>
+ASSIGNED OPERATIVE ID:
+<br>
+<span style="color:#00ff88;">
+${hunterID}
+</span>
+
+`;
+
+setTimeout(() => {
+
+window.location.href =
+"dashboard.html";
+
+}, 2500);
 
 }
 
 </script>
 
+<script src="script.js"></script>
+
 </body>
+
 </html>
