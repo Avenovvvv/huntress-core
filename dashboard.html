@@ -13,28 +13,34 @@
 </head>
 
 <body>
-  <!-- THREE DOT MENU -->
+
+<!-- SIDE MENU BUTTON -->
 
 <div class="menu-btn" onclick="toggleMenu()">
-    ⋮
+⋮
 </div>
+
+<!-- SIDE MENU -->
 
 <div class="side-menu" id="sideMenu">
 
-    <a href="#terminal">AI Terminal</a>
+<a href="#who">Who We Are</a>
 
-    <a href="#blogs">Blogs</a>
+<a href="#blogs">Blog Archive</a>
 
-    <a href="#india">India Unfiltered</a>
+<a href="#courses">Courses</a>
 
-    <a href="#archives">Archives</a>
+<a href="#hire">Hire Us</a>
 
-    <a href="#contact">Contact Us</a>
+<a href="#join">Join Us</a>
 
-    <a href="#join">Join Us</a>
+<a href="#contact">Contact Us</a>
 
 </div>
-  <div id="termsPopup" class="terms-popup">
+
+<!-- TERMS POPUP -->
+
+<div id="termsPopup" class="terms-popup">
 
 <div class="terms-overlay"></div>
 
@@ -83,6 +89,7 @@ Users are responsible for ethical use of information.
 </ul>
 
 </div>
+
 <div class="terms-buttons">
 
 <button onclick="acceptTerms()" class="accept-access">
@@ -90,27 +97,24 @@ ACCEPT & CONTINUE
 </button>
 
 </div>
+
 </div>
 
-  </div>
+</div>
+
+<!-- MATRIX -->
 
 <canvas id="matrix"></canvas>
+
+<!-- NAVBAR -->
 
 <nav class="navbar">
 
 <h1>H.U.N.T.R.E.S.S</h1>
 
-<div class="menu-container">
-
-<button class="menu-btn" onclick="toggleMenu()">
-⋮
-</button>
-
-
-
-</div>
-
 </nav>
+
+<!-- HERO -->
 
 <section class="dashboard-hero">
 
@@ -153,6 +157,7 @@ and propaganda breakdowns.
 </p>
 
 <div class="blog-archive">
+
 <a href="india-2040.html" class="blog-card">
 
 <span class="intel-label">
@@ -173,6 +178,7 @@ ACCESS FILE →
 </div>
 
 </a>
+
 <a href="india-unfiltered.html" class="blog-card">
 
 <span class="intel-label">
@@ -212,11 +218,13 @@ ethical hacking walkthroughs,
 and real-world intelligence operations training.
 </p>
 
-<button>Coming Soon!</button>
+<button>
+Coming Soon!
+</button>
 
 </section>
 
-<!-- HIRE US -->
+<!-- HIRE -->
 
 <section id="hire" class="info-section">
 
@@ -229,11 +237,13 @@ security analysis,
 or digital threat assessment?
 </p>
 
-<button>Coming Soon!</button>
+<button>
+Coming Soon!
+</button>
 
 </section>
 
-<!-- JOIN US -->
+<!-- JOIN -->
 
 <section id="join" class="info-section">
 
@@ -246,7 +256,9 @@ developers,
 and intelligence operatives.
 </p>
 
-<button>APPLY NOW</button>
+<button>
+APPLY NOW
+</button>
 
 </section>
 
@@ -278,6 +290,9 @@ SEND MESSAGE
 </form>
 
 </section>
+
+<!-- SCRIPTS -->
+
 <script>
 
 function acceptTerms(){
@@ -294,17 +309,15 @@ window.location.href = "denied.html";
 
 }
 
-</script>
-  <script>
-
 function toggleMenu(){
 
 document
-.getElementById("dropdownMenu")
-.classList.toggle("show-menu");
+.getElementById("sideMenu")
+.classList.toggle("active");
 
 }
 
-  </script>
+</script>
+
 </body>
 </html>
