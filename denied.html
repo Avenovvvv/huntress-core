@@ -4,34 +4,79 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Access Denied | H.U.N.T.R.E.S.S</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>ACCESS DENIED | H.U.N.T.R.E.S.S</title>
 
 <link rel="stylesheet" href="style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+rel="stylesheet">
+
 </head>
 
-<body>
+<body class="gateway-body">
 
-<div class="terms-bg"></div>
+<canvas id="matrix"></canvas>
 
-<div class="denied-box">
+<div class="gateway-overlay"></div>
+
+<div class="gateway-container">
+
+<div class="intel-label">
+AUTHORIZATION FAILURE
+</div>
 
 <h1>
 ACCESS DENIED
 </h1>
 
-<p>
-You must accept the H.U.N.T.R.E.S.S
-terms and conditions to proceed.
+<p class="gateway-warning">
+
+You declined the operational
+authorization protocol required
+to access H.U.N.T.R.E.S.S systems.
+
+<br><br>
+
+Network access has been restricted.
+
 </p>
 
-<a href="terms.html" class="return-btn">
+<div class="gateway-buttons">
+
+<button
+class="gateway-btn"
+onclick="window.location.href='terms.html'">
+
 RETURN TO AUTHORIZATION
-</a>
+
+</button>
 
 </div>
 
+<div class="clearance-box">
+
+<p>
+USER STATUS — RESTRICTED
+</p>
+
+<p>
+NO ACTIVE CLEARANCE DETECTED
+</p>
+
+<p>
+SYSTEM ACCESS TERMINATED
+</p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
