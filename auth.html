@@ -7,6 +7,21 @@
 <title>H.U.N.T.R.E.S.S AUTH</title>
 
 <link rel="stylesheet" href="style.css">
+  <input
+type="text"
+id="username"
+placeholder="Username">
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<button onclick="loginSystem()">
+
+LOGIN
+
+</button>
 
 <style>
 
@@ -199,8 +214,36 @@ e.preventDefault();
 window.location.href = "/gateway";
 
 });
+  
 
 </script>
+<script>
 
+function loginSystem(){
+
+const username =
+document.getElementById("username").value;
+
+const password =
+document.getElementById("password").value;
+
+if(
+username === "controller" &&
+password === "reznov"
+){
+
+window.location.href = "main.html";
+
+}
+
+else{
+
+alert("ACCESS DENIED");
+
+}
+
+}
+
+</script>
 </body>
 </html>
