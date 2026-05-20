@@ -1313,3 +1313,166 @@ border:
 
 color:#ff335f;
 }
+/* =========================================
+   DARJEELING DOSSIER PAGE
+========================================= */
+
+.intel-section{
+
+width:92%;
+
+max-width:1100px;
+
+margin:80px auto;
+
+padding:70px 50px;
+
+background:
+rgba(0,0,0,0.78);
+
+border:
+1px solid rgba(0,255,136,0.12);
+
+border-radius:24px;
+
+backdrop-filter:blur(14px);
+
+box-shadow:
+0 0 35px rgba(0,255,136,0.05);
+
+position:relative;
+
+overflow:hidden;
+}
+
+.section-header{
+
+text-align:center;
+
+margin-bottom:60px;
+}
+
+.intel-tag{
+
+display:inline-block;
+
+padding:10px 20px;
+
+border-radius:40px;
+
+background:
+rgba(255,0,60,0.08);
+
+border:
+1px solid rgba(255,0,60,0.2);
+
+color:#ff335f;
+
+font-size:12px;
+
+letter-spacing:3px;
+
+margin-bottom:25px;
+}
+
+.section-header h1{
+
+font-size:56px;
+
+line-height:1.2;
+
+letter-spacing:5px;
+
+margin-bottom:25px;
+
+color:white;
+
+text-shadow:
+0 0 20px rgba(255,0,60,0.2);
+}
+
+.author-line{
+
+color:#bbbbbb;
+
+letter-spacing:2px;
+
+font-size:15px;
+}
+
+/* WARNING BOX */
+
+.classified-box{
+
+margin:50px 0;
+
+padding:30px;
+
+border-radius:18px;
+
+background:
+rgba(255,0,60,0.06);
+
+border:
+1px solid rgba(255,0,60,0.15);
+
+color:#ffb3c1;
+
+line-height:2;
+
+font-size:15px;
+
+box-shadow:
+0 0 20px rgba(255,0,60,0.05);
+}
+
+/* ARTICLE */
+
+.article-block{
+
+margin:60px 0;
+}
+
+.article-block h2{
+
+font-size:34px;
+
+margin-bottom:25px;
+
+letter-spacing:3px;
+
+color:#00ff88;
+}
+
+.article-block p{
+
+font-size:16px;
+
+line-height:2.2;
+
+color:#d7d7d7;
+}
+
+/* REDACTED */
+
+.redacted-box{
+
+margin:70px 0;
+
+padding:40px;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+135deg,
+rgba(0,0,0,0.92),
+rgba(20,0,0,0.9)
+);
+
+border:
+1px solid rgba(255,0,60,0.2);
+
+position:relative;
+
+overflow
