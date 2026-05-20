@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>H.U.N.T.R.E.S.S AUTH</title>
 
 <link rel="stylesheet" href="style.css">
-  <input
-type="text"
-id="username"
-placeholder="Username">
 
-<input
-type="password"
-id="password"
-placeholder="Password">
-
-<button onclick="loginSystem()">
-
-LOGIN
-
-</button>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+rel="stylesheet">
 
 <style>
 
@@ -42,11 +34,11 @@ padding:20px;
 
 width:100%;
 
-max-width:450px;
+max-width:500px;
 
 padding:45px 30px;
 
-background:rgba(0,0,0,0.85);
+background:rgba(0,0,0,0.88);
 
 border:1px solid rgba(0,255,136,0.15);
 
@@ -86,6 +78,8 @@ display:flex;
 gap:10px;
 
 margin-bottom:25px;
+
+flex-wrap:wrap;
 }
 
 .auth-tabs button{
@@ -123,6 +117,13 @@ outline:none;
 display:none;
 }
 
+.admin-btn{
+
+background:#ff003c !important;
+
+color:white !important;
+}
+
 </style>
 
 </head>
@@ -143,9 +144,25 @@ display:none;
 
 <div class="auth-tabs">
 
-<button onclick="showLogin()">SIGN IN</button>
+<button onclick="showLogin()">
 
-<button onclick="showSignup()">SIGN UP</button>
+SIGN IN
+
+</button>
+
+<button onclick="showSignup()">
+
+SIGN UP
+
+</button>
+
+<button
+onclick="showAdmin()"
+class="admin-btn">
+
+ADMIN LOGIN
+
+</button>
 
 </div>
 
@@ -153,53 +170,133 @@ display:none;
 
 <form id="loginForm" class="auth-form">
 
-<input type="email" placeholder="EMAIL" required>
+<input
+type="email"
+placeholder="EMAIL"
+required>
 
-<input type="password" placeholder="PASSWORD" required>
+<input
+type="password"
+placeholder="PASSWORD"
+required>
 
-<button type="submit">ACCESS NETWORK</button>
+<button type="submit">
+
+ACCESS NETWORK
+
+</button>
 
 </form>
 
 <!-- SIGNUP -->
 
-<form id="signupForm" class="auth-form hidden">
+<form id="signupForm"
+class="auth-form hidden">
 
-<input type="text" placeholder="INITIATE NAME" required>
+<input
+type="text"
+placeholder="INITIATE NAME"
+required>
 
-<input type="email" placeholder="EMAIL" required>
+<input
+type="email"
+placeholder="EMAIL"
+required>
 
-<input type="password" placeholder="PASSWORD" required>
+<input
+type="password"
+placeholder="PASSWORD"
+required>
 
-<button type="submit">CREATE ACCOUNT</button>
+<button type="submit">
+
+CREATE ACCOUNT
+
+</button>
 
 </form>
 
+<!-- ADMIN -->
+
+<div
+id="adminForm"
+class="auth-form hidden">
+
+<input
+type="text"
+id="adminUser"
+placeholder="CONTROLLER USERNAME">
+
+<input
+type="password"
+id="adminPass"
+placeholder="CONTROLLER PASSWORD">
+
+<button
+onclick="loginSystem()"
+class="admin-btn">
+
+ACCESS CONTROLLER PANEL
+
+</button>
+
+</div>
+
 </div>
 
 </div>
 
 <script>
+
+/* LOGIN TAB */
 
 function showLogin(){
 
-document.getElementById("loginForm").classList.remove("hidden");
+document.getElementById("loginForm")
+.classList.remove("hidden");
 
-document.getElementById("signupForm").classList.add("hidden");
+document.getElementById("signupForm")
+.classList.add("hidden");
+
+document.getElementById("adminForm")
+.classList.add("hidden");
 
 }
+
+/* SIGNUP TAB */
 
 function showSignup(){
 
-document.getElementById("signupForm").classList.remove("hidden");
+document.getElementById("signupForm")
+.classList.remove("hidden");
 
-document.getElementById("loginForm").classList.add("hidden");
+document.getElementById("loginForm")
+.classList.add("hidden");
+
+document.getElementById("adminForm")
+.classList.add("hidden");
 
 }
 
-/* temporary redirect */
+/* ADMIN TAB */
 
-document.getElementById("loginForm").addEventListener("submit", function(e){
+function showAdmin(){
+
+document.getElementById("adminForm")
+.classList.remove("hidden");
+
+document.getElementById("loginForm")
+.classList.add("hidden");
+
+document.getElementById("signupForm")
+.classList.add("hidden");
+
+}
+
+/* NORMAL LOGIN */
+
+document.getElementById("loginForm")
+.addEventListener("submit", function(e){
 
 e.preventDefault();
 
@@ -207,36 +304,37 @@ window.location.href = "/gateway";
 
 });
 
-document.getElementById("signupForm").addEventListener("submit", function(e){
+/* SIGNUP */
+
+document.getElementById("signupForm")
+.addEventListener("submit", function(e){
 
 e.preventDefault();
 
 window.location.href = "/gateway";
 
 });
-  
 
-</script>
-<script>
+/* ADMIN LOGIN */
 
 function loginSystem(){
 
 const username =
-document.getElementById("username").value;
+document.getElementById("adminUser").value;
 
 const password =
-document.getElementById("password").value;
+document.getElementById("adminPass").value;
+
+/* YOUR CONTROLLER CREDENTIALS */
 
 if(
 username === "controller" &&
 password === "reznov"
 ){
 
-window.location.href = "main.html";
+window.location.href = "/gateway";
 
-}
-
-else{
+}else{
 
 alert("ACCESS DENIED");
 
@@ -245,5 +343,9 @@ alert("ACCESS DENIED");
 }
 
 </script>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
