@@ -20,215 +20,397 @@ href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
 rel="stylesheet">
 
+<style>
+
+.omega-page{
+
+min-height:100vh;
+
+padding:120px 20px 80px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+}
+
+.omega-container{
+
+width:100%;
+
+max-width:1100px;
+
+background:
+rgba(0,0,0,0.82);
+
+border:
+1px solid rgba(255,0,60,0.2);
+
+border-radius:28px;
+
+padding:60px 45px;
+
+backdrop-filter:blur(14px);
+
+box-shadow:
+0 0 40px rgba(255,0,60,0.12);
+}
+
+.omega-top{
+
+display:flex;
+
+align-items:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+margin-bottom:60px;
+}
+
+.omega-avatar{
+
+width:220px;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:3px solid #ff335f;
+
+box-shadow:
+0 0 45px rgba(255,0,60,0.4);
+}
+
+.omega-info h1{
+
+font-size:52px;
+
+letter-spacing:5px;
+
+margin-bottom:15px;
+
+color:white;
+}
+
+.omega-info h2{
+
+font-size:22px;
+
+letter-spacing:4px;
+
+color:#ff335f;
+
+margin-bottom:25px;
+}
+
+.omega-info p{
+
+line-height:2;
+
+color:#d0d0d0;
+}
+
+.classified-tag{
+
+display:inline-block;
+
+padding:10px 18px;
+
+border-radius:40px;
+
+background:
+rgba(255,0,60,0.08);
+
+border:
+1px solid rgba(255,0,60,0.2);
+
+color:#ff335f;
+
+letter-spacing:3px;
+
+font-size:12px;
+
+margin-bottom:25px;
+}
+
+.omega-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+}
+
+.omega-card{
+
+background:
+rgba(0,0,0,0.72);
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+border-radius:20px;
+
+padding:30px;
+
+transition:0.3s ease;
+}
+
+.omega-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 0 30px rgba(255,0,60,0.15);
+}
+
+.omega-card h3{
+
+color:#ff335f;
+
+margin-bottom:20px;
+
+letter-spacing:3px;
+}
+
+.omega-card p{
+
+line-height:1.9;
+
+color:#cccccc;
+
+font-size:14px;
+}
+
+.return-btn{
+
+display:inline-block;
+
+margin-top:50px;
+
+padding:16px 30px;
+
+border-radius:12px;
+
+border:1px solid rgba(255,0,60,0.3);
+
+color:#ff335f;
+
+letter-spacing:2px;
+
+transition:0.3s ease;
+}
+
+.return-btn:hover{
+
+background:#ff335f;
+
+color:black;
+
+box-shadow:
+0 0 25px rgba(255,0,60,0.35);
+}
+
+@media(max-width:768px){
+
+.omega-info h1{
+
+font-size:36px;
+}
+
+.omega-avatar{
+
+width:170px;
+height:170px;
+}
+
+.omega-container{
+
+padding:40px 25px;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
+<!-- MATRIX -->
+
 <canvas id="matrix"></canvas>
+
+<!-- NAVBAR -->
 
 <nav class="navbar">
 
 <h1>
 
-<a href="/gateway"
-style="
-text-decoration:none;
-color:#00ff88;
-">
-
 H.U.N.T.R.E.S.S
-
-</a>
 
 </h1>
 
 </nav>
 
-<section class="intel-section">
+<!-- OMEGA PAGE -->
 
-<div class="section-header">
+<section class="omega-page">
 
-<p class="intel-tag">
+<div class="omega-container">
 
-OMEGA CLEARANCE DOSSIER
+<div class="omega-top">
 
-</p>
+<img
+src="reznov-avatar.png"
+alt="Victor Reznov"
+class="omega-avatar">
+
+<div class="omega-info">
+
+<div class="classified-tag">
+
+OMEGA CLEARANCE ACTIVE
+
+</div>
 
 <h1>
 
-THE CONTROLLER
+VICTOR REŹNOV
 
 </h1>
 
-<p class="author-line">
-
-SUPREME AUTHORITY • NETWORK COMMAND • STRATEGIC CONTROL
-
-</p>
-
-</div>
-
-<div class="classified-box">
-
-WARNING:
-This file contains information
-regarding the highest operational authority
-inside the H.U.N.T.R.E.S.S network.
-
-Unauthorized interpretation is discouraged.
-
-</div>
-
-<div class="article-block">
-
 <h2>
 
-WHO IS THE CONTROLLER?
+CONTROLLER // FOUNDER
 
 </h2>
 
 <p>
 
-The Controller is the supreme authority
-of the H.U.N.T.R.E.S.S intelligence structure.
+Supreme authority of the
+H.U.N.T.R.E.S.S Intelligence Network.
 
-Unlike standard operatives,
-the Controller does not merely participate
-in operations.
+Responsible for strategic command,
+intelligence oversight,
+network expansion,
+cyber operations,
+recruitment architecture,
+and classified operational directives.
 
-The Controller designs them.
-
-All strategic decisions,
-network directives,
-intelligence deployments,
-and operational doctrines
-originate from OMEGA authority.
+The Omega entity functions as the
+central command layer of the organization.
 
 </p>
 
 </div>
 
-<div class="article-block">
-
-<h2>
-
-OMEGA RESPONSIBILITIES
-
-</h2>
-
-<p>
-
-• Strategic Command Oversight
-
-<br><br>
-
-• Intelligence Network Governance
-
-<br><br>
-
-• Classified Operations Authorization
-
-<br><br>
-
-• Threat Intelligence Coordination
-
-<br><br>
-
-• Cyber Warfare Doctrine Development
-
-<br><br>
-
-• Operational Expansion Planning
-
-<br><br>
-
-• Internal Security Enforcement
-
-</p>
-
 </div>
 
-<div class="redacted-box">
+<!-- GRID -->
+
+<div class="omega-grid">
+
+<div class="omega-card">
 
 <h3>
 
-CLASSIFIED NOTE
+PRIMARY ROLE
 
 </h3>
 
 <p>
 
-OMEGA authority is absolute.
-
-There can only be one Controller
-inside the H.U.N.T.R.E.S.S structure.
-
-The role is permanent,
-non-transferable,
-and operates beyond standard clearance systems.
+Strategic leadership,
+network command,
+mission authorization,
+and operational governance across all divisions.
 
 </p>
 
 </div>
 
-<div class="ending-line">
+<div class="omega-card">
 
-"CONTROL THE NETWORK.
-CONTROL THE INFORMATION.
-CONTROL THE OUTCOME."
+<h3>
 
-</div>
-
-<div style="
-margin-top:80px;
-padding-top:40px;
-border-top:1px solid rgba(255,255,255,0.1);
-display:flex;
-align-items:center;
-gap:20px;
-flex-wrap:wrap;
-">
-
-<img
-src="avenov.jpg"
-style="
-width:90px;
-height:90px;
-object-fit:cover;
-border-radius:50%;
-border:2px solid #ff003c;
-box-shadow:0 0 25px rgba(255,0,60,0.4);
-">
-
-<div>
-
-<h3 style="
-margin-bottom:8px;
-color:white;
-">
-
-CURRENT OMEGA
+SPECIALIZATION
 
 </h3>
 
-<p style="
-color:#ff335f;
-font-size:22px;
-">
+<p>
 
-Victor Reźnov
-
-</p>
-
-<p style="
-color:#888;
-">
-
-Founder • Controller • OMEGA Authority
+Threat intelligence,
+OSINT operations,
+cybersecurity research,
+digital reconnaissance,
+and propaganda analysis.
 
 </p>
 
 </div>
+
+<div class="omega-card">
+
+<h3>
+
+AUTHORITY LEVEL
+
+</h3>
+
+<p>
+
+OMEGA clearance grants unrestricted
+access to classified systems,
+internal dossiers,
+recruitment protocols,
+and network infrastructure.
+
+</p>
+
+</div>
+
+<div class="omega-card">
+
+<h3>
+
+DIRECTIVE
+
+</h3>
+
+<p>
+
+Build a decentralized intelligence-driven
+cybersecurity ecosystem focused on
+discipline,
+research,
+awareness,
+and operational precision.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- RETURN -->
+
+<a
+href="dashboard.html"
+class="return-btn">
+
+← RETURN TO COMMAND CENTER
+
+</a>
 
 </div>
 
