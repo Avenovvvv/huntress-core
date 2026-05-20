@@ -1392,7 +1392,107 @@ color:#ff335f;
     padding:25px;
     margin:40px 0;
 }
+/* =========================================
+   GLOBAL RESPONSIVE FIX
+========================================= */
 
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Main Containers */
+.container,
+.gateway-container,
+.register-container,
+.dashboard-container,
+.dossier-container,
+.loading-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* Responsive Titles */
+h1,
+.main-title,
+.hero-title {
+    font-size: clamp(2rem, 6vw, 6rem);
+    line-height: 1.1;
+    word-break: break-word;
+}
+
+/* Responsive Paragraphs */
+p,
+.subtitle,
+.description {
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
+    line-height: 1.6;
+}
+
+/* Buttons */
+button,
+.btn {
+    width: 100%;
+    max-width: 500px;
+    min-height: 60px;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    max-width: 500px;
+    min-height: 50px;
+    font-size: 16px;
+}
+
+/* Dashboard Cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Mobile Fix */
+@media screen and (max-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .dashboard-card,
+    .gateway-box,
+    .register-box,
+    .terminal-box {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .matrix-bg {
+        opacity: 0.3;
+    }
+
+    h1,
+    .main-title,
+    .hero-title {
+        text-align: center;
+    }
+
+    button,
+    .btn {
+        width: 100%;
+    }
+}
 .redacted-box h3{
     color:#ff4d4d;
 }
