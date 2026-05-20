@@ -1314,3 +1314,85 @@ border:
 
 color:#ff335f;
 }
+.intel-section{
+    background:#050505;
+    color:#d7d7d7;
+    padding:60px 10%;
+    font-family:Arial,sans-serif;
+    line-height:1.8;
+}
+
+.section-header h1{
+    font-size:48px;
+    color:#fff;
+    margin-bottom:10px;
+    text-transform:uppercase;
+}
+
+.intel-tag{
+    color:#ff2a2a;
+    font-size:13px;
+    letter-spacing:3px;
+}
+
+.author-line{
+    color:#777;
+}
+
+.classified-box{
+    border:1px solid #ff2a2a;
+    padding:15px;
+    margin:30px 0;
+    background:#111;
+    color:#ff4d4d;
+}
+
+.article-block{
+    margin-bottom:40px;
+}
+
+.question-line,
+.ending-line{
+    color:#ff3b3b;
+    font-size:30px;
+    margin:30px 0;
+}
+
+.intel-note{
+    background:#111;
+    border-left:4px solid red;
+    padding:25px;
+    margin:40px 0;
+}
+
+.intel-note h3{
+    color:#ff3b3b;
+}
+
+.intel-note ul{
+    padding-left:20px;
+}
+
+.bullet-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    margin:30px 0;
+}
+
+.bullet-grid div{
+    background:#111;
+    padding:15px;
+    border:1px solid #222;
+}
+
+.redacted-box{
+    background:#0d0d0d;
+    border:1px dashed #ff2a2a;
+    padding:25px;
+    margin:40px 0;
+}
+
+.redacted-box h3{
+    color:#ff4d4d;
+}
