@@ -8,8 +8,14 @@ if(canvas){
 
 const ctx = canvas.getContext("2d");
 
+function resizeCanvas(){
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
+}
+
+resizeCanvas();
 
 const letters =
 "01HUNTRESSVICTORREZNOV";
@@ -18,16 +24,27 @@ const matrix = letters.split("");
 
 const fontSize = 16;
 
-const columns =
-canvas.width / fontSize;
+let columns =
+Math.floor(canvas.width / fontSize);
 
-const drops = [];
+let drops = [];
+
+function resetDrops(){
+
+columns =
+Math.floor(canvas.width / fontSize);
+
+drops = [];
 
 for(let i = 0; i < columns; i++){
 
 drops[i] = 1;
 
 }
+
+}
+
+resetDrops();
 
 function drawMatrix(){
 
@@ -78,17 +95,16 @@ drops[i]++;
 
 }
 
+const matrixInterval =
 setInterval(drawMatrix, 40);
 
 window.addEventListener(
 "resize",
 () => {
 
-canvas.width =
-window.innerWidth;
+resizeCanvas();
 
-canvas.height =
-window.innerHeight;
+resetDrops();
 
 }
 );
@@ -151,6 +167,39 @@ sideMenu.classList.remove(
 );
 
 /* =========================
+   CLOSE MENU ON LINK CLICK
+========================= */
+
+const menuLinks =
+document.querySelectorAll(
+".side-menu a"
+);
+
+menuLinks.forEach((link)=>{
+
+link.addEventListener(
+"click",
+()=>{
+
+const sideMenu =
+document.getElementById(
+"sideMenu"
+);
+
+if(sideMenu){
+
+sideMenu.classList.remove(
+"active"
+);
+
+}
+
+}
+);
+
+});
+
+/* =========================
    TERMS POPUP
 ========================= */
 
@@ -195,6 +244,8 @@ background:black;
 color:#00ff88;
 font-family:Orbitron,sans-serif;
 letter-spacing:4px;
+text-align:center;
+padding:20px;
 ">
 
 <h1>
@@ -313,3 +364,35 @@ revealOnScroll
 );
 
 revealOnScroll();
+
+/* =========================
+   SMOOTH SCROLL FIX
+========================= */
+
+document.querySelectorAll(
+'a[href^="#"]'
+).forEach(anchor => {
+
+anchor.addEventListener(
+"click",
+function(e){
+
+e.preventDefault();
+
+const target =
+document.querySelector(
+this.getAttribute("href")
+);
+
+if(target){
+
+target.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+}
+);
+
+});
