@@ -1,4 +1,45 @@
-/* =========================================
+.rank-card{
+transition:0.4s;
+cursor:pointer;
+}
+
+.rank-card:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 0 35px rgba(0,255,136,0.15);
+}
+
+.rank-card.supreme:hover{
+box-shadow:0 0 45px rgba(255,0,60,0.35);
+transform:translateY(-12px) scale(1.03);
+}
+
+.rank-card img{
+transition:0.4s;
+}
+
+.rank-card:hover img{
+transform:scale(1.08);
+}
+
+.rank-card.supreme img{
+animation:omegaPulse 2s infinite;
+}
+
+@keyframes omegaPulse{
+
+0%{
+box-shadow:0 0 10px rgba(255,0,60,0.3);
+}
+
+50%{
+box-shadow:0 0 35px rgba(255,0,60,0.8);
+}
+
+100%{
+box-shadow:0 0 10px rgba(255,0,60,0.3);
+}
+
+}/* =========================================
    H.U.N.T.R.E.S.S CORE STYLESHEET
 ========================================= */
 
@@ -1642,6 +1683,48 @@ opacity:0.45;
 
 100%{
 opacity:1;
+}
+
+}
+.rank-card{
+transition:0.4s;
+cursor:pointer;
+}
+
+.rank-card:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 0 35px rgba(0,255,136,0.15);
+}
+
+.rank-card.supreme:hover{
+box-shadow:0 0 45px rgba(255,0,60,0.35);
+transform:translateY(-12px) scale(1.03);
+}
+
+.rank-card img{
+transition:0.4s;
+}
+
+.rank-card:hover img{
+transform:scale(1.08);
+}
+
+.rank-card.supreme img{
+animation:omegaPulse 2s infinite;
+}
+
+@keyframes omegaPulse{
+
+0%{
+box-shadow:0 0 10px rgba(255,0,60,0.3);
+}
+
+50%{
+box-shadow:0 0 35px rgba(255,0,60,0.8);
+}
+
+100%{
+box-shadow:0 0 10px rgba(255,0,60,0.3);
 }
 
 }
