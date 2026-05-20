@@ -605,56 +605,139 @@ margin-bottom:24px;
 }
 
 /* =========================================
-   MOBILE
+   FINAL MOBILE FIX
 ========================================= */
 
 @media(max-width:768px){
 
+body{
+overflow-x:hidden;
+}
+
+.dashboard-hero{
+padding:120px 20px 60px;
+}
+
 .dashboard-hero h2{
-font-size:42px;
+font-size:38px;
 line-height:1.3;
+letter-spacing:3px;
 }
 
 .dashboard-hero p{
-font-size:15px;
+font-size:14px;
 line-height:1.8;
 }
 
-.loading-title{
-font-size:42px;
-}
-
 .info-section{
-padding:45px 25px;
+width:95%;
+padding:35px 20px;
+margin:50px auto;
 }
 
 .info-section h2{
-font-size:30px;
+font-size:28px;
+line-height:1.3;
 }
 
-.gateway-container{
-padding:40px 24px;
-}
-
-.gateway-container h1{
-font-size:34px;
+.info-section p{
+font-size:14px;
+line-height:1.8;
 }
 
 .blog-card{
 width:100%;
+padding:25px;
+}
+
+.blog-card h3{
+font-size:24px;
+}
+
+.loading-title{
+font-size:34px;
+line-height:1.3;
+}
+
+.loading-terminal{
+padding:20px;
+overflow:hidden;
+}
+
+.loading-terminal p{
+font-size:13px;
+line-height:1.7;
+}
+
+.gateway-container{
+padding:35px 20px;
+}
+
+.gateway-container h1{
+font-size:30px;
+line-height:1.3;
+}
+
+.founder-section{
+flex-direction:column;
+text-align:center;
+gap:30px;
+}
+
+.founder-image-container{
+width:220px;
+height:220px;
+margin:auto;
+}
+
+.founder-content{
+width:100%;
+}
+
+.founder-content h2{
+font-size:28px;
+}
+
+.founder-content h3{
+font-size:24px;
+}
+
+.bio{
+font-size:14px;
+line-height:1.8;
+}
+
+.menu-btn{
+top:15px;
+right:15px;
+font-size:28px;
+}
+
+.side-menu{
+width:260px;
+padding-top:90px;
 }
 
 button,
 .join-btn{
 width:100%;
+max-width:100%;
+text-align:center;
 }
 
-.side-menu{
-width:260px;
+.intel-section{
+padding:40px 20px;
 }
 
-.dossier-page{
-padding:24px;
+.section-header h1{
+font-size:34px;
+line-height:1.2;
+}
+
+.question-line,
+.ending-line{
+font-size:24px;
+line-height:1.4;
 }
 
 }
