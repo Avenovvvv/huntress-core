@@ -58,7 +58,7 @@ canvas.width,
 canvas.height
 );
 
-ctx.fillStyle = "#00ff88";
+ctx.fillStyle = "#ff003c";
 
 ctx.font =
 fontSize + "px monospace";
