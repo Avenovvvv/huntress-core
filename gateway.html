@@ -12,80 +12,166 @@ content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 
-<body class="gateway-body">
+<body>
 
 <!-- MATRIX -->
 
 <canvas id="matrix"></canvas>
 
-<!-- GATEWAY -->
+<!-- GATEWAY BOX -->
 
-<div class="gateway-container">
+<section
+class="info-section"
+style="
+max-width:900px;
+margin:100px auto;
+padding:50px;
+position:relative;
+z-index:2;
+">
 
-<div class="intel-label">
-RESTRICTED NETWORK ACCESS
-</div>
+<p style="
+color:#ff335f;
+letter-spacing:3px;
+font-size:14px;
+margin-bottom:20px;
+">
 
-<h1>
-ACCESS GATEWAY
-</h1>
-
-<p class="gateway-warning">
-
-Unauthorized access to
-H.U.N.T.R.E.S.S systems
-is prohibited.
-
-<br><br>
-
-All activity may be monitored,
-logged,
-and analyzed.
+PUBLIC INFORMATION DISCLAIMER
 
 </p>
 
-<div class="gateway-buttons">
+<h2 style="
+font-size:55px;
+margin-bottom:30px;
+color:#00ff88;
+">
+
+OSINT NETWORK NODE
+
+</h2>
+
+<p style="
+font-size:20px;
+line-height:2;
+color:#bbbbbb;
+margin-bottom:40px;
+">
+
+H.U.N.T.R.E.S.S is an independent
+OSINT and cybersecurity awareness platform.
+
+<br><br>
+
+Content published across this network is based on:
+open-source intelligence,
+publicly available information,
+research analysis,
+digital investigations,
+and educational cybersecurity material.
+
+<br><br>
+
+This platform does not claim affiliation
+with any government,
+political organization,
+or intelligence agency.
+
+<br><br>
+
+Proceeding further indicates that the visitor
+understands all information is presented for:
+research,
+educational,
+journalistic,
+analytical,
+and awareness purposes only.
+
+</p>
+
+<div style="
+display:flex;
+flex-direction:column;
+gap:25px;
+">
 
 <button
-class="gateway-btn"
-onclick="window.location.href='main.html'">
+onclick="window.location.href='main.html'"
+style="
+padding:22px;
+background:#00ff88;
+border:none;
+border-radius:14px;
+font-family:Orbitron,sans-serif;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
+letter-spacing:3px;
+">
 
 CONTINUE AS GUEST
 
 </button>
 
 <button
-class="gateway-btn"
-onclick="window.location.href='auth.html'">
+onclick="window.location.href='https://forms.gle/YOUR_GOOGLE_FORM_LINK'"
+style="
+padding:22px;
+background:#ff003c;
+color:white;
+border:none;
+border-radius:14px;
+font-family:Orbitron,sans-serif;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
+letter-spacing:3px;
+box-shadow:0 0 25px rgba(255,0,60,0.4);
+">
 
-CREATE INITIATE ACCOUNT
+REQUEST NETWORK ACCESS
 
 </button>
 
 </div>
 
-<div class="clearance-box">
+<div style="
+margin-top:40px;
+padding:25px;
+border:1px solid rgba(0,255,136,0.15);
+border-radius:12px;
+background:#050505;
+">
 
-<p>
+<p style="
+color:#00ff88;
+line-height:2;
+font-size:16px;
+">
+
 LEVEL 0 — GUEST CLEARANCE
-</p>
 
-<p>
-LIMITED NETWORK ACCESS
-</p>
+<br>
 
-<p>
-CLASSIFIED DOSSIERS REDACTED
+Public dossiers partially accessible.
+
+<br>
+
+Certain intelligence archives remain restricted.
+
+<br>
+
+Operational access requires manual approval.
+
 </p>
 
 </div>
 
-</div>
+</section>
 
 <script src="script.js"></script>
 
