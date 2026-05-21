@@ -8,16 +8,272 @@
 
 <title>India 2040 | H.U.N.T.R.E.S.S</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+background:#020202;
+color:white;
+font-family:Rajdhani,sans-serif;
+overflow-x:hidden;
+}
+
+.blog-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.95)),
+url("https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop");
+background-size:cover;
+background-position:center;
+z-index:-2;
+}
+
+.blog-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+repeating-linear-gradient(
+90deg,
+rgba(255,0,80,0.04) 0px,
+rgba(255,0,80,0.04) 1px,
+transparent 1px,
+transparent 80px
+);
+z-index:-1;
+}
+
+.classified-banner{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:14px;
+background:#070707;
+border-bottom:1px solid rgba(255,0,80,0.2);
+text-align:center;
+font-family:Orbitron,sans-serif;
+letter-spacing:4px;
+font-size:12px;
+color:#ff335f;
+z-index:999;
+backdrop-filter:blur(10px);
+}
+
+.blog-container{
+max-width:950px;
+margin:auto;
+padding:120px 25px 100px;
+}
+
+.blog-header{
+text-align:center;
+margin-bottom:90px;
+}
+
+.intel-small{
+color:#ff335f;
+letter-spacing:5px;
+font-size:13px;
+font-family:Orbitron,sans-serif;
+margin-bottom:25px;
+}
+
+.blog-header h1{
+font-size:clamp(42px,8vw,92px);
+line-height:1;
+font-family:Orbitron,sans-serif;
+margin:0;
+text-transform:uppercase;
+color:white;
+text-shadow:
+0 0 10px rgba(255,255,255,0.15),
+0 0 40px rgba(255,0,80,0.18);
+}
+
+.blog-subtitle{
+max-width:750px;
+margin:35px auto;
+font-size:24px;
+line-height:1.8;
+color:#cfcfcf;
+}
+
+.author-box{
+margin-top:60px;
+padding:35px;
+background:rgba(10,10,10,0.82);
+border:1px solid rgba(0,255,120,0.15);
+border-radius:20px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 40px rgba(0,255,120,0.06);
+}
+
+.author-label{
+color:#00ff88;
+letter-spacing:4px;
+font-family:Orbitron,sans-serif;
+font-size:12px;
+}
+
+.author-box h3{
+font-size:38px;
+margin:10px 0;
+font-family:Orbitron,sans-serif;
+}
+
+.author-alias{
+color:#ff335f;
+font-size:20px;
+}
+
+.author-desc{
+color:#bfbfbf;
+line-height:1.8;
+font-size:18px;
+}
+
+.blog-content{
+display:flex;
+flex-direction:column;
+gap:60px;
+}
+
+.section-block{
+background:rgba(8,8,8,0.82);
+border:1px solid rgba(255,255,255,0.05);
+padding:45px;
+border-radius:24px;
+backdrop-filter:blur(8px);
+box-shadow:0 0 30px rgba(0,0,0,0.4);
+transition:0.4s;
+}
+
+.section-block:hover{
+transform:translateY(-4px);
+border-color:rgba(0,255,120,0.15);
+}
+
+.section-block h2{
+font-size:42px;
+margin-top:0;
+margin-bottom:25px;
+font-family:Orbitron,sans-serif;
+color:#00ff88;
+line-height:1.2;
+}
+
+.section-block p{
+font-size:22px;
+line-height:1.9;
+color:#d4d4d4;
+}
+
+.redacted-box{
+padding:40px;
+background:linear-gradient(
+135deg,
+rgba(40,0,0,0.8),
+rgba(15,0,0,0.95)
+);
+border:1px solid rgba(255,0,80,0.2);
+border-radius:22px;
+font-size:24px;
+line-height:1.8;
+color:white;
+box-shadow:0 0 30px rgba(255,0,80,0.08);
+}
+
+.timeline{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.timeline-item{
+padding:30px;
+background:#050505;
+border:1px solid rgba(255,255,255,0.06);
+border-radius:18px;
+}
+
+.timeline-item span{
+display:block;
+margin-bottom:15px;
+font-family:Orbitron,sans-serif;
+font-size:18px;
+color:#ff335f;
+}
+
+.timeline-item p{
+font-size:20px;
+line-height:1.8;
+}
+
+.footer-note{
+margin-top:80px;
+text-align:center;
+color:#666;
+letter-spacing:3px;
+font-family:Orbitron,sans-serif;
+font-size:12px;
+}
+
+@media(max-width:768px){
+
+.blog-container{
+padding:100px 18px 80px;
+}
+
+.blog-header h1{
+font-size:52px;
+}
+
+.blog-subtitle{
+font-size:19px;
+}
+
+.section-block{
+padding:28px;
+}
+
+.section-block h2{
+font-size:30px;
+}
+
+.section-block p{
+font-size:19px;
+}
+
+.redacted-box{
+font-size:20px;
+padding:28px;
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
 <div class="blog-bg"></div>
+<div class="blog-overlay"></div>
 
 <div class="classified-banner">
-RESTRICTED INTELLIGENCE DOSSIER
+RESTRICTED INTELLIGENCE DOSSIER // H.U.N.T.R.E.S.S
 </div>
 
 <div class="blog-container">
@@ -33,17 +289,14 @@ A NATION RISING OR A DEMOCRACY DECAYING?
 </h1>
 
 <p class="blog-subtitle">
-Corruption,
-criminal politics,
-propaganda,
-power
-and the uncertain future of India.
+Corruption. Propaganda. Power.
+The uncertain trajectory of the world's largest democracy.
 </p>
 
 <div class="author-box">
 
 <p class="author-label">
-AUTHOR
+DOSSIER AUTHOR
 </p>
 
 <h3>
@@ -51,14 +304,11 @@ Avenov Subba
 </h3>
 
 <p class="author-alias">
-a.k.a Victory Reznov
+a.k.a Victor Reźnov
 </p>
 
 <p class="author-desc">
-Cybersecurity researcher,
-OSINT analyst,
-digital intelligence enthusiast
-and founder of H.U.N.T.R.E.S.S
+Cybersecurity researcher, OSINT analyst, digital intelligence enthusiast and founder of H.U.N.T.R.E.S.S
 </p>
 
 </div>
@@ -67,133 +317,163 @@ and founder of H.U.N.T.R.E.S.S
 
 <div class="blog-content">
 
-<h2>THE SYSTEM INDIA CREATED</h2>
+<div class="section-block">
+
+<h2>
+THE SYSTEM INDIA CREATED
+</h2>
 
 <p>
-Indian politics evolved into a battlefield of
-religious polarization,
-caste arithmetic,
-media warfare,
-corporate influence
-and emotional nationalism.
+Indian politics evolved into a battlefield of religious polarization, caste arithmetic, media warfare, corporate influence and emotional nationalism.
 </p>
 
 <p>
-Political parties change.
-The machinery often does not.
+Political parties change. The machinery often does not.
 </p>
 
-<h2>THE CRIMINALIZATION OF POLITICS</h2>
+</div>
+
+<div class="section-block">
+
+<h2>
+THE CRIMINALIZATION OF POLITICS
+</h2>
 
 <p>
-Public election affidavit data analyzed by ADR and MyNeta
-showed that many elected representatives across parties
-have declared criminal cases against themselves.
+Election affidavit analysis by ADR and MyNeta repeatedly revealed that numerous elected representatives across multiple political parties possess declared criminal cases.
 </p>
 
 <p>
-This is not limited to one political party.
-It spans BJP,
-Congress
-and multiple regional parties.
+This issue transcends party lines and reflects deeper structural failures within electoral systems and public accountability.
 </p>
+
+</div>
 
 <div class="redacted-box">
 
 The danger is not merely corruption.
 
+<br><br>
+
 The danger is citizens becoming comfortable with corruption.
 
 </div>
 
-<h2>THE PROPAGANDA MACHINE</h2>
+<div class="section-block">
+
+<h2>
+THE PROPAGANDA MACHINE
+</h2>
 
 <p>
-Modern political warfare is now digital.
-Every major political ecosystem possesses:
-IT cells,
-influencer networks,
-algorithmic amplification
-and emotional narrative campaigns.
+Modern political warfare is digital. Every major political ecosystem now possesses IT cells, influencer networks, algorithmic amplification and emotional narrative campaigns.
 </p>
 
 <p>
 Truth increasingly competes against virality.
 </p>
 
-<h2>THE MODI FACTOR</h2>
+</div>
+
+<div class="section-block">
+
+<h2>
+THE MODI FACTOR
+</h2>
 
 <p>
-Narendra Modi transformed Indian politics permanently.
+Narendra Modi permanently transformed Indian political communication and governance narratives.
 </p>
 
 <p>
-Supporters credit infrastructure growth,
-global visibility
-and digital modernization.
+Supporters cite infrastructure growth, nationalism, global visibility and digital modernization.
 </p>
 
 <p>
-Critics point toward democratic concerns,
-centralization
-and political polarization.
+Critics point toward democratic concerns, media pressure, polarization and centralization of power.
 </p>
-
-<div class="redacted-box">
-
-Let us consider our country's PM is ______.
-
-The answer depends entirely
-on what information ecosystem shaped your perception.
 
 </div>
 
-<h2>THE YOUTH QUESTION</h2>
+<div class="redacted-box">
+
+Suppose the Prime Minister is ______.
+
+<br><br>
+
+The answer depends entirely on what information ecosystem shaped your perception.
+
+</div>
+
+<div class="section-block">
+
+<h2>
+THE YOUTH QUESTION
+</h2>
 
 <p>
-India's future depends on whether young voters:
-question propaganda,
-verify information,
-reject blind political worship
-and think independently.
+India's future depends on whether younger generations reject blind political worship, verify information independently and think beyond propaganda ecosystems.
 </p>
 
-<h2>2040 SCENARIO</h2>
+</div>
+
+<div class="section-block">
+
+<h2>
+2040 SCENARIOS
+</h2>
 
 <div class="timeline">
 
 <div class="timeline-item">
-<span>BEST CASE</span>
+
+<span>
+BEST CASE
+</span>
+
 <p>
-India becomes technologically advanced,
-economically dominant
-and institutionally stable.
+India emerges as a technologically advanced, economically dominant and institutionally stable global superpower.
 </p>
+
 </div>
 
 <div class="timeline-item">
-<span>WORST CASE</span>
+
+<span>
+WORST CASE
+</span>
+
 <p>
-India becomes hyper-polarized,
-media-controlled,
-tribalized
-and democratically weakened.
+India becomes hyper-polarized, media-controlled, emotionally manipulated and democratically weakened.
 </p>
+
+</div>
+
 </div>
 
 </div>
 
-<h2>FINAL DOSSIER NOTE</h2>
+<div class="section-block">
+
+<h2>
+FINAL DOSSIER NOTE
+</h2>
 
 <p>
 The future of India will not be decided only by politicians.
 </p>
 
 <p>
-It will be decided by whether citizens remain educated,
-question power
-and protect democratic accountability.
+It will be decided by whether citizens remain educated, question power structures and defend democratic accountability.
 </p>
+
+</div>
+
+</div>
+
+<div class="footer-note">
+
+H.U.N.T.R.E.S.S // INTELLIGENCE ARCHIVE // 2040 DOSSIER
 
 </div>
 
