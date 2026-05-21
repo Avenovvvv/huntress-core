@@ -399,7 +399,171 @@ alert("ACCESS DENIED");
 
 </script>
 
-<script src="script.js"></script>
+<script type="module">
+
+import {
+initializeApp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+
+apiKey: "PASTE_YOUR_API_KEY",
+
+authDomain: "huntress-core.firebaseapp.com",
+
+projectId: "huntress-core",
+
+storageBucket: "huntress-core.appspot.com",
+
+messagingSenderId: "136366574004",
+
+appId: "1:136366574004:web:37d9f25270987288190ae1"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+/* LOGIN TAB */
+
+window.showLogin = function(){
+
+document.getElementById("loginForm")
+.classList.remove("hidden");
+
+document.getElementById("signupForm")
+.classList.add("hidden");
+
+document.getElementById("adminForm")
+.classList.add("hidden");
+
+}
+
+/* SIGNUP TAB */
+
+window.showSignup = function(){
+
+document.getElementById("signupForm")
+.classList.remove("hidden");
+
+document.getElementById("loginForm")
+.classList.add("hidden");
+
+document.getElementById("adminForm")
+.classList.add("hidden");
+
+}
+
+/* ADMIN TAB */
+
+window.showAdmin = function(){
+
+document.getElementById("adminForm")
+.classList.remove("hidden");
+
+document.getElementById("loginForm")
+.classList.add("hidden");
+
+document.getElementById("signupForm")
+.classList.add("hidden");
+
+}
+
+/* LOGIN */
+
+document.getElementById("loginForm")
+.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const email =
+this.querySelector('input[type="email"]').value;
+
+const password =
+this.querySelector('input[type="password"]').value;
+
+try{
+
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+window.location.href = "/dashboard";
+
+}catch(error){
+
+alert(error.message);
+
+}
+
+});
+
+/* SIGNUP */
+
+document.getElementById("signupForm")
+.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const email =
+this.querySelector('input[type="email"]').value;
+
+const password =
+this.querySelector('input[type="password"]').value;
+
+try{
+
+await createUserWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+window.location.href = "/dashboard";
+
+}catch(error){
+
+alert(error.message);
+
+}
+
+});
+
+/* ADMIN */
+
+window.loginSystem = function(){
+
+const username =
+document.getElementById("adminUser").value;
+
+const password =
+document.getElementById("adminPass").value;
+
+if(
+username === "controller" &&
+password === "reznov"
+){
+
+window.location.href = "/dashboard";
+
+}else{
+
+alert("ACCESS DENIED");
+
+}
+
+}
+
+</script>
 
 </body>
 
