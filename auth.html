@@ -9,8 +9,6 @@
 
 <title>H.U.N.T.R.E.S.S AUTH</title>
 
-<link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -20,6 +18,15 @@ margin:0;
 background:black;
 font-family:'Orbitron',sans-serif;
 overflow:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:1;
 }
 
 .auth-body{
@@ -37,9 +44,9 @@ width:100%;
 max-width:500px;
 padding:45px 30px;
 background:rgba(0,0,0,0.92);
-border:1px solid rgba(0,255,136,0.2);
+border:1px solid rgba(0,255,136,0.15);
 border-radius:24px;
-box-shadow:0 0 30px rgba(0,255,136,0.08);
+backdrop-filter:blur(10px);
 }
 
 .auth-box h1{
@@ -71,19 +78,17 @@ border-radius:12px;
 font-family:'Orbitron',sans-serif;
 font-size:14px;
 cursor:pointer;
+font-weight:bold;
+}
+
+.green-btn{
 background:#00ff88;
 color:black;
-font-weight:bold;
-transition:0.3s;
 }
 
-.auth-tabs button:hover{
-transform:scale(1.03);
-}
-
-.admin-btn{
-background:#ff003c !important;
-color:white !important;
+.red-btn{
+background:#ff003c;
+color:white;
 }
 
 .auth-form{
@@ -102,10 +107,6 @@ font-family:'Orbitron',sans-serif;
 outline:none;
 }
 
-.auth-form input:focus{
-border:1px solid #00ff88;
-}
-
 .auth-form button{
 padding:18px;
 border:none;
@@ -114,24 +115,11 @@ background:#00ff88;
 font-family:'Orbitron',sans-serif;
 font-weight:bold;
 cursor:pointer;
-transition:0.3s;
-}
-
-.auth-form button:hover{
-transform:scale(1.02);
+font-size:15px;
 }
 
 .hidden{
 display:none;
-}
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:1;
 }
 
 </style>
@@ -152,16 +140,16 @@ z-index:1;
 
 <div class="auth-tabs">
 
-<button onclick="showLogin()">
-SIGN IN
+<button onclick="showLogin()" class="green-btn">
+LOGIN
 </button>
 
-<button onclick="showSignup()">
-SIGN UP
+<button onclick="showSignup()" class="green-btn">
+JOIN HUNTRESS
 </button>
 
-<button onclick="showAdmin()" class="admin-btn">
-ADMIN
+<button onclick="showAdmin()" class="red-btn">
+CONTROLLER
 </button>
 
 </div>
@@ -183,7 +171,7 @@ placeholder="PASSWORD"
 required>
 
 <button type="submit">
-ACCESS NETWORK
+LOGIN TO ACCOUNT
 </button>
 
 </form>
@@ -217,23 +205,25 @@ CREATE ACCOUNT
 
 <!-- ADMIN -->
 
-<div id="adminForm" class="auth-form hidden">
+<form id="adminForm" class="auth-form hidden">
 
 <input
 type="text"
 id="adminUser"
-placeholder="CONTROLLER">
+placeholder="CONTROLLER USERNAME"
+required>
 
 <input
 type="password"
 id="adminPass"
-placeholder="PASSWORD">
+placeholder="CONTROLLER PASSWORD"
+required>
 
-<button onclick="loginSystem()" class="admin-btn">
+<button type="submit" class="red-btn">
 ACCESS CONTROLLER
 </button>
 
-</div>
+</form>
 
 </div>
 
@@ -259,7 +249,7 @@ authDomain: "huntress-core.firebaseapp.com",
 
 projectId: "huntress-core",
 
-storageBucket: "huntress-core.appspot.com",
+storageBucket: "huntress-core.firebasestorage.app",
 
 messagingSenderId: "136366574004",
 
@@ -271,10 +261,14 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
+/* TAB SWITCHING */
+
 window.showLogin = function(){
 
 document.getElementById("loginForm").classList.remove("hidden");
+
 document.getElementById("signupForm").classList.add("hidden");
+
 document.getElementById("adminForm").classList.add("hidden");
 
 }
@@ -282,7 +276,9 @@ document.getElementById("adminForm").classList.add("hidden");
 window.showSignup = function(){
 
 document.getElementById("signupForm").classList.remove("hidden");
+
 document.getElementById("loginForm").classList.add("hidden");
+
 document.getElementById("adminForm").classList.add("hidden");
 
 }
@@ -290,10 +286,14 @@ document.getElementById("adminForm").classList.add("hidden");
 window.showAdmin = function(){
 
 document.getElementById("adminForm").classList.remove("hidden");
+
 document.getElementById("loginForm").classList.add("hidden");
+
 document.getElementById("signupForm").classList.add("hidden");
 
 }
+
+/* SIGNUP */
 
 document.getElementById("signupForm")
 .addEventListener("submit", async (e)=>{
@@ -316,7 +316,7 @@ password
 
 alert("ACCOUNT CREATED");
 
-window.location.href="/dashboard.html";
+window.location.href = "dashboard.html";
 
 }catch(error){
 
@@ -325,6 +325,8 @@ alert(error.message);
 }
 
 });
+
+/* LOGIN */
 
 document.getElementById("loginForm")
 .addEventListener("submit", async (e)=>{
@@ -347,7 +349,7 @@ password
 
 alert("ACCESS GRANTED");
 
-window.location.href="/dashboard.html";
+window.location.href = "dashboard.html";
 
 }catch(error){
 
@@ -357,7 +359,12 @@ alert(error.message);
 
 });
 
-window.loginSystem = function(){
+/* CONTROLLER LOGIN */
+
+document.getElementById("adminForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
 
 const user =
 document.getElementById("adminUser").value;
@@ -365,9 +372,12 @@ document.getElementById("adminUser").value;
 const pass =
 document.getElementById("adminPass").value;
 
-if(user==="controller" && pass==="reznov"){
+if(
+user === "controller" &&
+pass === "reznov"
+){
 
-window.location.href="/dashboard.html";
+window.location.href = "dashboard.html";
 
 }else{
 
@@ -375,7 +385,7 @@ alert("ACCESS DENIED");
 
 }
 
-}
+});
 
 </script>
 
@@ -389,16 +399,13 @@ canvas.height = window.innerHeight;
 
 canvas.width = window.innerWidth;
 
-const letters =
-"01HUNTRESSREZNOV";
+const letters = "01HUNTRESSREZNOV";
 
-const matrix =
-letters.split("");
+const matrix = letters.split("");
 
 const fontSize = 14;
 
-const columns =
-canvas.width/fontSize;
+const columns = canvas.width/fontSize;
 
 const drops = [];
 
@@ -407,8 +414,7 @@ drops[x]=1;
 
 function draw(){
 
-ctx.fillStyle =
-"rgba(0,0,0,0.05)";
+ctx.fillStyle = "rgba(0,0,0,0.05)";
 
 ctx.fillRect(
 0,
@@ -419,8 +425,7 @@ canvas.height
 
 ctx.fillStyle="#ff003c";
 
-ctx.font =
-fontSize+"px monospace";
+ctx.font = fontSize + "px monospace";
 
 for(let i=0;i<drops.length;i++){
 
@@ -434,8 +439,8 @@ drops[i]*fontSize
 );
 
 if(
-drops[i]*fontSize>canvas.height &&
-Math.random()>0.975
+drops[i]*fontSize > canvas.height &&
+Math.random() > 0.975
 ){
 drops[i]=0;
 }
