@@ -246,11 +246,20 @@ ACCESS CONTROLLER PANEL
 
 </div>
 
-<script>
+<script type="module">
+
+import { auth } from "./firebase-config.js";
+
+import {
+
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword
+
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 /* LOGIN TAB */
 
-function showLogin(){
+window.showLogin = function(){
 
 document.getElementById("loginForm")
 .classList.remove("hidden");
@@ -265,7 +274,7 @@ document.getElementById("adminForm")
 
 /* SIGNUP TAB */
 
-function showSignup(){
+window.showSignup = function(){
 
 document.getElementById("signupForm")
 .classList.remove("hidden");
@@ -280,7 +289,7 @@ document.getElementById("adminForm")
 
 /* ADMIN TAB */
 
-function showAdmin(){
+window.showAdmin = function(){
 
 document.getElementById("adminForm")
 .classList.remove("hidden");
@@ -293,39 +302,85 @@ document.getElementById("signupForm")
 
 }
 
-/* NORMAL LOGIN */
+/* LOGIN */
 
 document.getElementById("loginForm")
-.addEventListener("submit", function(e){
+.addEventListener("submit", async function(e){
 
 e.preventDefault();
 
+const email =
+document.querySelector(
+"#loginForm input[type='email']"
+).value;
+
+const password =
+document.querySelector(
+"#loginForm input[type='password']"
+).value;
+
+try{
+
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
 window.location.href = "/gateway";
+
+}catch(error){
+
+alert(error.message);
+
+}
 
 });
 
 /* SIGNUP */
 
 document.getElementById("signupForm")
-.addEventListener("submit", function(e){
+.addEventListener("submit", async function(e){
 
 e.preventDefault();
 
+const email =
+document.querySelector(
+"#signupForm input[type='email']"
+).value;
+
+const password =
+document.querySelector(
+"#signupForm input[type='password']"
+).value;
+
+try{
+
+await createUserWithEmailAndPassword(
+auth,
+email,
+password
+);
+
 window.location.href = "/gateway";
+
+}catch(error){
+
+alert(error.message);
+
+}
 
 });
 
 /* ADMIN LOGIN */
 
-function loginSystem(){
+window.loginSystem = function(){
 
 const username =
 document.getElementById("adminUser").value;
 
 const password =
 document.getElementById("adminPass").value;
-
-/* YOUR CONTROLLER CREDENTIALS */
 
 if(
 username === "controller" &&
