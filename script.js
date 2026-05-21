@@ -232,27 +232,82 @@ enterBtn.addEventListener(
 "click",
 () => {
 
+const hunterId =
+Math.floor(
+Math.random() * 999
+)
+.toString()
+.padStart(3,"0");
+
+let visitorCount =
+localStorage.getItem(
+"visitorCount"
+);
+
+if(!visitorCount){
+
+visitorCount = 1;
+
+}else{
+
+visitorCount =
+parseInt(visitorCount) + 1;
+
+}
+
+localStorage.setItem(
+"visitorCount",
+visitorCount
+);
+
 document.body.innerHTML = `
 
-<div class="loading-screen"
-style="
+<div style="
 height:100vh;
+background:black;
 display:flex;
 justify-content:center;
 align-items:center;
-background:black;
-color:#00ff88;
+flex-direction:column;
 font-family:Orbitron,sans-serif;
-letter-spacing:4px;
+color:#00ff88;
+padding:30px;
 text-align:center;
-padding:20px;
 ">
 
-<h1>
+<div style="
+font-size:15px;
+letter-spacing:4px;
+line-height:2.4;
+max-width:900px;
+">
 
-ACCESSING H.U.N.T.R.E.S.S...
+<p>
+INITIALIZING H.U.N.T.R.E.S.S...
+</p>
 
-</h1>
+<p>
+SCANNING NETWORK...
+</p>
+
+<p>
+ASSIGNING HUNTER ID...
+</p>
+
+<p style="color:#ff335f;">
+YOU ARE:
+HUNTER_${hunterId}
+</p>
+
+<p>
+VISITOR #${visitorCount}
+</p>
+
+<p>
+CONNECTED.
+</p>
+
+</div>
 
 </div>
 
@@ -260,16 +315,20 @@ ACCESSING H.U.N.T.R.E.S.S...
 
 setTimeout(() => {
 
-window.location.href =
-"loading.html";
+localStorage.setItem(
+"hunterId",
+hunterId
+);
 
-}, 2500);
+window.location.href =
+"dashboard.html";
+
+}, 5000);
 
 }
 );
 
 }
-
 /* =========================
    DOSSIER CARD EFFECT
 ========================= */
