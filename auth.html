@@ -5,123 +5,115 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>H.U.N.T.R.E.S.S AUTH</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
+body{
+margin:0;
+background:black;
+font-family:'Orbitron',sans-serif;
+overflow:hidden;
+}
+
 .auth-body{
-
 min-height:100vh;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 padding:20px;
+position:relative;
+z-index:2;
 }
 
 .auth-box{
-
 width:100%;
-
 max-width:500px;
-
 padding:45px 30px;
-
-background:rgba(0,0,0,0.88);
-
-border:1px solid rgba(0,255,136,0.15);
-
+background:rgba(0,0,0,0.92);
+border:1px solid rgba(0,255,136,0.2);
 border-radius:24px;
-
-backdrop-filter:blur(12px);
 }
 
 .auth-box h1{
-
 font-size:42px;
-
 color:#00ff88;
-
-margin-bottom:10px;
-
-letter-spacing:4px;
-
 text-align:center;
+letter-spacing:5px;
 }
 
 .auth-box p{
-
 text-align:center;
-
-color:#bdbdbd;
-
+color:#aaa;
 margin-bottom:35px;
-
-letter-spacing:2px;
 }
 
 .auth-tabs{
-
 display:flex;
-
 gap:10px;
-
 margin-bottom:25px;
-
-flex-wrap:wrap;
 }
 
 .auth-tabs button{
-
 flex:1;
+padding:16px;
+border:none;
+border-radius:12px;
+font-family:'Orbitron',sans-serif;
+font-size:14px;
+cursor:pointer;
+background:#00ff88;
+color:black;
+font-weight:bold;
+}
+
+.admin-btn{
+background:#ff003c !important;
+color:white !important;
 }
 
 .auth-form{
-
 display:flex;
-
 flex-direction:column;
-
 gap:18px;
 }
 
 .auth-form input{
-
 padding:16px;
-
 border-radius:12px;
-
 border:1px solid rgba(0,255,136,0.15);
-
 background:black;
-
 color:white;
-
 font-family:'Orbitron',sans-serif;
+}
 
-outline:none;
+.auth-form button{
+padding:18px;
+border:none;
+border-radius:12px;
+background:#00ff88;
+font-family:'Orbitron',sans-serif;
+font-weight:bold;
+cursor:pointer;
 }
 
 .hidden{
 display:none;
 }
 
-.admin-btn{
-
-background:#ff003c !important;
-
-color:white !important;
+canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:1;
 }
 
 </style>
@@ -131,8 +123,6 @@ color:white !important;
 <body>
 
 <canvas id="matrix"></canvas>
-
-<div class="gateway-overlay"></div>
 
 <div class="auth-body">
 
@@ -145,23 +135,15 @@ color:white !important;
 <div class="auth-tabs">
 
 <button onclick="showLogin()">
-
 SIGN IN
-
 </button>
 
 <button onclick="showSignup()">
-
 SIGN UP
-
 </button>
 
-<button
-onclick="showAdmin()"
-class="admin-btn">
-
-ADMIN LOGIN
-
+<button onclick="showAdmin()" class="admin-btn">
+ADMIN
 </button>
 
 </div>
@@ -172,26 +154,25 @@ ADMIN LOGIN
 
 <input
 type="email"
+id="loginEmail"
 placeholder="EMAIL"
 required>
 
 <input
 type="password"
+id="loginPassword"
 placeholder="PASSWORD"
 required>
 
 <button type="submit">
-
 ACCESS NETWORK
-
 </button>
 
 </form>
 
 <!-- SIGNUP -->
 
-<form id="signupForm"
-class="auth-form hidden">
+<form id="signupForm" class="auth-form hidden">
 
 <input
 type="text"
@@ -200,44 +181,38 @@ required>
 
 <input
 type="email"
+id="signupEmail"
 placeholder="EMAIL"
 required>
 
 <input
 type="password"
+id="signupPassword"
 placeholder="PASSWORD"
 required>
 
 <button type="submit">
-
 CREATE ACCOUNT
-
 </button>
 
 </form>
 
 <!-- ADMIN -->
 
-<div
-id="adminForm"
-class="auth-form hidden">
+<div id="adminForm" class="auth-form hidden">
 
 <input
 type="text"
 id="adminUser"
-placeholder="CONTROLLER USERNAME">
+placeholder="CONTROLLER">
 
 <input
 type="password"
 id="adminPass"
-placeholder="CONTROLLER PASSWORD">
+placeholder="PASSWORD">
 
-<button
-onclick="loginSystem()"
-class="admin-btn">
-
-ACCESS CONTROLLER PANEL
-
+<button onclick="loginSystem()" class="admin-btn">
+ACCESS CONTROLLER
 </button>
 
 </div>
@@ -245,159 +220,6 @@ ACCESS CONTROLLER PANEL
 </div>
 
 </div>
-
-<script type="module">
-
-import { auth } from "./firebase-config.js";
-
-import {
-
-createUserWithEmailAndPassword,
-signInWithEmailAndPassword
-
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-/* LOGIN TAB */
-
-window.showLogin = function(){
-
-document.getElementById("loginForm")
-.classList.remove("hidden");
-
-document.getElementById("signupForm")
-.classList.add("hidden");
-
-document.getElementById("adminForm")
-.classList.add("hidden");
-
-}
-
-/* SIGNUP TAB */
-
-window.showSignup = function(){
-
-document.getElementById("signupForm")
-.classList.remove("hidden");
-
-document.getElementById("loginForm")
-.classList.add("hidden");
-
-document.getElementById("adminForm")
-.classList.add("hidden");
-
-}
-
-/* ADMIN TAB */
-
-window.showAdmin = function(){
-
-document.getElementById("adminForm")
-.classList.remove("hidden");
-
-document.getElementById("loginForm")
-.classList.add("hidden");
-
-document.getElementById("signupForm")
-.classList.add("hidden");
-
-}
-
-/* LOGIN */
-
-document.getElementById("loginForm")
-.addEventListener("submit", async function(e){
-
-e.preventDefault();
-
-const email =
-document.querySelector(
-"#loginForm input[type='email']"
-).value;
-
-const password =
-document.querySelector(
-"#loginForm input[type='password']"
-).value;
-
-try{
-
-await signInWithEmailAndPassword(
-auth,
-email,
-password
-);
-
-window.location.href = "/gateway";
-
-}catch(error){
-
-alert(error.message);
-
-}
-
-});
-
-/* SIGNUP */
-
-document.getElementById("signupForm")
-.addEventListener("submit", async function(e){
-
-e.preventDefault();
-
-const email =
-document.querySelector(
-"#signupForm input[type='email']"
-).value;
-
-const password =
-document.querySelector(
-"#signupForm input[type='password']"
-).value;
-
-try{
-
-await createUserWithEmailAndPassword(
-auth,
-email,
-password
-);
-
-window.location.href = "/gateway";
-
-}catch(error){
-
-alert(error.message);
-
-}
-
-});
-
-/* ADMIN LOGIN */
-
-window.loginSystem = function(){
-
-const username =
-document.getElementById("adminUser").value;
-
-const password =
-document.getElementById("adminPass").value;
-
-if(
-username === "controller" &&
-password === "reznov"
-){
-
-window.location.href = "/gateway";
-
-}else{
-
-alert("ACCESS DENIED");
-
-}
-
-}
-
-</script>
 
 <script type="module">
 
@@ -413,7 +235,7 @@ signInWithEmailAndPassword
 
 const firebaseConfig = {
 
-apiKey: "PASTE_YOUR_API_KEY",
+apiKey: "PASTE_API_KEY",
 
 authDomain: "huntress-core.firebaseapp.com",
 
@@ -431,94 +253,40 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-/* LOGIN TAB */
-
 window.showLogin = function(){
 
-document.getElementById("loginForm")
-.classList.remove("hidden");
-
-document.getElementById("signupForm")
-.classList.add("hidden");
-
-document.getElementById("adminForm")
-.classList.add("hidden");
+document.getElementById("loginForm").classList.remove("hidden");
+document.getElementById("signupForm").classList.add("hidden");
+document.getElementById("adminForm").classList.add("hidden");
 
 }
-
-/* SIGNUP TAB */
 
 window.showSignup = function(){
 
-document.getElementById("signupForm")
-.classList.remove("hidden");
-
-document.getElementById("loginForm")
-.classList.add("hidden");
-
-document.getElementById("adminForm")
-.classList.add("hidden");
+document.getElementById("signupForm").classList.remove("hidden");
+document.getElementById("loginForm").classList.add("hidden");
+document.getElementById("adminForm").classList.add("hidden");
 
 }
-
-/* ADMIN TAB */
 
 window.showAdmin = function(){
 
-document.getElementById("adminForm")
-.classList.remove("hidden");
-
-document.getElementById("loginForm")
-.classList.add("hidden");
-
-document.getElementById("signupForm")
-.classList.add("hidden");
+document.getElementById("adminForm").classList.remove("hidden");
+document.getElementById("loginForm").classList.add("hidden");
+document.getElementById("signupForm").classList.add("hidden");
 
 }
 
-/* LOGIN */
-
-document.getElementById("loginForm")
-.addEventListener("submit", async function(e){
+document.getElementById("signupForm")
+.addEventListener("submit", async (e)=>{
 
 e.preventDefault();
 
 const email =
-this.querySelector('input[type="email"]').value;
+document.getElementById("signupEmail").value;
 
 const password =
-this.querySelector('input[type="password"]').value;
-
-try{
-
-await signInWithEmailAndPassword(
-auth,
-email,
-password
-);
-
-window.location.href = "/dashboard";
-
-}catch(error){
-
-alert(error.message);
-
-}
-
-});
-
-/* SIGNUP */
-
-document.getElementById("signupForm")
-.addEventListener("submit", async function(e){
-
-e.preventDefault();
-
-const email =
-this.querySelector('input[type="email"]').value;
-
-const password =
-this.querySelector('input[type="password"]').value;
+document.getElementById("signupPassword").value;
 
 try{
 
@@ -528,7 +296,9 @@ email,
 password
 );
 
-window.location.href = "/dashboard";
+alert("ACCOUNT CREATED");
+
+window.location.href="/dashboard";
 
 }catch(error){
 
@@ -538,22 +308,48 @@ alert(error.message);
 
 });
 
-/* ADMIN */
+document.getElementById("loginForm")
+.addEventListener("submit", async (e)=>{
+
+e.preventDefault();
+
+const email =
+document.getElementById("loginEmail").value;
+
+const password =
+document.getElementById("loginPassword").value;
+
+try{
+
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+alert("ACCESS GRANTED");
+
+window.location.href="/dashboard";
+
+}catch(error){
+
+alert(error.message);
+
+}
+
+});
 
 window.loginSystem = function(){
 
-const username =
+const user =
 document.getElementById("adminUser").value;
 
-const password =
+const pass =
 document.getElementById("adminPass").value;
 
-if(
-username === "controller" &&
-password === "reznov"
-){
+if(user==="controller" && pass==="reznov"){
 
-window.location.href = "/dashboard";
+window.location.href="/dashboard";
 
 }else{
 
@@ -562,6 +358,77 @@ alert("ACCESS DENIED");
 }
 
 }
+
+</script>
+
+<script>
+
+const canvas = document.getElementById("matrix");
+
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+
+canvas.width = window.innerWidth;
+
+const letters =
+"01HUNTRESSREZNOV";
+
+const matrix =
+letters.split("");
+
+const fontSize = 14;
+
+const columns =
+canvas.width/fontSize;
+
+const drops = [];
+
+for(let x=0;x<columns;x++)
+drops[x]=1;
+
+function draw(){
+
+ctx.fillStyle =
+"rgba(0,0,0,0.05)";
+
+ctx.fillRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+ctx.fillStyle="#ff003c";
+
+ctx.font =
+fontSize+"px monospace";
+
+for(let i=0;i<drops.length;i++){
+
+const text =
+matrix[Math.floor(Math.random()*matrix.length)];
+
+ctx.fillText(
+text,
+i*fontSize,
+drops[i]*fontSize
+);
+
+if(
+drops[i]*fontSize>canvas.height &&
+Math.random()>0.975
+){
+drops[i]=0;
+}
+
+drops[i]++;
+
+}
+
+}
+
+setInterval(draw,35);
 
 </script>
 
