@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>H.U.N.T.R.E.S.S MEMBERS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+background:#000;
+font-family:'Orbitron',sans-serif;
+color:white;
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:1;
+}
+
+.main{
+position:relative;
+z-index:2;
+padding:40px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.title h1{
+color:#00ff88;
+font-size:50px;
+letter-spacing:6px;
+margin-bottom:10px;
+}
+
+.title p{
+color:#888;
+letter-spacing:3px;
+}
+
+.panel{
+background:rgba(0,0,0,0.92);
+border:1px solid rgba(0,255,136,0.15);
+border-radius:20px;
+padding:30px;
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:800px;
+}
+
+th{
+background:#00ff88;
+color:black;
+padding:18px;
+font-size:14px;
+letter-spacing:2px;
+}
+
+td{
+padding:18px;
+border-bottom:1px solid rgba(255,255,255,0.08);
+font-size:14px;
+letter-spacing:1px;
+}
+
+tr:hover{
+background:rgba(0,255,136,0.05);
+}
+
+.rank{
+color:#00ff88;
+font-weight:bold;
+}
+
+.clearance{
+color:#ff335f;
+font-weight:bold;
+}
+
+.back-btn{
+display:inline-block;
+margin-top:30px;
+padding:16px 30px;
+background:#00ff88;
+color:black;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="main">
+
+<div class="title">
+
+<h1>MEMBER DATABASE</h1>
+
+<p>CLASSIFIED OPERATIVE REGISTRY</p>
+
+</div>
+
+<div class="panel">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ALIAS</th>
+
+<th>HUNTER CODE</th>
+
+<th>RANK</th>
+
+<th>CLEARANCE</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Victor Reźnov</td>
+<td>hunter_000</td>
+<td class="rank">CONTROLLER</td>
+<td class="clearance">OMEGA</td>
+</tr>
+
+<tr>
+<td>Ghost</td>
+<td>hunter_001</td>
+<td class="rank">REAPER</td>
+<td class="clearance">LEVEL 01</td>
+</tr>
+
+<tr>
+<td>Cipher</td>
+<td>hunter_002</td>
+<td class="rank">ANALYST</td>
+<td class="clearance">LEVEL 02</td>
+</tr>
+
+<tr>
+<td>Raven</td>
+<td>hunter_003</td>
+<td class="rank">HUNTER</td>
+<td class="clearance">LEVEL 03</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<a href="dashboard.html" class="back-btn">
+
+RETURN TO DASHBOARD
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+const canvas = document.getElementById("matrix");
+
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+
+canvas.width = window.innerWidth;
+
+const letters = "01HUNTRESSREZNOV";
+
+const matrix = letters.split("");
+
+const fontSize = 14;
+
+const columns = canvas.width/fontSize;
+
+const drops = [];
+
+for(let x=0;x<columns;x++)
+drops[x]=1;
+
+function draw(){
+
+ctx.fillStyle = "rgba(0,0,0,0.05)";
+
+ctx.fillRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+ctx.fillStyle="#ff003c";
+
+ctx.font = fontSize + "px monospace";
+
+for(let i=0;i<drops.length;i++){
+
+const text =
+matrix[Math.floor(Math.random()*matrix.length)];
+
+ctx.fillText(
+text,
+i*fontSize,
+drops[i]*fontSize
+);
+
+if(
+drops[i]*fontSize > canvas.height &&
+Math.random() > 0.975
+){
+drops[i]=0;
+}
+
+drops[i]++;
+
+}
+
+}
+
+setInterval(draw,35);
+
+</script>
+
+</body>
+
+</html>
