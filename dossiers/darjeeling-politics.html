@@ -9,280 +9,545 @@
 content="width=device-width, initial-scale=1.0">
 
 <title>
-
 Who Really Controls Darjeeling? | H.U.N.T.R.E.S.S
-
 </title>
 
-<link rel="stylesheet"
-href="style.css">
+<link rel="stylesheet" href="../style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
 rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+background:#050505;
+color:white;
+font-family:'Inter',sans-serif;
+overflow-x:hidden;
+}
+
+.blog-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top,#0f0f0f,#050505 60%);
+z-index:-2;
+}
+
+.blog-noise{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+background-size:3px 3px;
+opacity:0.15;
+z-index:-1;
+}
+
+.classified-banner{
+position:sticky;
+top:0;
+z-index:999;
+padding:14px;
+text-align:center;
+background:#ff003c;
+font-size:12px;
+letter-spacing:4px;
+font-family:'Orbitron',sans-serif;
+box-shadow:0 0 25px rgba(255,0,60,0.4);
+}
+
+.blog-container{
+max-width:1000px;
+margin:auto;
+padding:100px 25px;
+}
+
+.blog-header{
+text-align:center;
+margin-bottom:80px;
+}
+
+.intel-tag{
+display:inline-block;
+padding:10px 20px;
+border:1px solid rgba(0,255,136,0.3);
+border-radius:50px;
+color:#00ff88;
+font-size:12px;
+letter-spacing:3px;
+font-family:'Orbitron',sans-serif;
+margin-bottom:30px;
+}
+
+.blog-header h1{
+font-size:58px;
+line-height:1.15;
+margin-bottom:30px;
+font-family:'Orbitron',sans-serif;
+text-transform:uppercase;
+}
+
+.blog-subtitle{
+max-width:750px;
+margin:auto;
+color:#9d9d9d;
+line-height:2;
+font-size:18px;
+}
+
+.cover-image{
+margin-top:60px;
+border-radius:24px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 0 40px rgba(0,255,136,0.08);
+}
+
+.cover-image img{
+width:100%;
+display:block;
+}
+
+.author-box{
+margin-top:60px;
+padding:30px;
+border:1px solid rgba(255,255,255,0.08);
+border-radius:20px;
+background:rgba(255,255,255,0.02);
+backdrop-filter:blur(10px);
+}
+
+.author-label{
+color:#00ff88;
+letter-spacing:4px;
+font-size:12px;
+font-family:'Orbitron',sans-serif;
+margin-bottom:15px;
+}
+
+.author-box h3{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.author-alias{
+color:#ff335f;
+margin-bottom:20px;
+}
+
+.author-desc{
+color:#9d9d9d;
+line-height:1.8;
+}
+
+.blog-content{
+margin-top:80px;
+}
+
+.blog-content h2{
+font-size:34px;
+margin-top:80px;
+margin-bottom:25px;
+font-family:'Orbitron',sans-serif;
+color:white;
+position:relative;
+padding-left:18px;
+}
+
+.blog-content h2::before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+width:4px;
+height:100%;
+background:#00ff88;
+border-radius:20px;
+}
+
+.blog-content p{
+line-height:2.1;
+font-size:17px;
+color:#c5c5c5;
+margin-bottom:30px;
+}
+
+.highlight-box{
+margin:60px 0;
+padding:35px;
+background:rgba(255,0,60,0.06);
+border:1px solid rgba(255,0,60,0.2);
+border-radius:24px;
+box-shadow:0 0 25px rgba(255,0,60,0.06);
+}
+
+.highlight-box h3{
+font-family:'Orbitron',sans-serif;
+color:#ff335f;
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+.highlight-box p{
+margin:0;
+color:#e0e0e0;
+}
+
+.flags-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+margin:70px 0;
+}
+
+.flag-card{
+background:#0b0b0b;
+border:1px solid rgba(255,255,255,0.08);
+border-radius:24px;
+padding:25px;
+text-align:center;
+transition:0.3s;
+}
+
+.flag-card:hover{
+transform:translateY(-8px);
+border-color:#00ff88;
+box-shadow:0 0 25px rgba(0,255,136,0.12);
+}
+
+.flag-card img{
+width:100%;
+height:140px;
+object-fit:cover;
+border-radius:16px;
+margin-bottom:20px;
+}
+
+.flag-card h3{
+font-family:'Orbitron',sans-serif;
+margin-bottom:10px;
+}
+
+.flag-card p{
+font-size:14px;
+line-height:1.8;
+color:#9d9d9d;
+}
+
+.quote-line{
+margin-top:100px;
+padding:50px;
+text-align:center;
+font-size:32px;
+line-height:1.8;
+font-family:'Orbitron',sans-serif;
+border-top:1px solid rgba(255,255,255,0.08);
+border-bottom:1px solid rgba(255,255,255,0.08);
+color:white;
+}
+
+.final-box{
+margin-top:100px;
+padding:60px 40px;
+background:rgba(255,255,255,0.02);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:30px;
+text-align:center;
+}
+
+.final-box h2{
+font-size:42px;
+margin-bottom:25px;
+font-family:'Orbitron',sans-serif;
+}
+
+.final-box p{
+max-width:850px;
+margin:auto;
+line-height:2;
+}
+
+.footer-note{
+margin-top:60px;
+text-align:center;
+color:#00ff88;
+letter-spacing:4px;
+font-size:13px;
+font-family:'Orbitron',sans-serif;
+}
+
+@media(max-width:768px){
+
+.blog-header h1{
+font-size:36px;
+}
+
+.blog-subtitle{
+font-size:15px;
+}
+
+.blog-content h2{
+font-size:26px;
+}
+
+.quote-line{
+font-size:24px;
+padding:35px 20px;
+}
+
+.final-box h2{
+font-size:30px;
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- MATRIX -->
+<div class="blog-bg"></div>
+<div class="blog-noise"></div>
 
-<canvas id="matrix"></canvas>
+<div class="classified-banner">
+RESTRICTED INTELLIGENCE DOSSIER
+</div>
 
-<!-- NAVBAR -->
+<div class="blog-container">
 
-<nav class="navbar">
-
-<h1>
-
-H.U.N.T.R.E.S.S
-
-</h1>
-
-</nav>
-
-<!-- MAIN DOSSIER -->
-
-<section class="intel-section">
-
-<!-- HEADER -->
-
-<div class="section-header">
-
-<img
-src="logo.png"
-alt="HUNTRESS LOGO"
-style="
-width:220px;
-display:block;
-margin:0 auto 35px;
-filter:drop-shadow(0 0 25px #00ff88);
-">
+<div class="blog-header">
 
 <p class="intel-tag">
-
-RESTRICTED INTELLIGENCE DOSSIER
-
+HILL INTELLIGENCE ARCHIVE
 </p>
 
 <h1>
-
 WHO REALLY CONTROLS DARJEELING?
-
 </h1>
 
-<p class="author-line">
+<p class="blog-subtitle">
+Political influence, emotional mobilization,
+identity warfare, student manipulation,
+party ecosystems and the invisible power structures
+behind the Darjeeling hills.
+</p>
 
-Political Influence • Hill Power • Party Control • Public Manipulation
+<div class="cover-image">
 
+<img src="../darjeeling-banner.jpg">
+
+</div>
+
+<div class="author-box">
+
+<p class="author-label">
+AUTHOR
+</p>
+
+<h3>
+Avenov Subba
+</h3>
+
+<p class="author-alias">
+a.k.a Victor Reźnov
+</p>
+
+<p class="author-desc">
+Cybersecurity researcher,
+OSINT analyst,
+digital intelligence enthusiast
+and founder of H.U.N.T.R.E.S.S
 </p>
 
 </div>
 
-<!-- WARNING -->
-
-<div class="classified-box">
-
-WARNING:
-This dossier contains political analysis,
-power structure observations,
-and intelligence-style documentation
-focused on Darjeeling hill politics.
-
 </div>
 
-<!-- ARTICLE 1 -->
-
-<div class="article-block">
+<div class="blog-content">
 
 <h2>
-
 THE POLITICAL CHESSBOARD
-
 </h2>
 
 <p>
-
-Darjeeling politics has evolved into a
-constant struggle for territorial influence,
+Darjeeling politics evolved into a constant struggle
+for territorial influence,
 identity politics,
-party dominance,
+regional loyalty,
+party dominance
 and emotional public mobilization.
+</p>
 
+<p>
 Different political organizations claim
 to represent “the people”,
-yet many citizens question whether
-the hills are truly being developed
+yet many citizens continue questioning whether
+the hills are genuinely being developed
 or merely politically controlled.
+</p>
 
+<div class="highlight-box">
+
+<h3>
+INTELLIGENCE NOTE
+</h3>
+
+<p>
 Movements rise.
 Leaders change.
 Flags change.
 
-But systems of influence often remain untouched.
-
+But systems of influence
+often remain untouched.
 </p>
 
 </div>
-
-<!-- FLAGS -->
-
-<div style="
-display:flex;
-gap:25px;
-flex-wrap:wrap;
-justify-content:center;
-margin:60px 0;
-">
-
-<div style="text-align:center;">
-
-<img
-src="gjm-flag.png"
-style="
-width:130px;
-border-radius:12px;
-border:1px solid rgba(255,255,255,0.1);
-box-shadow:0 0 15px rgba(255,255,255,0.08);
-">
-
-<p style="margin-top:10px;">
-
-GJM
-
-</p>
-
-</div>
-
-<div style="text-align:center;">
-
-<img
-src="bjp-flag.png"
-style="
-width:130px;
-border-radius:12px;
-border:1px solid rgba(255,255,255,0.1);
-box-shadow:0 0 15px rgba(255,255,255,0.08);
-">
-
-<p style="margin-top:10px;">
-
-BJP
-
-</p>
-
-</div>
-
-<div style="text-align:center;">
-
-<img
-src="tmc-flag.png"
-style="
-width:130px;
-border-radius:12px;
-border:1px solid rgba(255,255,255,0.1);
-box-shadow:0 0 15px rgba(255,255,255,0.08);
-">
-
-<p style="margin-top:10px;">
-
-TMC
-
-</p>
-
-</div>
-
-</div>
-
-<!-- ARTICLE 2 -->
-
-<div class="article-block">
 
 <h2>
-
-THE QUESTION PEOPLE ASK
-
+THE FLAGS OF POWER
 </h2>
 
-<p>
+<div class="flags-grid">
 
-Why does every institution,
-event,
-organization,
-or local body
-appear politically connected?
+<div class="flag-card">
 
-Why do party symbols and political influence
-reach educational institutions,
-public spaces,
-student groups,
-and social programs?
-
-Is leadership serving the hills,
-or are the hills serving political branding?
-
-</p>
-
-</div>
-
-<!-- ARTICLE 3 -->
-
-<div class="article-block">
-
-<h2>
-
-THE BUSINESS OF EMOTION
-
-</h2>
-
-<p>
-
-Emotion has become one of the strongest
-political weapons in the hills.
-
-Identity,
-fear,
-regional insecurity,
-historical pain,
-and emotional loyalty
-are repeatedly used to mobilize people.
-
-The public remains divided,
-while political ecosystems continue expanding.
-
-</p>
-
-</div>
-
-<!-- REDACTED -->
-
-<div class="redacted-box">
+<img src="../gjm-flag.png">
 
 <h3>
-
-INTELLIGENCE NOTE
-
+GJM
 </h3>
 
 <p>
+Regional identity politics
+and historical Gorkhaland mobilization
+continue shaping hill narratives.
+</p>
 
-Political loyalty in the hills often becomes
-stronger than public accountability.
+</div>
 
+<div class="flag-card">
+
+<img src="../bjp-flag.png">
+
+<h3>
+BJP
+</h3>
+
+<p>
+National political influence
+expanded deeply through alliances,
+elections,
+and ideological penetration.
+</p>
+
+</div>
+
+<div class="flag-card">
+
+<img src="../tmc-flag.png">
+
+<h3>
+TMC
+</h3>
+
+<p>
+Administrative influence,
+state-level governance
+and strategic hill interventions
+continue affecting regional politics.
+</p>
+
+</div>
+
+</div>
+
+<h2>
+THE QUESTION PEOPLE ASK
+</h2>
+
+<p>
+Why does every institution,
+student body,
+event,
+organization
+or public gathering
+appear politically connected?
+</p>
+
+<p>
+Why do political symbols,
+party colors
+and ideological narratives
+reach educational institutions,
+social programs
+and local youth ecosystems?
+</p>
+
+<h2>
+THE BUSINESS OF EMOTION
+</h2>
+
+<p>
+Emotion became one of the strongest political weapons
+within the hills.
+</p>
+
+<p>
+Identity,
+fear,
+regional insecurity,
+historical pain
+and emotional loyalty
+are repeatedly used
+to mobilize public support.
+</p>
+
+<div class="highlight-box">
+
+<h3>
+REDACTED ANALYSIS
+</h3>
+
+<p>
 Citizens emotionally defend parties,
 while development,
 employment,
 infrastructure,
-education,
+education
 and transparency
-remain debated topics.
-
+remain endlessly debated topics.
 </p>
 
 </div>
 
-<!-- FINAL LINE -->
+<h2>
+THE STUDENT FACTOR
+</h2>
 
-<div class="ending-line">
+<p>
+Youth politics increasingly influences
+the ideological future of Darjeeling.
+</p>
+
+<p>
+Educational institutions,
+student organizations
+and local events
+often become indirect political battlegrounds
+where narratives are shaped early.
+</p>
+
+<div class="quote-line">
 
 WHO REALLY HOLDS POWER —
 THE PEOPLE,
@@ -290,46 +555,13 @@ OR THE POLITICAL NETWORKS?
 
 </div>
 
-<!-- FINAL TRANSMISSION -->
+<div class="final-box">
 
-<div style="
-margin-top:120px;
-padding:50px 30px;
-border:1px solid rgba(255,0,60,0.2);
-background:rgba(0,0,0,0.7);
-border-radius:20px;
-text-align:center;
-box-shadow:0 0 30px rgba(255,0,60,0.08);
-">
-
-<p style="
-color:#ff3b3b;
-letter-spacing:4px;
-margin-bottom:25px;
-font-size:13px;
-">
-
-END OF DOSSIER
-
-</p>
-
-<h2 style="
-font-size:42px;
-line-height:1.4;
-margin-bottom:30px;
-">
-
+<h2>
 THE HILLS REMEMBER EVERYTHING.
-
 </h2>
 
-<p style="
-max-width:850px;
-margin:auto;
-line-height:2;
-color:#bdbdbd;
-font-size:15px;
-">
+<p>
 
 Political movements rise.
 Parties change.
@@ -338,7 +570,7 @@ Flags disappear.
 But systems of influence survive through
 fear,
 emotion,
-dependency,
+dependency
 and silence.
 
 The real battle is no longer political.
@@ -347,12 +579,7 @@ It is psychological.
 
 </p>
 
-<div style="
-margin-top:40px;
-font-size:14px;
-letter-spacing:3px;
-color:#00ff88;
-">
+<div class="footer-note">
 
 H.U.N.T.R.E.S.S // INTELLIGENCE DIVISION
 
@@ -360,64 +587,9 @@ H.U.N.T.R.E.S.S // INTELLIGENCE DIVISION
 
 </div>
 
-<!-- AUTHOR -->
-
-<div style="
-margin-top:80px;
-padding-top:40px;
-border-top:1px solid rgba(255,255,255,0.1);
-display:flex;
-align-items:center;
-gap:20px;
-flex-wrap:wrap;
-">
-
-<img
-src="avenov.jpg"
-style="
-width:80px;
-height:80px;
-object-fit:cover;
-border-radius:50%;
-border:2px solid #00ff88;
-box-shadow:0 0 20px rgba(0,255,136,0.3);
-">
-
-<div>
-
-<h3 style="
-margin-bottom:8px;
-color:white;
-">
-
-Author
-
-</h3>
-
-<p style="
-color:#00ff88;
-font-size:20px;
-">
-
-Victor Reznov
-
-</p>
-
-<p style="
-color:#888;
-">
-
-Founder • H.U.N.T.R.E.S.S
-
-</p>
-
 </div>
 
 </div>
-
-</section>
-
-<script src="script.js"></script>
 
 </body>
 
