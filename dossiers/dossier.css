@@ -1,0 +1,176 @@
+body{
+
+margin:0;
+padding:0;
+background:#040404;
+color:white;
+font-family:Arial,sans-serif;
+line-height:1.8;
+
+}
+
+.hero{
+
+height:70vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+
+background:
+linear-gradient(
+rgba(0,0,0,0.7),
+rgba(0,0,0,0.9)
+),
+url('https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=2070');
+
+background-size:cover;
+background-position:center;
+
+border-bottom:1px solid rgba(255,0,60,0.2);
+
+}
+
+.hero h1{
+
+font-size:65px;
+color:#ffffff;
+margin-bottom:20px;
+font-family:Orbitron,sans-serif;
+text-shadow:0 0 20px rgba(255,0,60,0.5);
+
+}
+
+.hero p{
+
+max-width:900px;
+font-size:20px;
+color:#cccccc;
+
+}
+
+.article{
+
+max-width:950px;
+margin:auto;
+padding:80px 25px;
+
+}
+
+.article-section{
+
+margin-bottom:100px;
+
+}
+
+.article-section h2{
+
+font-size:42px;
+margin-bottom:25px;
+color:#00ff88;
+font-family:Orbitron,sans-serif;
+text-transform:uppercase;
+
+}
+
+.article-section p{
+
+font-size:19px;
+color:#dddddd;
+margin-bottom:25px;
+
+}
+
+.quote-box{
+
+background:rgba(255,0,60,0.08);
+border:1px solid rgba(255,0,60,0.2);
+padding:40px;
+border-radius:20px;
+margin:70px 0;
+
+font-size:24px;
+line-height:1.7;
+color:white;
+
+}
+
+.dossier-image{
+
+width:100%;
+border-radius:20px;
+margin:40px 0;
+border:1px solid rgba(255,255,255,0.08);
+
+}
+
+.divider{
+
+height:1px;
+background:linear-gradient(
+to right,
+transparent,
+#ff003c,
+transparent
+);
+
+margin:80px 0;
+
+}
+
+.author-box{
+
+margin-top:100px;
+padding:40px;
+background:#090909;
+border:1px solid rgba(0,255,136,0.15);
+border-radius:20px;
+
+}
+
+.author-box h3{
+
+color:#00ff88;
+font-family:Orbitron,sans-serif;
+
+}
+
+.back-btn{
+
+position:fixed;
+top:20px;
+left:20px;
+
+background:#00ff88;
+color:black;
+padding:12px 18px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+z-index:999;
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+.article-section h2{
+
+font-size:30px;
+
+}
+
+}
