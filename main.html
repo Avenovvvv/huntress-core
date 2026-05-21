@@ -206,6 +206,55 @@ ACCESS DASHBOARD
 </button>
 
 </div>
+   <!-- VISITOR COUNTER -->
+
+<div
+id="visitorCounter"
+style="
+text-align:center;
+padding:40px 20px;
+color:#00ff88;
+font-family:Orbitron,sans-serif;
+letter-spacing:2px;
+font-size:14px;
+opacity:0.8;
+">
+
+Initializing visitor trace...
+
+</div>
+
+<script>
+
+let visitorCount =
+localStorage.getItem("huntress_visitors");
+
+if (!visitorCount) {
+
+visitorCount = 1;
+
+} else {
+
+visitorCount =
+parseInt(visitorCount) + 1;
+
+}
+
+localStorage.setItem(
+"huntress_visitors",
+visitorCount
+);
+
+document.getElementById(
+"visitorCounter"
+).innerHTML =
+
+"You are visitor #" +
+visitorCount +
+"<br><br>" +
+"THE TRUTH REACHED ANOTHER NODE.";
+
+</script>
 
 <script src="script.js"></script>
 
