@@ -1850,3 +1850,18 @@ padding:25px;
     cursor: pointer;
     font-size: 15px;
 }
+/* =========================
+   INSTAGRAM FEED
+========================= */
+
+.instagram-feed{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:40px;
+
+align-items:start;
+
+}
