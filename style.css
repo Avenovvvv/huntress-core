@@ -1897,3 +1897,19 @@ align-items:start;
     color:#bdbdbd;
     line-height:1.7;
 }
+/* =========================
+   COMMUNISM SECTION IMAGE
+========================= */
+
+.communism-banner{
+    display:flex;
+    justify-content:center;
+    margin:40px 0;
+}
+
+.communism-banner img{
+    width:220px;
+    border:2px solid #8a0000;
+    box-shadow:0 0 30px rgba(255,0,0,0.35);
+}
+   
