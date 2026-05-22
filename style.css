@@ -1831,3 +1831,22 @@ padding:25px;
 }
 
 }
+/* Fix accept/decline button overlap */
+
+.terms-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.terms-buttons button {
+    min-width: 140px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
