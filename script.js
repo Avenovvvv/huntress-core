@@ -95,7 +95,6 @@ drops[i]++;
 
 }
 
-const matrixInterval =
 setInterval(drawMatrix, 40);
 
 window.addEventListener(
@@ -304,7 +303,7 @@ VISITOR #${visitorCount}
 </p>
 
 <p>
-CONNECTED.
+CONNECTED TO THE NETWORK
 </p>
 
 </div>
@@ -329,6 +328,65 @@ window.location.href =
 );
 
 }
+
+/* =========================
+   DASHBOARD VISITOR SYSTEM
+========================= */
+
+const visitorElement =
+document.getElementById(
+"visitorCounter"
+);
+
+if(visitorElement){
+
+let visitorCount =
+localStorage.getItem(
+"visitorCount"
+);
+
+if(!visitorCount){
+
+visitorCount = 1;
+
+localStorage.setItem(
+"visitorCount",
+visitorCount
+);
+
+}
+
+const hunterId =
+localStorage.getItem(
+"hunterId"
+) || "000";
+
+visitorElement.innerHTML = `
+
+<div style="
+font-size:15px;
+line-height:2.2;
+">
+
+YOU ARE VISITOR #${visitorCount}
+
+<br><br>
+
+CURRENT NODE:
+<span style="color:#ff335f;">
+HUNTER_${hunterId}
+</span>
+
+<br><br>
+
+THE TRUTH REACHED ANOTHER NODE.
+
+</div>
+
+`;
+
+}
+
 /* =========================
    DOSSIER CARD EFFECT
 ========================= */
@@ -450,6 +508,72 @@ behavior:"smooth"
 });
 
 }
+
+}
+);
+
+});
+
+/* =========================
+   TERMINAL TEXT EFFECT
+========================= */
+
+const typingElements =
+document.querySelectorAll(
+".typing-effect"
+);
+
+typingElements.forEach((element)=>{
+
+const text =
+element.innerText;
+
+element.innerText = "";
+
+let i = 0;
+
+function type(){
+
+if(i < text.length){
+
+element.innerText +=
+text.charAt(i);
+
+i++;
+
+setTimeout(type,50);
+
+}
+
+}
+
+type();
+
+});
+
+/* =========================
+   DOSSIER ACCESS SOUND
+========================= */
+
+const dossierLinks =
+document.querySelectorAll(
+".blog-card"
+);
+
+dossierLinks.forEach((link)=>{
+
+link.addEventListener(
+"click",
+()=>{
+
+const audio =
+new Audio(
+"https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"
+);
+
+audio.volume = 0.2;
+
+audio.play();
 
 }
 );
