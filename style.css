@@ -1908,8 +1908,15 @@ align-items:start;
 }
 
 .communism-banner img{
-    width:220px;
-    border:2px solid #8a0000;
-    box-shadow:0 0 30px rgba(255,0,0,0.35);
+    width:260px;
+    max-width:80%;
+    height:auto;
+
+    border:none;
+    background:transparent;
+
+    box-shadow:
+    0 0 25px rgba(255,0,0,0.18);
+
+    opacity:0.9;
 }
-   
