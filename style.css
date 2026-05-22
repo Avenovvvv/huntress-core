@@ -1865,3 +1865,35 @@ gap:40px;
 align-items:start;
 
 }
+/* =========================
+   DOSSIER CARDS
+========================= */
+
+.dossier-card{
+    display:block;
+    background:#0b0b0b;
+    border:1px solid #202020;
+    padding:30px;
+    margin-top:25px;
+    text-decoration:none;
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(255,0,0,0.05);
+}
+
+.dossier-card:hover{
+    transform:translateY(-5px);
+    border-color:#ff2d2d;
+    box-shadow:0 0 25px rgba(255,0,0,0.2);
+}
+
+.dossier-card h3{
+    color:#ff3a3a;
+    margin-bottom:15px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.dossier-card p{
+    color:#bdbdbd;
+    line-height:1.7;
+}
