@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>H.U.N.T.R.E.S.S AI - Cybersecurity Operations</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="matrix-bg"></canvas>
+
+    <div id="terminal-logs"></div>
+
+    <main class="terminal-container">
+      <div class="scan-line"></div>
+
+      <header class="terminal-header">
+        <div class="header-decorations">
+          <span class="decoration-bracket">[</span>
+          <span class="decoration-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </span>
+          <span class="decoration-bracket">]</span>
+        </div>
+        <h1 class="main-title">
+          <span class="title-letter">H</span><span class="title-letter">.</span><span class="title-letter">U</span><span class="title-letter">.</span><span class="title-letter">N</span><span class="title-letter">.</span><span class="title-letter">T</span><span class="title-letter">.</span><span class="title-letter">R</span><span class="title-letter">.</span><span class="title-letter">E</span><span class="title-letter">.</span><span class="title-letter">S</span><span class="title-letter">.</span><span class="title-letter">S</span>
+          <span class="ai-tag">AI</span>
+        </h1>
+        <p class="subtitle">
+          <span class="typing-text"></span>
+          <span class="cursor">_</span>
+        </p>
+        <div class="system-status">
+          <span class="status-item">
+            <span class="status-dot online"></span>
+            SYSTEM ONLINE
+          </span>
+          <span class="status-item">
+            <span class="status-dot"></span>
+            ENCRYPTED
+          </span>
+          <span class="status-item">
+            <span class="status-dot"></span>
+            READY
+          </span>
+        </div>
+      </header>
+
+      <section class="mode-selection">
+        <h2 class="section-title">// SELECT OPERATION MODE</h2>
+        <div class="cards-container">
+          <div class="mode-card" data-mode="red">
+            <div class="card-glow"></div>
+            <div class="card-border">
+              <div class="corner top-left"></div>
+              <div class="corner top-right"></div>
+              <div class="corner bottom-left"></div>
+              <div class="corner bottom-right"></div>
+            </div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L12 6M12 18L12 22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12L6 12M18 12L22 12M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93"/>
+                  <circle cx="12" cy="12" r="4"/>
+                </svg>
+              </div>
+              <h3 class="card-title">RED TEAM</h3>
+              <p class="card-description">Offensive security operations. Penetration testing, vulnerability assessment, and adversary simulation.</p>
+              <div class="card-stats">
+                <span class="stat">THREAT LEVEL: CRITICAL</span>
+              </div>
+              <button class="card-btn">
+                <span>INITIATE</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="mode-card" data-mode="blue">
+            <div class="card-glow"></div>
+            <div class="card-border">
+              <div class="corner top-left"></div>
+              <div class="corner top-right"></div>
+              <div class="corner bottom-left"></div>
+              <div class="corner bottom-right"></div>
+            </div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </div>
+              <h3 class="card-title">BLUE TEAM</h3>
+              <p class="card-description">Defensive security operations. Threat detection, incident response, and security monitoring.</p>
+              <div class="card-stats">
+                <span class="stat">DEFENSE STATUS: ACTIVE</span>
+              </div>
+              <button class="card-btn">
+                <span>ACTIVATE</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="mode-card" data-mode="purple">
+            <div class="card-glow"></div>
+            <div class="card-border">
+              <div class="corner top-left"></div>
+              <div class="corner top-right"></div>
+              <div class="corner bottom-left"></div>
+              <div class="corner bottom-right"></div>
+            </div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                  <path d="M16.24 7.76l-2.12 2.12M9.88 14.12l-2.12 2.12M7.76 7.76l2.12 2.12M14.12 14.12l2.12 2.12"/>
+                </svg>
+              </div>
+              <h3 class="card-title">PURPLE TEAM</h3>
+              <p class="card-description">Integrated security testing. Combined red and blue operations for comprehensive assessment.</p>
+              <div class="card-stats">
+                <span class="stat">SYNTHESIS MODE: ENABLED</span>
+              </div>
+              <button class="card-btn">
+                <span>ENGAGE</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="terminal-footer">
+        <div class="footer-content">
+          <span class="footer-text">[H.U.N.T.R.E.S.S AI v2.4.7]</span>
+          <span class="footer-text">[SECURE CONNECTION ESTABLISHED]</span>
+          <span class="footer-text" id="timestamp"></span>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
