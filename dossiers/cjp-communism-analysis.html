@@ -19,11 +19,23 @@
 body{
     background:#050505;
     color:#d8d8d8;
-    font-family:Arial, sans-serif;
+    font-family:'Orbitron',sans-serif;
     margin:0;
     padding:0;
     overflow-x:hidden;
     line-height:1.9;
+}
+
+/* MATRIX */
+
+#matrix{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    background:black;
 }
 
 /* =========================
@@ -34,7 +46,7 @@ body{
     position:relative;
     padding:120px 10%;
     background:
-    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+    linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.96)),
     url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop');
     background-size:cover;
     background-position:center;
@@ -59,79 +71,43 @@ body{
     text-transform:uppercase;
     max-width:1100px;
     margin-bottom:30px;
+    line-height:1.3;
 }
 
 .subtitle{
     color:#bbbbbb;
     font-size:22px;
     max-width:900px;
+    line-height:1.8;
 }
-
-.flags{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-top:50px;
-}
-
-.flags{
-    display:flex;
-    gap:25px;
-    margin-top:50px;
-    flex-wrap:wrap;
-}
-
-.flags img{
-   /* =========================
-   COMMUNIST BANNER
-========================= */
-
-.communism-banner{
-    width:100%;
-    margin:40px 0;
-    overflow:hidden;
-    border:1px solid #222;
-    background:#111;
-}
-
-.communism-banner img{
-    width:100%;
-    max-height:500px;
-    object-fit:cover;
-    display:block;
-}
-
-/* MOBILE FIX */
-
-@media(max-width:768px){
-
-.communism-banner img{
-    max-height:280px;
-    object-fit:contain;
-}
-
-}
-    width:180px;
-    height:auto;
-
-    object-fit:contain;
-
-    border:none;
-    background:transparent;
-
-    box-shadow:
-    0 0 20px rgba(255,0,0,0.2);
-}
-
-/* =========================
-   DOSSIER LABEL
-========================= */
 
 .label{
     margin-top:40px;
     color:#ff4d4d;
     letter-spacing:3px;
     font-size:14px;
+}
+
+/* =========================
+   FLAGS
+========================= */
+
+.flags{
+    display:flex;
+    gap:25px;
+    margin-top:50px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+.flags img{
+    width:180px;
+    height:auto;
+    object-fit:contain;
+    border:none;
+    background:transparent;
+    box-shadow:0 0 20px rgba(255,0,0,0.2);
+    border-radius:12px;
 }
 
 /* =========================
@@ -145,7 +121,7 @@ body{
 }
 
 /* =========================
-   HEADINGS
+   SECTION
 ========================= */
 
 .section{
@@ -159,11 +135,13 @@ body{
     padding-left:15px;
     margin-bottom:40px;
     text-transform:uppercase;
+    letter-spacing:2px;
 }
 
 .section h3{
     color:#ff6161;
     margin-top:30px;
+    margin-bottom:20px;
 }
 
 /* =========================
@@ -176,6 +154,7 @@ body{
     padding:35px;
     margin-top:30px;
     box-shadow:0 0 25px rgba(255,0,0,0.08);
+    border-radius:18px;
 }
 
 /* =========================
@@ -204,11 +183,53 @@ li{
 }
 
 /* =========================
+   COMMUNISM BANNER
+========================= */
+
+.communism-banner{
+    margin:40px 0;
+    text-align:center;
+}
+
+.communism-banner img{
+    width:240px;
+    max-width:100%;
+    border-radius:14px;
+    box-shadow:0 0 30px rgba(255,0,0,0.25);
+}
+
+/* =========================
    RED TEXT
 ========================= */
 
 .red{
     color:#ff3b3b;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:9999;
+    text-decoration:none;
+    background:#0c0c0c;
+    border:1px solid rgba(255,0,0,0.25);
+    color:#ff4d4d;
+    padding:12px 18px;
+    border-radius:12px;
+    font-size:13px;
+    letter-spacing:2px;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#ff2d2d;
+    color:black;
+    box-shadow:0 0 20px rgba(255,0,0,0.35);
 }
 
 /* =========================
@@ -221,6 +242,7 @@ footer{
     border-top:1px solid #1f1f1f;
     background:#020202;
     color:#6f6f6f;
+    letter-spacing:2px;
 }
 
 /* =========================
@@ -228,6 +250,10 @@ footer{
 ========================= */
 
 @media(max-width:768px){
+
+.hero{
+    padding:100px 7%;
+}
 
 .hero h1{
     font-size:34px;
@@ -245,6 +271,20 @@ footer{
     width:90%;
 }
 
+.quote{
+    font-size:18px;
+}
+
+.section h2{
+    font-size:26px;
+}
+
+.back-btn{
+    top:15px;
+    right:15px;
+    font-size:11px;
+}
+
 }
 
 </style>
@@ -252,6 +292,16 @@ footer{
 </head>
 
 <body>
+
+<!-- MATRIX -->
+
+<canvas id="matrix"></canvas>
+
+<!-- BACK BUTTON -->
+
+<a href="../dashboard.html" class="back-btn">
+← RETURN
+</a>
 
 <!-- HERO -->
 
@@ -273,8 +323,6 @@ DIGITAL MOVEMENTS // IDEOLOGICAL SHIFT ANALYSIS
 <div class="flags">
 
 <img src="cjp-flag.png" alt="CJP Flag">
-
-
 
 </div>
 
@@ -409,11 +457,11 @@ Most internet movements collapse once public attention shifts or creators burn o
 <section class="section">
 
 <h2>III — The Communist Shift Theory</h2>
+
 <div class="communism-banner">
-
 <img src="communist-flag.png" alt="Communist Symbol">
-
 </div>
+
 <p>
 One growing theory surrounding internet-based political movements is that dissatisfaction with inequality, corruption, unemployment, and elite influence could gradually create sympathy toward collectivist or socialist political ideas.
 </p>
@@ -604,5 +652,7 @@ H.U.N.T.R.E.S.S ARCHIVE — INDIA UNFILTERED DOSSIER
 
 </footer>
 
+<script src="../script.js"></script>
+
 </body>
-  </html>
+</html>
