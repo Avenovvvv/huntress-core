@@ -14,274 +14,188 @@
 
 <style>
 
-/* =========================
-   GLOBAL
-========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-background:#050505;
-color:#d7d7d7;
-font-family:'Orbitron',sans-serif;
-margin:0;
-padding:0;
-overflow-x:hidden;
-line-height:2;
+    background:#000;
+    color:#e6e6e6;
+    font-family:'Orbitron', sans-serif;
+    overflow-x:hidden;
 }
 
 /* MATRIX */
 
 #matrix{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-background:black;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:0;
+    opacity:0.25;
 }
 
-/* =========================
-   CONTAINER
-========================= */
+/* MAIN SECTION */
+
+.intel-section{
+    position:relative;
+    z-index:1;
+    width:100%;
+    min-height:100vh;
+    padding:40px 0;
+}
+
+/* CONTAINER */
 
 .dossier-container{
-
-width:92%;
-max-width:1100px;
-
-margin:80px auto;
-
-padding:70px 50px;
-
-background:
-rgba(0,0,0,0.82);
-
-border:
-1px solid rgba(0,255,136,0.12);
-
-border-radius:24px;
-
-backdrop-filter:blur(14px);
-
-box-shadow:
-0 0 35px rgba(0,255,136,0.05);
-
-position:relative;
-overflow:hidden;
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    background:rgba(0,0,0,0.82);
+    border:1px solid rgba(0,255,140,0.15);
+    border-radius:30px;
+    padding:40px;
+    backdrop-filter:blur(4px);
+    box-shadow:0 0 40px rgba(0,255,120,0.08);
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .classified-header{
-text-align:center;
-margin-bottom:70px;
+    margin-bottom:50px;
 }
 
 .classified-text{
-
-display:inline-block;
-
-padding:10px 20px;
-
-border-radius:40px;
-
-background:
-rgba(255,0,60,0.08);
-
-border:
-1px solid rgba(255,0,60,0.2);
-
-color:#ff335f;
-
-font-size:12px;
-
-letter-spacing:3px;
-
-margin-bottom:30px;
+    color:#9b9b9b;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:15px;
 }
 
 .classified-header h1{
-
-font-size:60px;
-
-letter-spacing:6px;
-
-margin-bottom:20px;
-
-color:white;
-
-text-shadow:
-0 0 20px rgba(255,0,60,0.2);
+    color:#ffffff;
+    font-size:58px;
+    margin-bottom:10px;
 }
 
 .classified-header h2{
-
-font-size:38px;
-
-line-height:1.5;
-
-margin-bottom:25px;
-
-color:#00ff88;
-
-letter-spacing:2px;
+    color:#ffffff;
+    font-size:34px;
+    line-height:1.4;
+    margin-bottom:20px;
 }
 
 .subtitle{
-
-max-width:850px;
-
-margin:auto;
-
-color:#bbbbbb;
-
-font-size:17px;
-
-line-height:2;
+    color:#bcbcbc;
+    font-size:18px;
+    line-height:1.7;
 }
 
-/* =========================
-   DOSSIER BLOCKS
-========================= */
+/* DOSSIER BLOCKS */
 
 .dossier-block{
-
-margin-bottom:80px;
-
-padding:40px;
-
-background:
-rgba(0,0,0,0.72);
-
-border:
-1px solid rgba(0,255,136,0.1);
-
-border-radius:22px;
-
-box-shadow:
-0 0 20px rgba(0,255,136,0.04);
+    background:rgba(0,0,0,0.75);
+    border:1px solid rgba(0,255,140,0.08);
+    border-radius:25px;
+    padding:35px;
+    margin-bottom:50px;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(0,255,140,0.05);
 }
 
-.dossier-block h3{
-
-font-size:30px;
-
-margin-bottom:25px;
-
-color:#00ff88;
-
-letter-spacing:3px;
-}
-
-.dossier-block p{
-
-font-size:16px;
-
-line-height:2.2;
-
-color:#d7d7d7;
-}
-
-/* =========================
-   IMAGES
-========================= */
+/* IMAGES */
 
 .dossier-img{
-
-width:100%;
-
-border-radius:18px;
-
-margin-bottom:30px;
-
-border:
-1px solid rgba(255,255,255,0.08);
-
-box-shadow:
-0 0 30px rgba(0,255,136,0.08);
-
-transition:0.4s ease;
+    width:100%;
+    height:auto;
+    border-radius:18px;
+    margin-bottom:30px;
+    display:block;
+    object-fit:cover;
 }
 
-.dossier-img:hover{
+/* HEADINGS */
 
-transform:scale(1.01);
-
-box-shadow:
-0 0 40px rgba(0,255,136,0.18);
+.dossier-block h3{
+    color:#00ff99;
+    font-size:42px;
+    margin-bottom:25px;
+    line-height:1.4;
 }
 
-/* =========================
-   RETURN BUTTON
-========================= */
+/* TEXT */
+
+.dossier-block p{
+    color:#d9d9d9;
+    font-size:20px;
+    line-height:2.2;
+}
+
+/* BUTTON */
 
 .return-btn{
-
-display:inline-block;
-
-margin-top:30px;
-
-padding:18px 30px;
-
-border-radius:14px;
-
-background:#00ff88;
-
-color:black;
-
-font-weight:bold;
-
-letter-spacing:2px;
-
-text-decoration:none;
-
-transition:0.3s ease;
+    display:inline-block;
+    margin-top:20px;
+    padding:22px 40px;
+    background:#00ff99;
+    color:#000;
+    text-decoration:none;
+    border-radius:18px;
+    font-size:22px;
+    font-weight:bold;
+    transition:0.3s ease;
 }
 
 .return-btn:hover{
-
-transform:translateY(-4px);
-
-box-shadow:
-0 0 25px rgba(0,255,136,0.4);
+    transform:scale(1.05);
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:768px){
 
 .dossier-container{
-
-padding:45px 25px;
+    width:94%;
+    padding:22px;
+    border-radius:20px;
 }
 
 .classified-header h1{
-
-font-size:40px;
+    font-size:42px;
 }
 
 .classified-header h2{
-
-font-size:28px;
+    font-size:26px;
 }
 
 .subtitle{
-
-font-size:15px;
+    font-size:15px;
 }
 
 .dossier-block{
-
-padding:25px;
+    padding:22px;
+    margin-bottom:35px;
 }
 
 .dossier-block h3{
+    font-size:22px;
+    line-height:1.7;
+}
 
-font-size:24px;
+.dossier-block p{
+    font-size:15px;
+    line-height:2;
+}
+
+.return-btn{
+    width:100%;
+    text-align:center;
+    font-size:18px;
+    padding:18px;
 }
 
 }
@@ -292,15 +206,11 @@ font-size:24px;
 
 <body>
 
-<!-- MATRIX -->
+<div class="intel-section">
 
 <canvas id="matrix"></canvas>
 
-<!-- DOSSIER CONTAINER -->
-
 <div class="dossier-container">
-
-<!-- HEADER -->
 
 <div class="classified-header">
 
@@ -322,13 +232,9 @@ A Generational Shift or a Calculated Political Convergence?
 
 </div>
 
-<!-- EXECUTIVE SUMMARY -->
-
 <section class="dossier-block">
 
-<h3>
-EXECUTIVE SUMMARY
-</h3>
+<h3>EXECUTIVE SUMMARY</h3>
 
 <p>
 This dossier examines the political convergence between
@@ -340,21 +246,15 @@ or the completion of a long-term generational strategy.
 
 </section>
 
-<!-- CONVERGENCE -->
-
 <section class="dossier-block">
 
-<img src="ae-bg-convergence.jpg" class="dossier-img">
+<img src="ae-bg-convergence.jpg" class="dossier-img" alt="Convergence">
 
-<h3>
-THE CONVERGENCE
-</h3>
+<h3>THE CONVERGENCE</h3>
 
 <p>
 One built the emotional machinery.
 The other modernized the interface.
-
-<br><br>
 
 This alliance may not have been sudden.
 It may have been inevitable.
@@ -362,15 +262,11 @@ It may have been inevitable.
 
 </section>
 
-<!-- AE -->
-
 <section class="dossier-block">
 
-<img src="ae-parivartan-poster.jpg" class="dossier-img">
+<img src="ae-parivartan-poster.jpeg" class="dossier-img" alt="Parivartan Poster">
 
-<h3>
-THE HARVESTER — AE
-</h3>
+<h3>THE HARVESTER — AE</h3>
 
 <p>
 Ajoy Edwards emerged as a digitally fluent,
@@ -382,15 +278,11 @@ and modern branding into hill politics.
 
 </section>
 
-<!-- BG -->
-
 <section class="dossier-block">
 
-<img src="bg-bjp-support.jpg" class="dossier-img">
+<img src="bg-bjp-support.jpeg" class="dossier-img" alt="BG BJP">
 
-<h3>
-THE BACKEND — BG
-</h3>
+<h3>THE BACKEND — BG</h3>
 
 <p>
 While one controlled visibility and perception,
@@ -401,15 +293,11 @@ and backend political survival structures.
 
 </section>
 
-<!-- POLITICAL GEOMETRY -->
-
 <section class="dossier-block">
 
-<img src="ae-rahul-gandhi-alliance.jpg" class="dossier-img">
+<img src="ae-rahul-gandhi-alliance.jpeg" class="dossier-img" alt="Political Geometry">
 
-<h3>
-POLITICAL GEOMETRY
-</h3>
+<h3>POLITICAL GEOMETRY</h3>
 
 <p>
 Congress optics,
@@ -421,35 +309,27 @@ that continues to raise questions across the hills.
 
 </section>
 
-<!-- FINAL -->
-
 <section class="dossier-block">
 
-<h3>
-FINAL ASSESSMENT
-</h3>
+<h3>FINAL ASSESSMENT</h3>
 
 <p>
 History in the hills has a habit of repeating itself.
 
-<br><br>
-
 Whether this truly marks
 Parivartan —
 or merely another political cycle preparing to repeat itself...
-
-<br><br>
 
 God knows.
 </p>
 
 </section>
 
-<!-- RETURN -->
-
 <a href="../dashboard.html" class="return-btn">
 RETURN TO ARCHIVE
 </a>
+
+</div>
 
 </div>
 
