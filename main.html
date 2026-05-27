@@ -31,7 +31,23 @@ rel="stylesheet">
 
 <!-- FOUNDER SECTION -->
 
-<section class="founder-section">
+<section class="founder-section reveal">
+
+<div class="intel-window">
+
+<div class="window-header">
+
+<span class="window-dot red"></span>
+<span class="window-dot yellow"></span>
+<span class="window-dot green"></span>
+
+<p>
+FOUNDER DOSSIER // OMEGA CLEARANCE
+</p>
+
+</div>
+
+<div class="window-body">
 
 <div class="founder-image-container">
 
@@ -82,11 +98,31 @@ and intelligent cyber defense.
 
 </div>
 
+</div>
+
+</div>
+
 </section>
 
 <!-- VISION -->
 
-<section class="vision-section">
+<section class="vision-section reveal">
+
+<div class="intel-window">
+
+<div class="window-header">
+
+<span class="window-dot red"></span>
+<span class="window-dot yellow"></span>
+<span class="window-dot green"></span>
+
+<p>
+MISSION CORE // STRATEGIC INTEL
+</p>
+
+</div>
+
+<div class="window-body">
 
 <h2>
 OUR VISION
@@ -130,11 +166,31 @@ evolve in the modern digital battlefield.
 
 </div>
 
+</div>
+
+</div>
+
 </section>
 
 <!-- CONTACT -->
 
-<section class="contact-section">
+<section class="contact-section reveal">
+
+<div class="intel-window">
+
+<div class="window-header">
+
+<span class="window-dot red"></span>
+<span class="window-dot yellow"></span>
+<span class="window-dot green"></span>
+
+<p>
+SECURE COMMUNICATION CHANNEL
+</p>
+
+</div>
+
+<div class="window-body">
 
 <h2>
 CONTACT H.U.N.T.R.E.S.S
@@ -159,19 +215,38 @@ for verified operatives and strategic partners.
 
 </div>
 
+</div>
+
+</div>
+
 </section>
 
 <!-- JOIN -->
 
-<section class="join-section">
+<section class="join-section reveal">
+
+<div class="intel-window">
+
+<div class="window-header">
+
+<span class="window-dot red"></span>
+<span class="window-dot yellow"></span>
+<span class="window-dot green"></span>
+
+<p>
+NETWORK ACCESS TERMINAL
+</p>
+
+</div>
+
+<div class="window-body">
 
 <h2>
 JOIN THE NETWORK
 </h2>
+
 <h2>
-
 ENTER OPERATIONS
-
 </h2>
 
 <p>
@@ -206,7 +281,8 @@ ACCESS DASHBOARD
 </button>
 
 </div>
-   <!-- VISITOR COUNTER -->
+
+<!-- VISITOR COUNTER -->
 
 <div
 id="visitorCounter"
@@ -223,6 +299,16 @@ opacity:0.8;
 Initializing visitor trace...
 
 </div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- VISITOR SCRIPT -->
 
 <script>
 
@@ -256,7 +342,7 @@ visitorCount +
 
 </script>
 
-<script src="script.js"></script>
+<!-- GLITCH IMAGE -->
 
 <script>
 
@@ -305,6 +391,40 @@ document
 }, 4000);
 
 </script>
+
+<!-- REVEAL ANIMATION -->
+
+<script>
+
+const reveals =
+document.querySelectorAll(".reveal");
+
+window.addEventListener(
+"scroll",
+() => {
+
+reveals.forEach((element) => {
+
+const windowHeight =
+window.innerHeight;
+
+const revealTop =
+element.getBoundingClientRect().top;
+
+if(revealTop < windowHeight - 100){
+
+element.classList.add("active");
+
+}
+
+});
+
+}
+);
+
+</script>
+
+<script src="script.js"></script>
 
 </body>
 
