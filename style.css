@@ -1054,3 +1054,79 @@ height:220px;
 }
 
 }
+.ack-container{
+    min-height:100vh;
+    background:#050505;
+    color:#d4d4d4;
+    padding:80px 30px;
+    font-family:Arial, sans-serif;
+}
+
+.ack-title{
+    font-size:52px;
+    letter-spacing:8px;
+    border-bottom:1px solid #222;
+    padding-bottom:20px;
+}
+
+.ack-subtitle{
+    margin-top:15px;
+    color:#777;
+    text-transform:uppercase;
+    letter-spacing:4px;
+}
+
+.mentor-card{
+    margin-top:60px;
+    background:#0d0d0d;
+    border:1px solid rgba(255,0,0,0.15);
+    border-radius:20px;
+    padding:40px;
+}
+
+.mentor-label{
+    color:#ff4444;
+    font-size:12px;
+    letter-spacing:5px;
+}
+
+.mentor-card h2{
+    font-size:42px;
+    margin-top:15px;
+}
+
+.mentor-card p{
+    margin-top:20px;
+    line-height:1.8;
+    color:#999;
+}
+
+.contributors-section{
+    margin-top:60px;
+}
+
+.contributors-title{
+    font-size:28px;
+    letter-spacing:5px;
+    margin-bottom:30px;
+    border-left:3px solid red;
+    padding-left:15px;
+}
+
+.contributor-card{
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:20px;
+}
+
+.contributor-card h3{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.alias{
+    color:#ff4444;
+    margin-bottom:15px;
+}
