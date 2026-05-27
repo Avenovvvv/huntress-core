@@ -1130,3 +1130,17 @@ height:220px;
     color:#ff4444;
     margin-bottom:15px;
 }
+.reveal{
+
+opacity:0;
+transform:translateY(60px);
+transition:all 1s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+transform:translateY(0);
+
+}
