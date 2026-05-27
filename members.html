@@ -34,7 +34,7 @@ z-index:1;
 position:relative;
 z-index:2;
 padding:40px 20px;
-max-width:1200px;
+max-width:1400px;
 margin:auto;
 }
 
@@ -48,6 +48,7 @@ color:#00ff88;
 font-size:50px;
 letter-spacing:6px;
 margin-bottom:10px;
+text-shadow:0 0 20px #00ff88;
 }
 
 .title p{
@@ -61,12 +62,16 @@ border:1px solid rgba(0,255,136,0.15);
 border-radius:20px;
 padding:30px;
 overflow-x:auto;
+box-shadow:0 0 40px rgba(0,255,136,0.08);
+backdrop-filter:blur(8px);
 }
 
 table{
 width:100%;
 border-collapse:collapse;
-min-width:800px;
+min-width:1000px;
+border-radius:16px;
+overflow:hidden;
 }
 
 th{
@@ -82,10 +87,15 @@ padding:18px;
 border-bottom:1px solid rgba(255,255,255,0.08);
 font-size:14px;
 letter-spacing:1px;
+transition:0.3s;
 }
 
 tr:hover{
 background:rgba(0,255,136,0.05);
+}
+
+tr:hover td{
+color:#00ff88;
 }
 
 .rank{
@@ -95,6 +105,11 @@ font-weight:bold;
 
 .clearance{
 color:#ff335f;
+font-weight:bold;
+}
+
+.active{
+color:#00ff88;
 font-weight:bold;
 }
 
@@ -108,6 +123,25 @@ text-decoration:none;
 border-radius:12px;
 font-weight:bold;
 letter-spacing:2px;
+transition:0.3s;
+}
+
+.back-btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px #00ff88;
+}
+
+@media(max-width:768px){
+
+.title h1{
+font-size:34px;
+}
+
+th,td{
+font-size:12px;
+padding:14px;
+}
+
 }
 
 </style>
@@ -137,12 +171,11 @@ letter-spacing:2px;
 <tr>
 
 <th>ALIAS</th>
-
 <th>HUNTER CODE</th>
-
 <th>RANK</th>
-
 <th>CLEARANCE</th>
+<th>ROLE</th>
+<th>STATUS</th>
 
 </tr>
 
@@ -155,13 +188,26 @@ letter-spacing:2px;
 <td>hunter_000</td>
 <td class="rank">CONTROLLER</td>
 <td class="clearance">OMEGA</td>
+<td>Supreme Command</td>
+<td class="active">ACTIVE</td>
 </tr>
 
 <tr>
-<td>Ghost</td>
-<td>hunter_001</td>
+<td>ANU</td>
+<td>hunter_005</td>
 <td class="rank">REAPER</td>
-<td class="clearance">LEVEL 01</td>
+<td class="clearance">SIGMA</td>
+<td>Lead Handler</td>
+<td class="active">ACTIVE</td>
+</tr>
+
+<tr>
+<td>ArchPhantom</td>
+<td>hunter_003</td>
+<td class="rank">REAPER</td>
+<td class="clearance">SIGMA</td>
+<td>Frontend Dev / Co-Founder</td>
+<td class="active">ACTIVE</td>
 </tr>
 
 <tr>
@@ -169,13 +215,17 @@ letter-spacing:2px;
 <td>hunter_002</td>
 <td class="rank">ANALYST</td>
 <td class="clearance">LEVEL 02</td>
+<td>Threat Intelligence</td>
+<td class="active">ACTIVE</td>
 </tr>
 
 <tr>
 <td>Raven</td>
-<td>hunter_003</td>
+<td>hunter_004</td>
 <td class="rank">HUNTER</td>
 <td class="clearance">LEVEL 03</td>
+<td>Field Operations</td>
+<td class="active">ACTIVE</td>
 </tr>
 
 </tbody>
@@ -226,7 +276,7 @@ canvas.width,
 canvas.height
 );
 
-ctx.fillStyle="#ff003c";
+ctx.fillStyle="#00ff88";
 
 ctx.font = fontSize + "px monospace";
 
@@ -255,6 +305,13 @@ drops[i]++;
 }
 
 setInterval(draw,35);
+
+window.addEventListener("resize",()=>{
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+});
 
 </script>
 
