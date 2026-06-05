@@ -1308,3 +1308,124 @@ height:240px;
 }
 
 }
+
+/* =========================================
+   COMMUNICATIONS RELAY MODULE
+========================================= */
+
+.comms-relay-container {
+    width: 100%;
+    margin: 20px auto;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background-color: #050505;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.comms-header {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    color: #888;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.comms-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comms-links li a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, padding-left 0.3s ease, text-shadow 0.3s ease;
+    display: block;
+}
+
+.comms-links li a:hover {
+    color: #ffffff;
+    padding-left: 15px;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+/* =========================================
+   H.U.N.T.R.E.S.S AI TERMINAL MODULE
+========================================= */
+.huntress-terminal {
+    background: rgba(10, 10, 10, 0.95);
+    border: 1px solid #ff335f;
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    font-family: 'Orbitron', monospace;
+    color: #00ff88;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(255, 51, 95, 0.15);
+}
+
+.terminal-output {
+    min-height: 150px;
+    max-height: 350px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    padding-right: 10px;
+}
+
+.terminal-output p {
+    margin: 5px 0;
+    letter-spacing: 1px;
+}
+
+.terminal-output .user-query {
+    color: #fff;
+}
+
+.terminal-output .error-log {
+    color: #ff335f;
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+}
+
+.prompt-arrow {
+    color: #ff335f;
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+#terminalInput {
+    background: transparent;
+    border: none;
+    color: #00ff88;
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+#terminalInput::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.terminal-output::-webkit-scrollbar {
+    width: 5px;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+    background: #ff335f;
+    border-radius: 5px;
+}

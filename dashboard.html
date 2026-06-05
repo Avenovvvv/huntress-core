@@ -4,1009 +4,286 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>H.U.N.T.R.E.S.S Dashboard</title>
 
-<title>
-H.U.N.T.R.E.S.S Dashboard
-</title>
-
-<link rel="stylesheet"
-href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
-rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1.1">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- MATRIX -->
-
 <canvas id="matrix"></canvas>
 
-<!-- MENU BUTTON -->
-
-<div
-class="menu-btn"
-onclick="toggleMenu()">
-
+<div class="menu-btn" onclick="toggleMenu()">
 ☰
-
 </div>
 
-<!-- SIDE MENU -->
-
-<div
-class="side-menu"
-id="sideMenu">
-
-<a href="#overview">
-Overview
-</a>
-
-<a href="#who">
-Who We Are
-</a>
-
-<a href="#blogs">
-Dossier Archive
-</a>
-
-<a href="#hierarchy">
-Hierarchy
-</a>
-
-<a href="#database">
-Member Database
-</a>
-
-<a href="#acknowledgements">
-Acknowledgements
-</a>
-
-<a href="#contact">
-Contact
-</a>
-
+<div class="side-menu" id="sideMenu">
+<a href="#overview">Overview</a>
+<a href="#who">Who We Are</a>
+<a href="#blogs">Dossier Archive</a>
+<a href="#hierarchy">Hierarchy</a>
+<a href="#database">Member Database</a>
+<a href="#acknowledgements">Acknowledgements</a>
+<a href="#contact">Contact</a>
 </div>
-
-<!-- NAVBAR -->
 
 <nav class="navbar">
-
-<h1>
-H.U.N.T.R.E.S.S
-</h1>
-
+<h1>H.U.N.T.R.E.S.S</h1>
 </nav>
 
-<!-- HERO -->
+<section id="overview" class="dashboard-hero reveal">
+<h2>WELCOME TO H.U.N.T.R.E.S.S</h2>
+<p>Cybersecurity • Intelligence • Reconnaissance</p>
 
-<section
-id="overview"
-class="dashboard-hero reveal">
-
-<h2>
-WELCOME TO H.U.N.T.R.E.S.S
-</h2>
-
-<p>
-Cybersecurity • Intelligence • Reconnaissance
-</p>
-
-<div
-style="
-margin-top:40px;
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-">
-
-<a
-href="main.html"
-class="join-btn">
-
-ENTER OPERATIONS
-
-</a>
-
-<a
-href="https://docs.google.com/forms"
-target="_blank"
-class="join-btn"
-style="
-background:#ff003c;
-box-shadow:0 0 25px rgba(255,0,60,0.35);
-">
-
-JOIN H.U.N.T.R.E.S.S
-
-</a>
-
+<div style="margin-top:40px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+<a href="main.html" class="join-btn">ENTER OPERATIONS</a>
+<a href="https://docs.google.com/forms" target="_blank" class="join-btn" style="background:#ff003c; box-shadow:0 0 25px rgba(255,0,60,0.35);">JOIN H.U.N.T.R.E.S.S</a>
 </div>
 
-<div
-style="
-margin-top:35px;
-padding:20px;
-border:1px solid rgba(255,0,60,0.2);
-background:rgba(255,0,60,0.05);
-border-radius:18px;
-max-width:850px;
-margin-left:auto;
-margin-right:auto;
-text-align:center;
-">
-
-<p style="
-color:#ff4d6d;
-font-size:13px;
-letter-spacing:3px;
-margin-bottom:15px;
-font-family:Orbitron,sans-serif;
-">
-
-PUBLIC INTELLIGENCE NOTICE
-
+<div style="margin-top:35px; padding:20px; border:1px solid rgba(255,0,60,0.2); background:rgba(255,0,60,0.05); border-radius:18px; max-width:850px; margin-left:auto; margin-right:auto; text-align:center;">
+<p style="color:#ff4d6d; font-size:13px; letter-spacing:3px; margin-bottom:15px; font-family:Orbitron,sans-serif;">PUBLIC INTELLIGENCE NOTICE</p>
+<p style="color:#bdbdbd; line-height:2; font-size:15px;">
+This platform is an independent OSINT, cybersecurity, research, and intelligence-analysis project.
+No illegal activity, intrusion, or unauthorized access is promoted, encouraged, or conducted through this platform.
+All investigations, reports, and dossiers are created strictly for educational, research, journalistic, and awareness purposes.
 </p>
-
-<p style="
-color:#bdbdbd;
-line-height:2;
-font-size:15px;
-">
-
-This platform is an independent OSINT,
-cybersecurity,
-research,
-and intelligence-analysis project.
-
-No illegal activity,
-intrusion,
-or unauthorized access is promoted,
-encouraged,
-or conducted through this platform.
-
-All investigations,
-reports,
-and dossiers are created strictly for
-educational,
-research,
-journalistic,
-and awareness purposes.
-
-</p>
-
 </div>
 
-<p style="
-margin-top:35px;
-max-width:900px;
-margin-left:auto;
-margin-right:auto;
-line-height:1.9;
-color:#bbbbbb;
-letter-spacing:1px;
-">
-
+<p style="margin-top:35px; max-width:900px; margin-left:auto; margin-right:auto; line-height:1.9; color:#bbbbbb; letter-spacing:1px;">
 Fvck qualifications.
-
-H.U.N.T.R.E.S.S recruits based on
-skills,
-discipline,
-intelligence,
-operational mindset,
-research capability,
-and loyalty to the mission.
-
-We do not care about degrees.
-We care about what you can actually do.
-
+H.U.N.T.R.E.S.S recruits based on skills, discipline, intelligence, operational mindset, research capability, and loyalty to the mission.
+We do not care about degrees. We care about what you can actually do.
 </p>
-
 </section>
 
-<!-- WHO WE ARE -->
-
-<section
-id="who"
-class="info-section reveal">
-
-<h2>
-WHO WE ARE
-</h2>
-
+<section id="who" class="info-section reveal">
+<h2>WHO WE ARE</h2>
 <p>
-
-H.U.N.T.R.E.S.S is an independent
-cybersecurity and intelligence initiative
-focused on:
-
+H.U.N.T.R.E.S.S is an independent cybersecurity and intelligence initiative focused on:
 <br><br>
-
-• Offensive Security Research  
-• Digital Reconnaissance  
-• OSINT Operations  
-• Threat Intelligence  
-• Cyber Awareness  
+• Offensive Security Research  <br>
+• Digital Reconnaissance  <br>
+• OSINT Operations  <br>
+• Threat Intelligence  <br>
+• Cyber Awareness  <br>
 • Propaganda Analysis  
-
 <br><br>
-
-Built with a philosophy combining
-military precision,
-hacker methodology,
-and intelligence-driven operations.
-
+Built with a philosophy combining military precision, hacker methodology, and intelligence-driven operations.
 </p>
-
 </section>
 
-<!-- DOSSIER ARCHIVE -->
-
-<section
-id="blogs"
-class="info-section reveal">
-
-<h2>
-DOSSIER ARCHIVE
-</h2>
-
-<p style="
-margin-bottom:50px;
-color:#bbbbbb;
-letter-spacing:2px;
-">
-
-Cyber investigations,
-political analysis,
-OSINT case studies,
-and classified intelligence reports.
-
+<section id="blogs" class="info-section reveal">
+<h2>DOSSIER ARCHIVE</h2>
+<p style="margin-bottom:50px; color:#bbbbbb; letter-spacing:2px;">
+Cyber investigations, political analysis, OSINT case studies, and classified intelligence reports.
 </p>
 
 <div class="blog-archive">
-
-<a
-href="dossiers/dossier-01.html"
-class="blog-card">
-
-<h3>
-OPERATION PARIWARTAN
-</h3>
-
-<p>
-Political convergence analysis,
-Darjeeling electoral psychology,
-and generational transition mapping.
-</p>
-
-<div class="access-btn">
-ACCESS DOSSIER →
-</div>
-
+<a href="dossiers/dossier-01.html" class="blog-card">
+<h3>OPERATION PARIWARTAN</h3>
+<p>Political convergence analysis, Darjeeling electoral psychology, and generational transition mapping.</p>
+<div class="access-btn">ACCESS DOSSIER →</div>
 </a>
 
-<a
-href="dossiers/cjp-communism-analysis.html"
-class="blog-card">
-
-<h3>
-CJP ANALYSIS
-</h3>
-
-<p>
-Chaos,
-resistance,
-or the beginning of a new political culture?
-</p>
-
-<div class="access-btn">
-ACCESS FILE →
-</div>
-
+<a href="dossiers/cjp-communism-analysis.html" class="blog-card">
+<h3>CJP ANALYSIS</h3>
+<p>Chaos, resistance, or the beginning of a new political culture?</p>
+<div class="access-btn">ACCESS FILE →</div>
 </a>
 
-<a
-href="dossiers/india-2040.html"
-class="blog-card">
-
-<h3>
-INDIA 2040
-</h3>
-
-<p>
-
-Corruption,
-criminal politics,
-propaganda systems,
-and the future of Indian democracy.
-
-</p>
-
-<div class="access-btn">
-ACCESS FILE →
-</div>
-
+<a href="dossiers/india-2040.html" class="blog-card">
+<h3>INDIA 2040</h3>
+<p>Corruption, criminal politics, propaganda systems, and the future of Indian democracy.</p>
+<div class="access-btn">ACCESS FILE →</div>
 </a>
 
-<a
-href="dossiers/india-unfiltered.html"
-class="blog-card">
-
-<h3>
-INDIA UNFILTERED
-</h3>
-
-<p>
-
-Political analysis,
-media influence,
-development narratives,
-and propaganda ecosystems.
-
-</p>
-
-<div class="access-btn">
-ACCESS FILE →
-</div>
-
+<a href="dossiers/india-unfiltered.html" class="blog-card">
+<h3>INDIA UNFILTERED</h3>
+<p>Political analysis, media influence, development narratives, and propaganda ecosystems.</p>
+<div class="access-btn">ACCESS FILE →</div>
 </a>
 
-<a
-href="dossiers/darjeeling-politics.html"
-class="blog-card">
-
-<h3>
-WHO REALLY CONTROLS DARJEELING?
-</h3>
-
-<p>
-
-Political influence,
-party control,
-hill power structures,
-student manipulation,
-and hidden systems.
-
-</p>
-
-<div class="access-btn">
-ACCESS FILE →
-</div>
-
+<a href="dossiers/darjeeling-politics.html" class="blog-card">
+<h3>WHO REALLY CONTROLS DARJEELING?</h3>
+<p>Political influence, party control, hill power structures, student manipulation, and hidden systems.</p>
+<div class="access-btn">ACCESS FILE →</div>
 </a>
-
 </div>
-
 </section>
 
-<!-- INSTAGRAM FEED -->
-
-<section
-id="intel-feed"
-class="info-section reveal">
-
-<h2>
-LIVE INTEL FEED
-</h2>
-
-<p style="
-margin-bottom:50px;
-color:#999;
-letter-spacing:2px;
-">
-
+<section id="intel-feed" class="info-section reveal">
+<h2>LIVE INTEL FEED</h2>
+<p style="margin-bottom:50px; color:#999; letter-spacing:2px;">
 Latest transmissions from the H.U.N.T.R.E.S.S network.
-
 </p>
 
 <div class="instagram-feed">
-
-<blockquote
-class="instagram-media"
-data-instgrm-permalink="https://www.instagram.com/p/DYloTZtv5Sm/?igsh=MWU3cjRudDJ0ZmdkMw=="
-data-instgrm-version="14"
-style="
-background:#0a0a0a;
-border:1px solid rgba(255,255,255,0.08);
-border-radius:20px;
-padding:0;
-width:100%;
-max-width:540px;
-margin:auto;
-">
-
-</blockquote>
-
-<blockquote
-class="instagram-media"
-data-instgrm-permalink="https://www.instagram.com/reel/DYmcIpwPbRB/?igsh=MTQ3MTBnYm03OWx4dg=="
-data-instgrm-version="14"
-style="
-background:#0a0a0a;
-border:1px solid rgba(255,255,255,0.08);
-border-radius:20px;
-padding:0;
-width:100%;
-max-width:540px;
-margin:auto;
-">
-
-</blockquote>
-
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYloTZtv5Sm/?igsh=MWU3cjRudDJ0ZmdkMw==" data-instgrm-version="14" style="background:#0a0a0a; border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:0; width:100%; max-width:540px; margin:auto;"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DYmcIpwPbRB/?igsh=MTQ3MTBnYm03OWx4dg==" data-instgrm-version="14" style="background:#0a0a0a; border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:0; width:100%; max-width:540px; margin:auto;"></blockquote>
 </div>
-
-<script async
-src="//www.instagram.com/embed.js">
-</script>
-
+<script async src="//www.instagram.com/embed.js"></script>
 </section>
 
-<!-- HIERARCHY -->
-
-<section
-id="hierarchy"
-class="info-section reveal">
-
-<h2>
-CHAIN OF COMMAND
-</h2>
-
+<section id="hierarchy" class="info-section reveal">
+<h2>CHAIN OF COMMAND</h2>
 <p class="hierarchy-subtitle">
-
-Operational structure of the
-H.U.N.T.R.E.S.S Intelligence Network.
-
+Operational structure of the H.U.N.T.R.E.S.S Intelligence Network.
 </p>
 
 <div class="hierarchy-grid">
-
-<a
-href="omega.html"
-class="rank-card supreme"
-style="
-text-decoration:none;
-color:inherit;
-">
-
-<img
-src="reznov-avatar.png"
-alt="Victor Reznov"
-style="
-width:90px;
-height:90px;
-object-fit:cover;
-border-radius:50%;
-border:2px solid #ff335f;
-margin-bottom:20px;
-box-shadow:0 0 25px rgba(255,0,60,0.4);
-">
-
-<span class="rank-level">
-OMEGA CLEARANCE
-</span>
-
-<h3>
-CONTROLLER
-</h3>
-
-<p>
-Victor Reźnov
-</p>
-
-<div class="rank-desc">
-
-Supreme command authority.
-Controls strategic intelligence,
-classified operations,
-and network governance.
-
-</div>
-
+<a href="omega.html" class="rank-card supreme" style="text-decoration:none; color:inherit;">
+<img src="reznov-avatar.png" alt="Victor Reznov" style="width:90px; height:90px; object-fit:cover; border-radius:50%; border:2px solid #ff335f; margin-bottom:20px; box-shadow:0 0 25px rgba(255,0,60,0.4);">
+<span class="rank-level">OMEGA CLEARANCE</span>
+<h3>CONTROLLER</h3>
+<p>Victor Reźnov</p>
+<div class="rank-desc">Supreme command authority. Controls strategic intelligence, classified operations, and network governance.</div>
 </a>
 
 <div class="rank-card">
-
-<img
-src="reaper-avatar.png"
-alt="Reaper"
-style="
-width:90px;
-height:90px;
-object-fit:cover;
-border-radius:50%;
-border:2px solid #00ff88;
-margin-bottom:20px;
-">
-
-<span class="rank-level">
-LEVEL 01
-</span>
-
-<h3>
-REAPERS
-</h3>
-
-<p>
-Elite Operatives
-</p>
-
-<div class="rank-desc">
-
-Advanced offensive security
-and covert cyber operations.
-
-</div>
-
+<img src="reaper-avatar.png" alt="Reaper" style="width:90px; height:90px; object-fit:cover; border-radius:50%; border:2px solid #00ff88; margin-bottom:20px;">
+<span class="rank-level">LEVEL 01</span>
+<h3>REAPERS</h3>
+<p>Elite Operatives</p>
+<div class="rank-desc">Advanced offensive security and covert cyber operations.</div>
 </div>
 
 <div class="rank-card">
-
-<img
-src="analyst-avatar.png"
-alt="Analyst"
-style="
-width:90px;
-height:90px;
-object-fit:cover;
-border-radius:50%;
-border:2px solid #00ffcc;
-margin-bottom:20px;
-">
-
-<span class="rank-level">
-LEVEL 02
-</span>
-
-<h3>
-ANALYSTS
-</h3>
-
-<p>
-Threat Intelligence
-</p>
-
-<div class="rank-desc">
-
-OSINT investigations,
-behavioral profiling,
-and reconnaissance.
-
-</div>
-
+<img src="analyst-avatar.png" alt="Analyst" style="width:90px; height:90px; object-fit:cover; border-radius:50%; border:2px solid #00ffcc; margin-bottom:20px;">
+<span class="rank-level">LEVEL 02</span>
+<h3>ANALYSTS</h3>
+<p>Threat Intelligence</p>
+<div class="rank-desc">OSINT investigations, behavioral profiling, and reconnaissance.</div>
 </div>
 
 <div class="rank-card">
-
-<img
-src="hunter-avatar.png"
-alt="Hunter"
-style="
-width:90px;
-height:90px;
-object-fit:cover;
-border-radius:50%;
-border:2px solid #00ff88;
-margin-bottom:20px;
-">
-
-<span class="rank-level">
-LEVEL 03
-</span>
-
-<h3>
-HUNTERS
-</h3>
-
-<p>
-Field Operatives
-</p>
-
-<div class="rank-desc">
-
-Research contributors
-and intelligence scouts.
-
-</div>
-
+<img src="hunter-avatar.png" alt="Hunter" style="width:90px; height:90px; object-fit:cover; border-radius:50%; border:2px solid #00ff88; margin-bottom:20px;">
+<span class="rank-level">LEVEL 03</span>
+<h3>HUNTERS</h3>
+<p>Field Operatives</p>
+<div class="rank-desc">Research contributors and intelligence scouts.</div>
 </div>
 
 <div class="rank-card">
-
-<img
-src="initiate-avatar.png"
-alt="Initiate"
-style="
-width:90px;
-height:90px;
-object-fit:cover;
-border-radius:50%;
-border:2px solid #00ff88;
-margin-bottom:20px;
-">
-
-<span class="rank-level">
-LEVEL 04
-</span>
-
-<h3>
-INITIATES
-</h3>
-
-<p>
-Probationary Access
-</p>
-
-<div class="rank-desc">
-
-New recruits under
-verification and evaluation.
-
+<img src="initiate-avatar.png" alt="Initiate" style="width:90px; height:90px; object-fit:cover; border-radius:50%; border:2px solid #00ff88; margin-bottom:20px;">
+<span class="rank-level">LEVEL 04</span>
+<h3>INITIATES</h3>
+<p>Probationary Access</p>
+<div class="rank-desc">New recruits under verification and evaluation.</div>
 </div>
-
 </div>
-
-</div>
-
 </section>
 
-<!-- MEMBER DATABASE -->
-
-<section
-id="database"
-class="info-section reveal">
-
-<h2>
-MEMBER DATABASE
-</h2>
-
-<p style="
-margin-bottom:40px;
-color:#999;
-letter-spacing:2px;
-">
-
+<section id="database" class="info-section reveal">
+<h2>MEMBER DATABASE</h2>
+<p style="margin-bottom:40px; color:#999; letter-spacing:2px;">
 Operational personnel registry.
-
 </p>
 
-<div style="
-overflow-x:auto;
-">
-
-<table style="
-width:100%;
-border-collapse:collapse;
-background:#050505;
-border:1px solid rgba(0,255,136,0.15);
-">
-
-<tr style="
-background:#0b0b0b;
-">
-
-<th style="padding:18px;color:#00ff88;">
-ALIAS
-</th>
-
-<th style="padding:18px;color:#00ff88;">
-HUNTER CODE
-</th>
-
-<th style="padding:18px;color:#00ff88;">
-RANK
-</th>
-
-<th style="padding:18px;color:#00ff88;">
-CLEARANCE
-</th>
-
-</tr>
-
-<tr>
-
-<td style="padding:18px;border-top:1px solid #111;">
-Victor Reźnov
-</td>
-
-<td style="padding:18px;border-top:1px solid #111;">
-HNTR-000
-</td>
-
-<td style="padding:18px;border-top:1px solid #111;">
-CONTROLLER
-</td>
-
-<td style="padding:18px;border-top:1px solid #111;color:#ff335f;">
-OMEGA
-</td>
-
+<div style="overflow-x:auto;">
+<table style="width:100%; border-collapse:collapse; background:#050505; border:1px solid rgba(0,255,136,0.15);">
+<tr style="background:#0b0b0b;">
+<th style="padding:18px; color:#00ff88;">ALIAS</th>
+<th style="padding:18px; color:#00ff88;">HUNTER CODE</th>
+<th style="padding:18px; color:#00ff88;">RANK</th>
+<th style="padding:18px; color:#00ff88;">CLEARANCE</th>
 </tr>
 <tr>
-
-<td style="padding:18px;border-top:1px solid #111;">
-ANU
-</td>
-
-<td style="padding:18px;border-top:1px solid #111;">
-hunter_005
-</td>
-
-<td style="padding:18px;border-top:1px solid #111;">
-REAPER
-</td>
-
-<td style="padding:18px;border-top:1px solid #111;color:#00ff88;">
-LEVEL 01
-</td>
-
+<td style="padding:18px; border-top:1px solid #111;">Victor Reźnov</td>
+<td style="padding:18px; border-top:1px solid #111;">HNTR-000</td>
+<td style="padding:18px; border-top:1px solid #111;">CONTROLLER</td>
+<td style="padding:18px; border-top:1px solid #111; color:#ff335f;">OMEGA</td>
 </tr>
-
 <tr>
-
-<td style="padding:18px;border-top:1px solid #111;">
-ArchPhantom
-</td>
-
-<td style="padding:18px;border-top:1px solid #111;">
-hunter_003
-</td>
-
-<td style="padding:18px;border-top:1px solid #111;">
-REAPER
-</td>
-
-<td style="padding:18px;border-top:1px solid #111;color:#00ff88;">
-LEVEL 01
-</td>
-
+<td style="padding:18px; border-top:1px solid #111;">ANU</td>
+<td style="padding:18px; border-top:1px solid #111;">hunter_005</td>
+<td style="padding:18px; border-top:1px solid #111;">REAPER</td>
+<td style="padding:18px; border-top:1px solid #111; color:#00ff88;">LEVEL 01</td>
 </tr>
-
+<tr>
+<td style="padding:18px; border-top:1px solid #111;">ArchPhantom</td>
+<td style="padding:18px; border-top:1px solid #111;">hunter_003</td>
+<td style="padding:18px; border-top:1px solid #111;">REAPER</td>
+<td style="padding:18px; border-top:1px solid #111; color:#00ff88;">LEVEL 01</td>
+</tr>
 </table>
-
 </div>
-
 </section>
 
-<!-- ACKNOWLEDGEMENTS -->
-
-<section
-id="acknowledgements"
-class="info-section reveal">
-
-<h2>
-ACKNOWLEDGEMENTS
-</h2>
-
-<p style="
-margin-bottom:40px;
-color:#999;
-letter-spacing:2px;
-">
-
+<section id="acknowledgements" class="info-section reveal">
+<h2>ACKNOWLEDGEMENTS</h2>
+<p style="margin-bottom:40px; color:#999; letter-spacing:2px;">
 Recognition archives and operational credits.
-
 </p>
 
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-margin-top:40px;
-">
-
-<div style="
-background:#050505;
-border:1px solid rgba(255,0,60,0.18);
-padding:30px;
-border-radius:18px;
-box-shadow:0 0 25px rgba(255,0,60,0.08);
-">
-
-<p style="
-color:#ff335f;
-letter-spacing:3px;
-font-size:13px;
-margin-bottom:15px;
-">
-
-PRIMARY MENTOR
-
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; margin-top:40px;">
+<div style="background:#050505; border:1px solid rgba(255,0,60,0.18); padding:30px; border-radius:18px; box-shadow:0 0 25px rgba(255,0,60,0.08);">
+<p style="color:#ff335f; letter-spacing:3px; font-size:13px; margin-bottom:15px;">PRIMARY MENTOR</p>
+<h3 style="font-size:28px; margin-bottom:20px;">Rohit Mukherjee</h3>
+<p style="line-height:1.9; color:#bdbdbd;">
+Guidance, strategic direction, professional mentorship, and operational support during the development of the H.U.N.T.R.E.S.S ecosystem.
 </p>
-
-<h3 style="
-font-size:28px;
-margin-bottom:20px;
-">
-
-Rohit Mukherjee
-
-</h3>
-
-<p style="
-line-height:1.9;
-color:#bdbdbd;
-">
-
-Guidance,
-strategic direction,
-professional mentorship,
-and operational support
-during the development
-of the H.U.N.T.R.E.S.S ecosystem.
-
-</p>
-
-<a
-href="https://www.linkedin.com/in/rohit-mukherjee-rsm?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-target="_blank"
-class="join-btn"
-style="margin-top:20px;display:inline-block;">
-
-VIEW PROFILE
-
-</a>
-
+<a href="https://www.linkedin.com/in/rohit-mukherjee-rsm?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="join-btn" style="margin-top:20px; display:inline-block;">VIEW PROFILE</a>
 </div>
 
-<div style="
-background:#050505;
-border:1px solid rgba(0,255,136,0.18);
-padding:30px;
-border-radius:18px;
-box-shadow:0 0 25px rgba(0,255,136,0.08);
-">
-
-<p style="
-color:#00ff88;
-letter-spacing:3px;
-font-size:13px;
-margin-bottom:15px;
-">
-
-CO-FOUNDERS
-
+<div style="background:#050505; border:1px solid rgba(0,255,136,0.18); padding:30px; border-radius:18px; box-shadow:0 0 25px rgba(0,255,136,0.08);">
+<p style="color:#00ff88; letter-spacing:3px; font-size:13px; margin-bottom:15px;">CO-FOUNDERS</p>
+<h3 style="font-size:24px; margin-bottom:18px;">hunter_005 — ANU</h3>
+<p style="line-height:1.9; color:#bdbdbd;">
+Lead Handler of H.U.N.T.R.E.S.S. Responsible for internal coordination, operations handling, and strategic assistance.
 </p>
-
-<h3 style="
-font-size:24px;
-margin-bottom:18px;
-">
-
-hunter_005 — ANU
-
-</h3>
-
-<p style="
-line-height:1.9;
-color:#bdbdbd;
-">
-
-Lead Handler of H.U.N.T.R.E.S.S.
-Responsible for internal coordination,
-operations handling,
-and strategic assistance.
-
+<hr style="border:0; height:1px; background:#111; margin:25px 0;">
+<h3 style="font-size:24px; margin-bottom:18px;">hunter_003 — ArchPhantom</h3>
+<p style="line-height:1.9; color:#bdbdbd;">
+Frontend systems, design direction, Python development support, and co-founder operations.
 </p>
-
-<hr style="
-border:0;
-height:1px;
-background:#111;
-margin:25px 0;
-">
-
-<h3 style="
-font-size:24px;
-margin-bottom:18px;
-">
-
-hunter_003 — ArchPhantom
-
-</h3>
-
-<p style="
-line-height:1.9;
-color:#bdbdbd;
-">
-
-Frontend systems,
-design direction,
-Python development support,
-and co-founder operations.
-
-</p>
-
+</div>
 </div>
 
+<div style="margin-top:50px; text-align:center;">
+<a href="acknowledgements.html" class="join-btn">OPEN FULL ARCHIVE</a>
 </div>
-
-<div style="
-margin-top:50px;
-text-align:center;
-">
-
-<a
-href="acknowledgements.html"
-class="join-btn">
-
-OPEN FULL ARCHIVE
-
-</a>
-
-</div>
-
 </section>
 
-<!-- CONTACT -->
+<section id="contact" class="info-section reveal">
+<h2>CONTACT US</h2>
+<p>For collaborations, research partnerships, or intelligence inquiries.</p>
 
-<section
-id="contact"
-class="info-section reveal">
-
-<h2>
-CONTACT US
-</h2>
-
-<p>
-For collaborations,
-research partnerships,
-or intelligence inquiries.
-</p>
-
-<form
-action="https://formspree.io/f/mredgaqn"
-method="POST"
-class="contact-form"
-style="
-margin-top:40px;
-display:flex;
-flex-direction:column;
-gap:20px;
-">
-
-<input
-type="text"
-name="name"
-placeholder="Your Name"
-required>
-
-<input
-type="email"
-name="email"
-placeholder="Your Email"
-required>
-
-<textarea
-name="message"
-placeholder="Your Message"
-required
-style="
-width:100%;
-min-height:180px;
-padding:20px;
-background:#0b0b0b;
-border:1px solid rgba(0,255,136,0.15);
-border-radius:12px;
-color:white;
-font-family:Orbitron,sans-serif;
-resize:vertical;
-"></textarea>
-
-<button type="submit">
-SEND MESSAGE
-</button>
-
+<form action="https://formspree.io/f/mredgaqn" method="POST" class="contact-form" style="margin-top:40px; display:flex; flex-direction:column; gap:20px;">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message" required style="width:100%; min-height:180px; padding:20px; background:#0b0b0b; border:1px solid rgba(0,255,136,0.15); border-radius:12px; color:white; font-family:Orbitron,sans-serif; resize:vertical;"></textarea>
+<button type="submit">SEND MESSAGE</button>
 </form>
+</section>
+
+<section id="communications" class="info-section reveal">
+<h2>EXTERNAL RELAYS</h2>
+<p style="margin-bottom:40px; color:#999; letter-spacing:2px;">
+Secure communications and operational networks.
+</p>
+
+<div class="comms-relay-container">
+<div class="comms-header">
+<span>[ SYSTEM.COMM_LINKS_ACTIVE ]</span>
+</div>
+
+<ul class="comms-links">
+<li><a href="https://github.com/Avenovvvv" target="_blank" rel="noopener noreferrer">>> GITHUB_ARCHIVE</a></li>
+<li><a href="https://www.instagram.com/huntress.archive?igsh=dTRlY3FibGFydHZm" target="_blank" rel="noopener noreferrer">>> INSTAGRAM_FEED</a></li>
+<li><a href="https://x.com/Huntresscore_i?s=20" target="_blank" rel="noopener noreferrer">>> X_INTEL_FEED</a></li>
+<li><a href="#" target="_blank" rel="noopener noreferrer">>> LINKEDIN_[CONTROLLER]</a></li>
+<li><a href="https://www.facebook.com/profile.php?id=61590701691859" target="_blank" rel="noopener noreferrer">>> FB_RELAY_[ENG]</a></li>
+<li><a href="https://www.facebook.com/profile.php?id=61590082876797" target="_blank" rel="noopener noreferrer">>> FB_RELAY_[HIN]</a></li>
+</ul>
+</div>
 
 </section>
 
-<script src="script.js"></script>
+<script src="script.js?v=1.1"></script>
 
 </body>
-
 </html>

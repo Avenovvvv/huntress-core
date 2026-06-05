@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.U.N.T.R.E.S.S | CLEARANCE REQUIRED</title>
+    <link rel="stylesheet" href="style.css?v=1.1">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="display:flex; justify-content:center; align-items:center; height:100vh; overflow:hidden; background:#030303;">
+
+    <canvas id="matrix"></canvas>
+
+    <div class="auth-terminal reveal active">
+        <div class="comms-header" style="text-align:center; border-bottom: 1px solid var(--danger); padding-bottom:15px; margin-bottom:20px;">
+            <h2 style="color:var(--danger); letter-spacing:4px; font-size:24px;">RESTRICTED AREA</h2>
+            <p style="color:#888; font-size:12px; margin-top:10px; font-family:monospace;">AUTHORIZATION REQUIRED TO BREACH PLATFORM</p>
+        </div>
+        
+        <div class="auth-body">
+            <input type="text" id="hunterAlias" class="auth-input" placeholder="ENTER ALIAS / ID" autocomplete="off">
+            <input type="password" id="clearanceCode" class="auth-input" placeholder="ENTER CLEARANCE CODE" autocomplete="off">
+            <p id="authError" style="color:var(--danger); font-size:12px; display:none; margin-bottom:15px; text-align:center; font-family:monospace;">[!] ACCESS DENIED: INVALID CLEARANCE CREDENTIALS</p>
+            
+            <button id="authBtn" class="join-btn" style="width:100%;">INITIATE HANDSHAKE</button>
+        </div>
+    </div>
+
+    <script src="script.js?v=1.1"></script>
+    <script>
+        document.getElementById('authBtn').addEventListener('click', function() {
+            const alias = document.getElementById('hunterAlias').value.toUpperCase();
+            const passcode = document.getElementById('clearanceCode').value;
+            const errorMsg = document.getElementById('authError');
+
+            // Hardcoded frontend matching logic using your specific password token
+            if(alias !== "" && passcode === "REZNOV") {
+                errorMsg.style.display = 'none';
+                this.innerText = "ACCESS GRANTED. DECRYPTING...";
+                this.style.color = "var(--primary)";
+                this.style.borderColor = "var(--primary)";
+                this.style.boxShadow = "0 0 15px rgba(0,255,136,0.4)";
+                
+                setTimeout(() => {
+                    localStorage.setItem('huntress_clearance', 'GRANTED');
+                    window.location.href = 'dashboard.html';
+                }, 1500);
+            } else {
+                errorMsg.style.display = 'block';
+                this.innerText = "RE-ATTEMPT CODES";
+                document.getElementById('clearanceCode').value = "";
+            }
+        });
+    </script>
+</body>
+</html>
