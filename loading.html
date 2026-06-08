@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H.U.N.T.R.E.S.S | INITIALIZATION</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="loading-body">
@@ -13,19 +13,25 @@
     
     <div class="loading-container">
         <h1 class="loading-title">H.U.N.T.R.E.S.S CORE</h1>
+        
         <div class="loading-terminal">
             <p>> CONNECTING TO SECURE NETWORK...</p>
             <p>> VERIFYING NODE INTEGRITY...</p>
+            <p>> ESTABLISHING ENCRYPTED CHANNEL...</p>
             <p>> SYSTEM INITIALIZATION COMPLETE</p>
         </div>
-        <div class="loading-bar"><div class="loading-progress"></div></div>
+        
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=1.1"></script>
     <script>
+        // Handoff Sequence: Loading -> Login Terminal
         setTimeout(() => {
             window.location.href = "login.html";
-        }, 6500);
+        }, 6500); 
     </script>
 </body>
 </html>
