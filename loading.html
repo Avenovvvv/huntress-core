@@ -1,89 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-H.U.N.T.R.E.S.S INITIALIZATION
-</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
-rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.U.N.T.R.E.S.S | INITIALIZATION</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body class="loading-body">
 
-<!-- MATRIX -->
+    <canvas id="matrix"></canvas>
+    
+    <div class="loading-container">
+        <h1 class="loading-title">H.U.N.T.R.E.S.S CORE</h1>
+        <div class="loading-terminal">
+            <p>> CONNECTING TO SECURE NETWORK...</p>
+            <p>> VERIFYING NODE INTEGRITY...</p>
+            <p>> SYSTEM INITIALIZATION COMPLETE</p>
+        </div>
+        <div class="loading-bar"><div class="loading-progress"></div></div>
+    </div>
 
-<canvas id="matrix"></canvas>
-
-<div class="loading-overlay"></div>
-
-<!-- MAIN -->
-
-<div class="loading-container">
-
-<div class="loading-top-tag">
-SECURE NETWORK ACCESS
-</div>
-
-<h1 class="loading-title">
-H.U.N.T.R.E.S.S CORE
-</h1>
-
-<div class="loading-terminal">
-
-<p>
-> CONNECTING TO SECURE NETWORK...
-</p>
-
-<p>
-> VERIFYING NODE INTEGRITY...
-</p>
-
-<p>
-> ESTABLISHING ENCRYPTED CHANNEL...
-</p>
-
-<p>
-> PREPARING USER ACCESS...
-</p>
-
-<p class="blink">
-> SYSTEM INITIALIZATION COMPLETE
-</p>
-
-</div>
-
-<div class="loading-bar">
-
-<div class="loading-progress"></div>
-
-</div>
-
-<p class="loading-status">
-AWAITING AUTHORIZATION...
-</p>
-
-</div>
-
-<script src="script.js"></script>
-
-<script>
-    setTimeout(() => {
-        // This ensures the flow: Loading -> Login
-        window.location.href = "login.html"; 
-    }, 6500); // Matches your current 6.5s delay
-</script>
-
+    <script src="script.js"></script>
+    <script>
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 6500);
+    </script>
 </body>
-
 </html>
