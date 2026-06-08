@@ -101,28 +101,14 @@ function denyTerms(){ window.location.href = "denied.html"; }
 const enterBtn = document.getElementById("enterBtn");
 if(enterBtn){
     enterBtn.addEventListener("click", () => {
-        const hunterId = Math.floor(Math.random() * 999).toString().padStart(3,"0");
+        // Increment global visitor count
         let visitorCount = localStorage.getItem("visitorCount") || 0;
-        
         visitorCount = parseInt(visitorCount) + 1;
         localStorage.setItem("visitorCount", visitorCount);
 
-        document.body.innerHTML = `
-        <div style="height:100vh; background:black; display:flex; justify-content:center; align-items:center; flex-direction:column; font-family:Orbitron,sans-serif; color:#00ff88; padding:30px; text-align:center;">
-            <div style="font-size:15px; letter-spacing:4px; line-height:2.4; max-width:900px;">
-                <p>INITIALIZING H.U.N.T.R.E.S.S...</p>
-                <p>SCANNING NETWORK...</p>
-                <p>ASSIGNING HUNTER ID...</p>
-                <p style="color:#ff335f;">YOU ARE: HUNTER_${hunterId}</p>
-                <p>VISITOR #${visitorCount}</p>
-                <p>CONNECTED TO THE NETWORK</p>
-            </div>
-        </div>`;
-
-        setTimeout(() => {
-            localStorage.setItem("hunterId", hunterId);
-            window.location.href = "login.html"; // Target Re-routed to the Clearance Terminal
-        }, 5000);
+        // Redirect to the loading page instead of hard-coding the transition here
+        // The loading page will handle the timeout and redirect to login.html
+        window.location.href = "gateway-loading.html"; 
     });
 }
 

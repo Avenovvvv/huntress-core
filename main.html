@@ -1,433 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-H.U.N.T.R.E.S.S | Main System
-</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
-rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.U.N.T.R.E.S.S | Main System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- MATRIX -->
-
-<canvas id="matrix"></canvas>
-
-<!-- MAIN CONTAINER -->
-
-<div class="main-wrapper">
-
-<!-- FOUNDER SECTION -->
-
-<section class="founder-section reveal">
-
-<div class="intel-window">
-
-<div class="window-header">
-
-<span class="window-dot red"></span>
-<span class="window-dot yellow"></span>
-<span class="window-dot green"></span>
-
-<p>
-FOUNDER DOSSIER // OMEGA CLEARANCE
-</p>
-
-</div>
-
-<div class="window-body">
-
-<div class="founder-image-container">
-
-<div class="glitch-ring"></div>
-
-<img
-src="avenov.jpg"
-id="founderImage"
-class="founder-image">
-
-<div class="matrix-flash"></div>
-
-</div>
-
-<div class="founder-content">
-
-<h2>
-ABOUT THE FOUNDER
-</h2>
-
-<h3>
-Avenov Subba
-</h3>
-
-<p class="alias">
-Aka. Victor Reźnov | Controller
-</p>
-
-<p class="role">
-Founder & Lead Threat Intelligence Coordinator
-</p>
-
-<p class="bio">
-
-Founder of H.U.N.T.R.E.S.S,
-a cybersecurity initiative focused on
-offensive security research,
-intelligence-driven operations,
-digital threat analysis,
-and advanced security systems.
-
-Built with a vision combining
-military precision,
-hacker methodology,
-and intelligent cyber defense.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- VISION -->
-
-<section class="vision-section reveal">
-
-<div class="intel-window">
-
-<div class="window-header">
-
-<span class="window-dot red"></span>
-<span class="window-dot yellow"></span>
-<span class="window-dot green"></span>
-
-<p>
-MISSION CORE // STRATEGIC INTEL
-</p>
-
-</div>
-
-<div class="window-body">
-
-<h2>
-OUR VISION
-</h2>
-
-<div class="vision-card">
-
-<p class="vision-text">
-
-H.U.N.T.R.E.S.S was built with the vision of
-creating a next-generation cyber intelligence
-and offensive security network focused on
-precision, adaptability, operational discipline,
-and intelligent digital defense.
-
-Combining tactical methodology,
-advanced threat research,
-and modern cybersecurity principles,
-the organization aims to redefine how
-security, intelligence, and cyber operations
-evolve in the modern digital battlefield.
-
-</p>
-
-<div class="vision-values">
-
-<span>PRECISION</span>
-<span>DISCIPLINE</span>
-<span>INTELLIGENCE</span>
-<span>CONTROL</span>
-<span>ADAPTABILITY</span>
-<span>RESILIENCE</span>
-
-</div>
-
-<p class="dynamic-slogan">
-
-"Built for the evolving battlefield."
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="contact-section reveal">
-
-<div class="intel-window">
-
-<div class="window-header">
-
-<span class="window-dot red"></span>
-<span class="window-dot yellow"></span>
-<span class="window-dot green"></span>
-
-<p>
-SECURE COMMUNICATION CHANNEL
-</p>
-
-</div>
-
-<div class="window-body">
-
-<h2>
-CONTACT H.U.N.T.R.E.S.S
-</h2>
-
-<p class="contact-text">
-
-Secure communication channels are available
-for verified operatives and strategic partners.
-
-</p>
-
-<div class="contact-box">
-
-<p>NETWORK STATUS : ACTIVE</p>
-
-<p>REGION : GLOBAL</p>
-
-<p>CLEARANCE REQUIRED : LEVEL 2+</p>
-
-<p>CONTACT : victor_reznov@proton.me</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- JOIN -->
-
-<section class="join-section reveal">
-
-<div class="intel-window">
-
-<div class="window-header">
-
-<span class="window-dot red"></span>
-<span class="window-dot yellow"></span>
-<span class="window-dot green"></span>
-
-<p>
-NETWORK ACCESS TERMINAL
-</p>
-
-</div>
-
-<div class="window-body">
-
-<h2>
-JOIN THE NETWORK
-</h2>
-
-<h2>
-ENTER OPERATIONS
-</h2>
-
-<p>
-
-Guest clearance accepted.
-
-<br><br>
-
-Welcome,
-hunter_001
-
-<br>
-
-Current session recognized as:
-VISITOR NODE
-
-<br><br>
-
-Controller designation remains:
-hunter_000
-
-</p>
-
-<div style="margin-top:30px;">
-
-<button
-onclick="window.location.href='dashboard.html'"
-class="join-btn">
-
-ACCESS DASHBOARD
-
-</button>
-
-</div>
-
-<!-- VISITOR COUNTER -->
-
-<div
-id="visitorCounter"
-style="
-text-align:center;
-padding:40px 20px;
-color:#00ff88;
-font-family:Orbitron,sans-serif;
-letter-spacing:2px;
-font-size:14px;
-opacity:0.8;
-">
-
-Initializing visitor trace...
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-<!-- VISITOR SCRIPT -->
-
-<script>
-
-let visitorCount =
-localStorage.getItem("huntress_visitors");
-
-if (!visitorCount) {
-
-visitorCount = 1;
-
-} else {
-
-visitorCount =
-parseInt(visitorCount) + 1;
-
-}
-
-localStorage.setItem(
-"huntress_visitors",
-visitorCount
-);
-
-document.getElementById(
-"visitorCounter"
-).innerHTML =
-
-"You are visitor #" +
-visitorCount +
-"<br><br>" +
-"THE TRUTH REACHED ANOTHER NODE.";
-
-</script>
-
-<!-- GLITCH IMAGE -->
-
-<script>
-
-/* =========================
-   GLITCH IMAGE SYSTEM
-========================= */
-
-const founderImage =
-document.getElementById(
-"founderImage"
-);
-
-const images = [
-
-"avenov.jpg",
-"reznov.jpg"
-
-];
-
-let current = 0;
-
-setInterval(() => {
-
-document
-.querySelector(".matrix-flash")
-.style.opacity = "1";
-
-setTimeout(() => {
-
-current =
-(current + 1) % images.length;
-
-founderImage.src =
-images[current];
-
-}, 400);
-
-setTimeout(() => {
-
-document
-.querySelector(".matrix-flash")
-.style.opacity = "0";
-
-}, 800);
-
-}, 4000);
-
-</script>
-
-<!-- REVEAL ANIMATION -->
-
-<script>
-
-const reveals =
-document.querySelectorAll(".reveal");
-
-window.addEventListener(
-"scroll",
-() => {
-
-reveals.forEach((element) => {
-
-const windowHeight =
-window.innerHeight;
-
-const revealTop =
-element.getBoundingClientRect().top;
-
-if(revealTop < windowHeight - 100){
-
-element.classList.add("active");
-
-}
-
-});
-
-}
-);
-
-</script>
-
-<script src="script.js"></script>
-<a href="https://www.appcreator24.com/app4067772-c18wpa" class="app-dl-badge" target="_blank">
+    <canvas id="matrix"></canvas>
+
+    <div class="main-wrapper">
+
+        <section class="founder-section reveal">
+            <div class="intel-window">
+                <div class="window-header">
+                    <span class="window-dot red"></span>
+                    <span class="window-dot yellow"></span>
+                    <span class="window-dot green"></span>
+                    <p>FOUNDER DOSSIER // OMEGA CLEARANCE</p>
+                </div>
+                <div class="window-body">
+                    <div class="founder-image-container">
+                        <div class="glitch-ring"></div>
+                        <img src="avenov.jpg" id="founderImage" class="founder-image">
+                        <div class="matrix-flash"></div>
+                    </div>
+                    <div class="founder-content">
+                        <h2>ABOUT THE FOUNDER</h2>
+                        <h3>Avenov Subba</h3>
+                        <p class="alias">Aka. Victor Reźnov | Controller</p>
+                        <p class="role">Founder & Lead Threat Intelligence Coordinator</p>
+                        <p class="bio">
+                            Founder of H.U.N.T.R.E.S.S, a cybersecurity initiative focused on
+                            offensive security research, intelligence-driven operations,
+                            digital threat analysis, and advanced security systems.
+                            Built with a vision combining military precision,
+                            hacker methodology, and intelligent cyber defense.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="vision-section reveal">
+            <div class="intel-window">
+                <div class="window-header">
+                    <span class="window-dot red"></span>
+                    <span class="window-dot yellow"></span>
+                    <span class="window-dot green"></span>
+                    <p>MISSION CORE // STRATEGIC INTEL</p>
+                </div>
+                <div class="window-body">
+                    <h2>OUR VISION</h2>
+                    <div class="vision-card">
+                        <p class="vision-text">
+                            H.U.N.T.R.E.S.S was built with the vision of creating a next-generation cyber intelligence
+                            and offensive security network focused on precision, adaptability, operational discipline,
+                            and intelligent digital defense. Combining tactical methodology,
+                            advanced threat research, and modern cybersecurity principles,
+                            the organization aims to redefine how security, intelligence, and cyber operations
+                            evolve in the modern digital battlefield.
+                        </p>
+                        <div class="vision-values">
+                            <span>PRECISION</span>
+                            <span>DISCIPLINE</span>
+                            <span>INTELLIGENCE</span>
+                            <span>CONTROL</span>
+                            <span>ADAPTABILITY</span>
+                            <span>RESILIENCE</span>
+                        </div>
+                        <p class="dynamic-slogan">"Built for the evolving battlefield."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section reveal">
+            <div class="intel-window">
+                <div class="window-header">
+                    <span class="window-dot red"></span>
+                    <span class="window-dot yellow"></span>
+                    <span class="window-dot green"></span>
+                    <p>SECURE COMMUNICATION CHANNEL</p>
+                </div>
+                <div class="window-body">
+                    <h2>CONTACT H.U.N.T.R.E.S.S</h2>
+                    <p class="contact-text">Secure communication channels are available for verified operatives and strategic partners.</p>
+                    <div class="contact-box">
+                        <p>NETWORK STATUS : ACTIVE</p>
+                        <p>REGION : GLOBAL</p>
+                        <p>CLEARANCE REQUIRED : LEVEL 2+</p>
+                        <p>CONTACT : victor_reznov@proton.me</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="join-section reveal">
+            <div class="intel-window">
+                <div class="window-header">
+                    <span class="window-dot red"></span>
+                    <span class="window-dot yellow"></span>
+                    <span class="window-dot green"></span>
+                    <p>NETWORK ACCESS TERMINAL</p>
+                </div>
+                <div class="window-body">
+                    <h2>JOIN THE NETWORK</h2>
+                    <h2>ENTER OPERATIONS</h2>
+                    <p>
+                        Guest clearance accepted.
+                        <br><br>Welcome, hunter_001
+                        <br>Current session recognized as: VISITOR NODE
+                        <br><br>Controller designation remains: hunter_000
+                    </p>
+                    <div style="margin-top:30px;">
+                        <button onclick="window.location.href='dashboard.html'" class="join-btn">
+                            ACCESS DASHBOARD
+                        </button>
+                    </div>
+
+                    <div id="visitorCounter" style="text-align:center; padding:40px 20px; color:#00ff88; font-family:Orbitron,sans-serif; letter-spacing:2px; font-size:14px; opacity:0.8;">
+                        Initializing visitor trace...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        let visitorCount = localStorage.getItem("huntress_visitors");
+        if (!visitorCount) {
+            visitorCount = 1;
+        } else {
+            visitorCount = parseInt(visitorCount) + 1;
+        }
+        localStorage.setItem("huntress_visitors", visitorCount);
+        document.getElementById("visitorCounter").innerHTML = "You are visitor #" + visitorCount + "<br><br>" + "THE TRUTH REACHED ANOTHER NODE.";
+    </script>
+
+    <script>
+        const founderImage = document.getElementById("founderImage");
+        const images = ["avenov.jpg", "reznov.jpg"];
+        let current = 0;
+
+        setInterval(() => {
+            document.querySelector(".matrix-flash").style.opacity = "1";
+            setTimeout(() => {
+                current = (current + 1) % images.length;
+                founderImage.src = images[current];
+            }, 400);
+            setTimeout(() => {
+                document.querySelector(".matrix-flash").style.opacity = "0";
+            }, 800);
+        }, 4000);
+    </script>
+
+    <script>
+        const reveals = document.querySelectorAll(".reveal");
+        window.addEventListener("scroll", () => {
+            reveals.forEach((element) => {
+                const windowHeight = window.innerHeight;
+                const revealTop = element.getBoundingClientRect().top;
+                if(revealTop < windowHeight - 100){
+                    element.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+    <a href="https://www.appcreator24.com/app4067772-c18wpa" class="app-dl-badge" target="_blank">
         <span>[↓]</span> EXTRACT .APK
     </a>
 </body>
-
 </html>
