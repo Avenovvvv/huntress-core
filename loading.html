@@ -78,14 +78,10 @@ AWAITING AUTHORIZATION...
 <script src="script.js"></script>
 
 <script>
-
-setTimeout(() => {
-
-window.location.href =
-"gateway.html";
-
-}, 6500);
-
+    setTimeout(() => {
+        // This ensures the flow: Loading -> Login
+        window.location.href = "login.html"; 
+    }, 6500); // Matches your current 6.5s delay
 </script>
 
 </body>

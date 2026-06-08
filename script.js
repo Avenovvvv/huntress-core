@@ -101,14 +101,10 @@ function denyTerms(){ window.location.href = "denied.html"; }
 const enterBtn = document.getElementById("enterBtn");
 if(enterBtn){
     enterBtn.addEventListener("click", () => {
-        // Increment global visitor count
-        let visitorCount = localStorage.getItem("visitorCount") || 0;
-        visitorCount = parseInt(visitorCount) + 1;
-        localStorage.setItem("visitorCount", visitorCount);
-
-        // Redirect to the loading page instead of hard-coding the transition here
-        // The loading page will handle the timeout and redirect to login.html
-        window.location.href = "gateway-loading.html"; 
+        // ... (visitor counter logic)
+        
+        // RE-ROUTED TO CORRECT FILENAME: loading.html
+        window.location.href = "loading.html"; 
     });
 }
 
