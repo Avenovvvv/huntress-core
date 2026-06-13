@@ -1472,4 +1472,54 @@ height:240px;
     50% { opacity: 0.3; }
     100% { opacity: 1; }
 }
+/* =========================================
+   CO-FOUNDERS GRID LAYOUT
+========================================= */
+.co-founders-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Allows stacking on mobile screens */
+}
 
+.co-founder-card {
+    flex: 1;
+    min-width: 250px;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.co-founder-card:hover {
+    border-color: rgba(0, 255, 0, 0.6);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+.co-founder-card h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+/* Scales down the glitch containers so they fit side-by-side */
+.small-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+/* Patched Visitor Terminal */
+.visitor-terminal {
+    text-align: center;
+    color: #0f0;
+    font-family: 'Orbitron', sans-serif;
+    margin: 40px 0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #0f0;
+}
