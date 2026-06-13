@@ -26,31 +26,32 @@
         </div>
     </div>
 
-    <script src="script.js?v=1.1"></script>
-    <script>
-        document.getElementById('authBtn').addEventListener('click', function() {
-            const alias = document.getElementById('hunterAlias').value.toUpperCase();
-            const passcode = document.getElementById('clearanceCode').value;
-            const errorMsg = document.getElementById('authError');
+   <script>
+    document.getElementById('authBtn').addEventListener('click', function() {
+        const alias = document.getElementById('hunterAlias').value.toUpperCase();
+        const passcode = document.getElementById('clearanceCode').value;
+        const errorMsg = document.getElementById('authError');
 
-            // Hardcoded frontend matching logic using your specific password token
-            if(alias !== "" && passcode === "REZNOV") {
-                errorMsg.style.display = 'none';
-                this.innerText = "ACCESS GRANTED. DECRYPTING...";
-                this.style.color = "var(--primary)";
-                this.style.borderColor = "var(--primary)";
-                this.style.boxShadow = "0 0 15px rgba(0,255,136,0.4)";
-                
-                setTimeout(() => {
-                    localStorage.setItem('huntress_clearance', 'GRANTED');
-                    window.location.href = 'main.html';
-                }, 1500);
-            } else {
-                errorMsg.style.display = 'block';
-                this.innerText = "RE-ATTEMPT CODES";
-                document.getElementById('clearanceCode').value = "";
-            }
-        });
-    </script>
+        // Authentication Logic
+        if(alias !== "" && passcode === "REZNOV") {
+            errorMsg.style.display = 'none';
+            this.innerText = "ACCESS GRANTED. DECRYPTING...";
+            this.style.color = "var(--primary)";
+            this.style.borderColor = "var(--primary)";
+            this.style.boxShadow = "0 0 15px rgba(0,255,136,0.4)";
+            
+            setTimeout(() => {
+                // Set clearance token for the firewall
+                localStorage.setItem('huntress_clearance', 'GRANTED');
+                // Route to the Dashboard Playground
+                window.location.href = 'dashboard.html'; 
+            }, 1500);
+        } else {
+            errorMsg.style.display = 'block';
+            this.innerText = "RE-ATTEMPT CODES";
+            document.getElementById('clearanceCode').value = "";
+        }
+    });
+</script> 
 </body>
 </html>
