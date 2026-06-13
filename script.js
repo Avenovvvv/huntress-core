@@ -3,7 +3,7 @@
 ========================================= */
 
 /* =========================
-   MATRIX EFFECT
+   MATRIX EFFECT v2.0 (KINETIC)
 ========================= */
 const canvas = document.getElementById("matrix");
 
@@ -32,18 +32,49 @@ if(canvas){
     }
     resetDrops();
 
+    // --- KINETIC SENSOR VARIABLES ---
+    let mouse = {
+        x: undefined,
+        y: undefined,
+        radius: 120 // Glitch field radius
+    };
+
+    window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    window.addEventListener('mouseout', () => {
+        mouse.x = undefined;
+        mouse.y = undefined;
+    });
+
     function drawMatrix(){
         ctx.fillStyle = "rgba(0,0,0,0.08)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
-        ctx.fillStyle = "#ff003c";
         ctx.font = fontSize + "px monospace";
         
         for(let i = 0; i < drops.length; i++){
             const text = matrix[Math.floor(Math.random() * matrix.length)];
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            const dropX = i * fontSize;
+            const dropY = drops[i] * fontSize;
+
+            // KINETIC TRIGGER: Calculate proximity to cursor
+            let dx = mouse.x - dropX;
+            let dy = mouse.y - dropY;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < mouse.radius) {
+                ctx.fillStyle = "#ffffff"; // Glitch white
+                drops[i] += 0.5;           // Micro-acceleration
+            } else {
+                ctx.fillStyle = "#ff003c"; // Original H.U.N.T.R.E.S.S red
+            }
+
+            ctx.fillText(text, dropX, dropY);
             
-            if(drops[i] * fontSize > canvas.height && Math.random() > 0.975){
+            if(dropY > canvas.height && Math.random() > 0.975){
                 drops[i] = 0;
             }
             drops[i]++;
@@ -101,9 +132,6 @@ function denyTerms(){ window.location.href = "denied.html"; }
 const enterBtn = document.getElementById("enterBtn");
 if(enterBtn){
     enterBtn.addEventListener("click", () => {
-        // ... (visitor counter logic)
-        
-        // RE-ROUTED TO CORRECT FILENAME: loading.html
         window.location.href = "loading.html"; 
     });
 }
@@ -166,7 +194,6 @@ function revealOnScroll(){
     });
 }
 
-// Initial state application
 revealElements.forEach((el) => {
     if(!el.classList.contains("active")){
         el.style.opacity = "0";
@@ -234,14 +261,12 @@ if (terminalInput && terminalOutput) {
             const text = terminalInput.value.trim();
             if (!text) return;
 
-            // Render User Input
             terminalInput.value = "";
             terminalOutput.innerHTML += `<p class="user-query">> ${text}</p>`;
             terminalOutput.innerHTML += `<p id="loading" style="color:#ff335f;">> PROCESSING UPLINK TO CORE...</p>`;
             terminalOutput.scrollTop = terminalOutput.scrollHeight;
 
             try {
-                // Route query through your secure Vercel proxy
                 const res = await fetch('/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -249,11 +274,9 @@ if (terminalInput && terminalOutput) {
                 });
                 const data = await res.json();
                 
-                // Remove Loading Status
                 const loader = document.getElementById("loading");
                 if(loader) loader.remove();
 
-                // Render AI Response or Error
                 if (res.ok) {
                     terminalOutput.innerHTML += `<p>> ${data.reply}</p>`;
                 } else {
@@ -265,7 +288,6 @@ if (terminalInput && terminalOutput) {
                 terminalOutput.innerHTML += `<p class="error-log">> SYSTEM FAULT: CONNECTION SEVERED.</p>`;
             }
             
-            // Keep terminal scrolled to the latest message
             terminalOutput.scrollTop = terminalOutput.scrollHeight;
         }
     });

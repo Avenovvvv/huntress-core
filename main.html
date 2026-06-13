@@ -29,7 +29,7 @@
                         <div class="matrix-flash"></div>
                     </div>
                     <div class="founder-content">
-                        <h2>ABOUT THE FOUNDER</h2>
+                        <h2 class="scramble-text">ABOUT THE FOUNDER</h2>
                         <h3>Avenov Subba</h3>
                         <p class="alias">Aka. Victor Reźnov | Controller</p>
                         <p class="role">Founder & Lead Threat Intelligence Coordinator</p>
@@ -55,9 +55,10 @@
                     <p>MISSION CORE // STRATEGIC INTEL</p>
                 </div>
                 <div class="window-body">
-                    <h2>OUR VISION</h2>
+                    <h2 class="scramble-text">OUR VISION</h2>
                     <div class="vision-card">
-                        <p class="vision-text">
+                        <!-- Protocol 2 Initiated Here -->
+                        <p class="vision-text typewriter-text">
                             H.U.N.T.R.E.S.S was built with the vision of creating a next-generation cyber intelligence
                             and offensive security network focused on precision, adaptability, operational discipline,
                             and intelligent digital defense. Combining tactical methodology,
@@ -89,7 +90,7 @@
                     <p>CO-FOUNDERS DOSSIER // ALPHA CLEARANCE</p>
                 </div>
                 <div class="window-body">
-                    <h2>ABOUT OUR CO-FOUNDERS</h2>
+                    <h2 class="scramble-text">ABOUT OUR CO-FOUNDERS</h2>
                     <div class="co-founders-grid">
                         
                         <!-- ArchPhantom Profile -->
@@ -127,8 +128,9 @@
                     <p>SECURE COMMUNICATION CHANNEL</p>
                 </div>
                 <div class="window-body">
-                    <h2>CONTACT H.U.N.T.R.E.S.S</h2>
-                    <p class="contact-text">Secure communication channels are available for verified operatives and strategic partners.</p>
+                    <h2 class="scramble-text">CONTACT H.U.N.T.R.E.S.S</h2>
+                    <!-- Protocol 2 Initiated Here -->
+                    <p class="contact-text typewriter-text">Secure communication channels are available for verified operatives and strategic partners.</p>
                     <div class="contact-box">
                         <p>NETWORK STATUS : ACTIVE</p>
                         <p>REGION : GLOBAL</p>
@@ -146,7 +148,7 @@
                     <p>NETWORK ACCESS TERMINAL // RECRUITMENT</p>
                 </div>
                 <div class="window-body">
-                    <h2>JOIN THE NETWORK</h2>
+                    <h2 class="scramble-text">JOIN THE NETWORK</h2>
                     <p>Operatives are required for ongoing threat intelligence operations. Clearance is granted upon successful vetting.</p>
                     
                     <div style="margin-top:30px; display:flex; flex-direction:column; gap:15px;">
@@ -156,6 +158,10 @@
                         
                         <button onclick="window.location.href='dashboard.html'" class="join-btn secondary">
                             ACCESS DASHBOARD
+                        </button>
+
+                        <button onclick="window.location.href='hub.html'" class="join-btn" style="border-color: #ffaa00; color: #ffaa00;">
+                            ACCESS CYBER SECURITY HUBS
                         </button>
                     </div>
                 </div>
@@ -197,16 +203,92 @@
     </script>
 
     <script>
+        // --- PROTOCOL 1: CRYPTOGRAPHIC DECRYPTION CIPHER ---
+        const cipherLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
+
+        function decodeText(element) {
+            let iteration = 0;
+            clearInterval(element.interval);
+            
+            if (!element.dataset.value) {
+                element.dataset.value = element.innerText;
+            }
+            
+            element.interval = setInterval(() => {
+                element.innerText = element.innerText
+                    .split("")
+                    .map((letter, index) => {
+                        if (element.dataset.value[index] === " ") return " ";
+                        if(index < iteration) {
+                            return element.dataset.value[index];
+                        }
+                        return cipherLetters[Math.floor(Math.random() * cipherLetters.length)];
+                    })
+                    .join("");
+                
+                if(iteration >= element.dataset.value.length){ 
+                    clearInterval(element.interval);
+                }
+                
+                iteration += 1 / 3; 
+            }, 30);
+        }
+
+        // --- PROTOCOL 2: LIVE TERMINAL TYPEWRITER ---
+        function typeWriterEffect(element, speed = 15) {
+            // Store the original text securely
+            if (!element.dataset.fulltext) {
+                element.dataset.fulltext = element.innerText.trim();
+            }
+            
+            let text = element.dataset.fulltext;
+            element.innerHTML = ""; 
+            
+            // Create the blinking cursor
+            const cursor = document.createElement("span");
+            cursor.className = "typewriter-cursor";
+            element.appendChild(cursor);
+            
+            let i = 0;
+            clearInterval(element.typeInterval);
+            
+            // Type out character by character
+            element.typeInterval = setInterval(() => {
+                if (i < text.length) {
+                    const charNode = document.createTextNode(text.charAt(i));
+                    element.insertBefore(charNode, cursor);
+                    i++;
+                } else {
+                    clearInterval(element.typeInterval);
+                }
+            }, speed);
+        }
+
+        // --- UPGRADED REVEAL OBSERVER ---
         const reveals = document.querySelectorAll(".reveal");
         window.addEventListener("scroll", () => {
             reveals.forEach((element) => {
                 const windowHeight = window.innerHeight;
                 const revealTop = element.getBoundingClientRect().top;
+                
                 if(revealTop < windowHeight - 100){
-                    element.classList.add("active");
+                    if (!element.classList.contains("active")) {
+                        element.classList.add("active");
+                        
+                        // Fire Decryption Protocol (Protocol 1)
+                        const scrambles = element.querySelectorAll(".scramble-text");
+                        scrambles.forEach(decodeText);
+
+                        // Fire Typewriter Protocol (Protocol 2)
+                        const typewriters = element.querySelectorAll(".typewriter-text");
+                        typewriters.forEach(tw => typeWriterEffect(tw));
+                    }
                 }
             });
         });
+        
+        // Initial check on load
+        window.dispatchEvent(new Event('scroll'));
     </script>
 
     <script src="script.js"></script>
