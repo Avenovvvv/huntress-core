@@ -1,4 +1,9 @@
 // H.U.N.T.R.E.S.S CORE SCRIPT (Sanitized for direct routing)
+document.addEventListener('DOMContentLoaded', () => {
+    // Wrap all your existing code inside this block
+    // This ensures your scripts only run after the HTML is fully built
+    console.log("H.U.N.T.R.E.S.S System: DOM Initialized");
+});
 const canvas = document.getElementById("matrix");
 if(canvas){
     const ctx = canvas.getContext("2d");
