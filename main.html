@@ -11,6 +11,20 @@
 
     <canvas id="matrix"></canvas>
 
+    <div class="rhs-menu-container">
+        <div class="menu-dots" onclick="toggleRhsMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="rhs-menu" id="rhsMenu">
+            <a href="index.html">System Reboot</a>
+            <a href="#dossiers">Public Archives</a>
+            <a href="login.html">Hunter Sign In</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzGGx4KHoH7sjnioaWQs4USCZxkG0S8oAp2CyDtbyHretgtA/viewform" target="_blank">Hunter Sign Up</a>
+        </div>
+    </div>
+
     <div class="main-wrapper">
 
         <section class="founder-section">
@@ -24,7 +38,7 @@
                 <div class="window-body">
                     <div class="founder-image-container">
                         <div class="glitch-ring"></div>
-                        <img src="avenov.jpg" id="founderImage" class="founder-image">
+                        <img src="avenov.jpg" id="founderImage" class="founder-image" alt="Founder Image">
                         <div class="matrix-flash"></div>
                     </div>
                     <div class="founder-content">
@@ -72,17 +86,49 @@
         <section id="dossiers" class="info-section">
             <h2 class="scramble-text">DOSSIER ARCHIVE // PUBLIC ACCESS</h2>
             <p style="margin-bottom: 30px; color: #888;">Intelligence reports and OSINT investigations.</p>
-            <div class="blog-archive" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                <a href="dossiers/operation-pariwartan.html" class="blog-card" style="text-decoration: none; border: 1px solid #ff335f; padding: 20px; border-radius: 8px; background: rgba(10,10,10,0.95);">
-                    <h3 style="color:#fff;">OPERATION PARIWARTAN</h3>
-                    <p style="color:#bbb;">Political convergence analysis and electoral mapping.</p>
-                    <span style="color:#00ff88;">ACCESS DOSSIER →</span>
-                </a>
-                <a href="dossiers/india-2040.html" class="blog-card" style="text-decoration: none; border: 1px solid #ff335f; padding: 20px; border-radius: 8px; background: rgba(10,10,10,0.95);">
-                    <h3 style="color:#fff;">INDIA 2040</h3>
-                    <p style="color:#bbb;">Analysis of future socio-political trajectories.</p>
-                    <span style="color:#00ff88;">ACCESS FILE →</span>
-                </a>
+            
+            <div class="dossier-carousel" id="carouselContainer">
+                <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#9664;</button>
+
+                <div class="carousel-track" id="dossierTrack">
+                    
+                    <a href="dossiers/operation-pariwartan.html" class="blog-card carousel-slide active" style="text-decoration: none; border: 1px solid #ff335f; padding: 20px; border-radius: 8px; background: rgba(10,10,10,0.95);">
+                        <h3 style="color:#fff;">OPERATION PARIWARTAN</h3>
+                        <p style="color:#bbb;">Political convergence analysis and electoral mapping.</p>
+                        <span style="color:#00ff88;">ACCESS DOSSIER →</span>
+                    </a>
+
+                    <a href="dossiers/india-2040.html" class="blog-card carousel-slide" style="text-decoration: none; border: 1px solid #ff335f; padding: 20px; border-radius: 8px; background: rgba(10,10,10,0.95);">
+                        <h3 style="color:#fff;">INDIA 2040</h3>
+                        <p style="color:#bbb;">Analysis of future socio-political trajectories.</p>
+                        <span style="color:#00ff88;">ACCESS FILE →</span>
+                    </a>
+
+                    <a href="dossiers/darjeeling-politics.html" class="blog-card carousel-slide" style="text-decoration: none; border: 1px solid #ff335f; padding: 20px; border-radius: 8px; background: rgba(10,10,10,0.95);">
+                        <h3 style="color:#fff;">DARJEELING POLITICS</h3>
+                        <p style="color:#bbb;">Regional geopolitical shifts and factional intelligence.</p>
+                        <span style="color:#00ff88;">ACCESS FILE →</span>
+                    </a>
+
+                    <a href="dossiers/india-unfiltered.html" class="blog-card carousel-slide" style="text-decoration: none; border: 1px solid #ff335f; padding: 20px; border-radius: 8px; background: rgba(10,10,10,0.95);">
+                        <h3 style="color:#fff;">INDIA UNFILTERED</h3>
+                        <p style="color:#bbb;">Raw socio-economic data and unredacted national metrics.</p>
+                        <span style="color:#00ff88;">ACCESS FILE →</span>
+                    </a>
+
+                    <a href="dossiers/dossier-01.html" class="blog-card carousel-slide" style="text-decoration: none; border: 1px solid #ff335f; padding: 20px; border-radius: 8px; background: rgba(10,10,10,0.95);">
+                        <h3 style="color:#fff;">DOSSIER 01</h3>
+                        <p style="color:#bbb;">Classified system initialization and origin protocols.</p>
+                        <span style="color:#00ff88;">ACCESS FILE →</span>
+                    </a>
+
+                </div>
+
+                <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#9654;</button>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button id="toggleArchiveBtn" onclick="toggleArchive()" class="join-btn secondary" style="border: 1px solid #ff335f; background: transparent; color: #ff335f; padding: 10px 20px; cursor: pointer; font-family: 'Orbitron', sans-serif;">VIEW FULL ARCHIVE</button>
             </div>
         </section>
 
@@ -104,6 +150,7 @@
                     <h2 class="scramble-text">JOIN THE NETWORK</h2>
                     <div style="margin-top:30px; display:flex; flex-direction:column; gap:15px;">
                         <button onclick="window.location.href='login.html'" class="join-btn secondary">ACCESS DASHBOARD</button>
+                        <button onclick="window.location.href='https://forms.gle/VmM3xCM8CyisMPJE9'" class="join-btn secondary">BE ONE OF US</button>
                     </div>
                 </div>
             </div>
