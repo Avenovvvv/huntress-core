@@ -3,75 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H.U.N.T.R.E.S.S | C2_CONSOLE</title>
-    <!-- Firewall: Security Handshake -->
-    <script>
-        if(localStorage.getItem('huntress_clearance') !== 'GRANTED') {
-            window.location.href = 'login.html';
-        }
-    </script>
-    <link rel="stylesheet" href="style.css?v=1.1">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Courier+Prime&display=swap" rel="stylesheet">
-    <style>
-        body { background: #030303; color: #00ff88; font-family: 'Courier Prime', monospace; margin: 0; overflow: hidden; }
-        .c2-console { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; padding: 20px; z-index: 10; display: flex; flex-direction: column; }
-        .console-header { border-bottom: 1px solid #00ff88; padding-bottom: 10px; display: flex; justify-content: space-between; font-size: 14px; }
-        .dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; height: 90vh; padding-top: 20px; }
-        .widget { background: rgba(0, 0, 0, 0.85); border: 1px solid #00ff88; padding: 15px; display: flex; flex-direction: column; overflow: hidden; }
-        .widget-header { background: #00ff88; color: #000; font-weight: bold; padding: 5px; margin-bottom: 10px; font-size: 12px; }
-        #terminalOutput { flex-grow: 1; overflow-y: auto; font-size: 13px; margin-bottom: 10px; }
-        .terminal-input { background: transparent; border: none; border-top: 1px solid #00ff88; color: #00ff88; padding: 10px; font-family: 'Courier Prime', monospace; outline: none; }
-        .log-content { font-size: 12px; opacity: 0.8; }
-    </style>
+    <title>H.U.N.T.R.E.S.S. // COMMAND CENTER</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./style.css?v=2.0">
 </head>
-
 <body>
-    <canvas id="matrix"></canvas>
+    <canvas id="matrixCanvas" class="matrix-bg"></canvas>
 
-    <div class="c2-console">
-        <header class="console-header">
-            <span>[ SYSTEM_CONSOLE_ACTIVE ]</span>
-            <span>CLEARANCE: OMEGA</span>
-            <span id="clock">00:00:00</span>
+    <div class="dashboard-wrapper">
+        
+        <header class="gx-header glass-panel">
+            <div class="logo-container">
+                <h1 class="system-title">H.U.N.T.R.E.S.S. <span class="cyan-text">//</span> COMMAND</h1>
+            </div>
+            
+            <form class="shodan-search" action="https://www.shodan.io/search" target="_blank" method="GET">
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" name="query" placeholder="Shodan OSINT Query (e.g. port:21)..." required autocomplete="off">
+                    <button type="submit" class="danger-btn">SCAN TARGET</button>
+                </div>
+            </form>
+
+            <div class="nav-controls">
+                <button onclick="window.location.href='./main.html'" class="ghost-btn">RETURN TO ARCHIVE</button>
+                <button onclick="window.location.href='./index.html'" class="danger-btn outline">SYSTEM LOGOUT</button>
+            </div>
         </header>
 
-        <div class="dashboard-grid">
-            <!-- TERMINAL MODULE -->
-            <div class="widget terminal-widget">
-                <div class="widget-header">UPLINK_CONSOLE</div>
-                <div id="terminalOutput">
-                    <p>> HANDSHAKE ESTABLISHED...</p>
-                    <p>> AUTHENTICATION SUCCESSFUL...</p>
+        <main class="dashboard-grid">
+            
+            <section class="panel toolkit-panel glass-panel">
+                <div class="panel-header">
+                    <h2><span class="cyan-text">🧰</span> TACTICAL ARSENAL</h2>
                 </div>
-                <input type="text" id="terminalInput" class="terminal-input" placeholder=">_">
-            </div>
+                <div class="panel-body">
+                    <ul id="tool-list" class="tool-list">
+                        <li><span class="status-dot online"></span> Metasploit Framework</li>
+                        <li><span class="status-dot online"></span> Nmap Scanner</li>
+                        <li><span class="status-dot online"></span> Wireshark</li>
+                        <li><span class="status-dot online"></span> Burp Suite</li>
+                        <li><span class="status-dot offline"></span> Maltego</li>
+                    </ul>
+                    
+                    <div class="add-tool-box">
+                        <input type="text" id="new-tool-input" placeholder="Register new tool payload...">
+                        <button id="add-tool-btn" class="action-btn">[+] ADD</button>
+                    </div>
+                </div>
+            </section>
 
-            <!-- STATUS MODULE -->
-            <div class="widget status-widget">
-                <div class="widget-header">SYSTEM_STATUS</div>
-                <div class="log-content">
-                    <p>LATENCY: 12ms</p>
-                    <p>THREAT: DEFCON 3</p>
-                    <p>NODE_STATUS: ACTIVE</p>
+            <section class="panel terminal-panel glass-panel border-glow">
+                <div class="terminal-header">
+                    <span class="term-title">root@huntress-core:~/.netlify/functions/chat</span>
+                    <div class="term-controls">
+                        <span class="dot min"></span>
+                        <span class="dot max"></span>
+                        <span class="dot close"></span>
+                    </div>
                 </div>
-            </div>
+                
+                <div class="terminal-body" id="terminal-output">
+                    <div class="term-line sys-msg">Initiating H.U.N.T.R.E.S.S. AI Core Interface...</div>
+                    <div class="term-line sys-msg">Connection to Netlify Serverless Proxy established.</div>
+                    <div class="term-line sys-msg">Awaiting operator input...</div>
+                </div>
+                
+                <div class="terminal-input-line">
+                    <span class="prompt">root@huntress:~# </span>
+                    <input type="text" id="terminal-input" placeholder="Enter command or AI query..." autocomplete="off" autofocus>
+                </div>
+            </section>
 
-            <!-- LOG MODULE -->
-            <div class="widget log-widget" style="grid-column: span 2;">
-                <div class="widget-header">ACTIVE_RELAYS</div>
-                <div class="log-content">
-                    <p>> READY TO INITIATE MAPPING...</p>
+            <section class="panel radar-panel glass-panel">
+                <div class="panel-header">
+                    <h2><span class="cyan-text">📡</span> ENTITY PROXIMITY</h2>
                 </div>
-            </div>
-        </div>
+                <div class="panel-body radar-container">
+                    <div class="radar">
+                        <div class="radar-grid"></div>
+                        <div class="radar-crosshair-v"></div>
+                        <div class="radar-crosshair-h"></div>
+                        
+                        <div class="sweep"></div>
+                        
+                        <div class="blip" style="top: 25%; left: 35%; animation-delay: 0.5s;" data-bssid="BSSID: 0A:1B:... "></div>
+                        <div class="blip" style="top: 65%; left: 75%; animation-delay: 1.2s;" data-bssid="BSSID: 9F:2C:... "></div>
+                        <div class="blip threat" style="top: 80%; left: 45%; animation-delay: 2.5s;" data-bssid="UNKNOWN THREAT"></div>
+                    </div>
+                    <div class="radar-status">
+                        <span class="status-text scanning">SCANNING 802.11 FREQUENCIES...</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
     </div>
 
-    <script src="script.js?v=1.1"></script>
-    <script>
-        // Clock Function
-        setInterval(() => {
-            document.getElementById('clock').innerText = new Date().toLocaleTimeString();
-        }, 1000);
-    </script>
+    <script src="./script.js?v=2.0"></script>
 </body>
 </html>
