@@ -78,15 +78,30 @@
         }
         .return-btn:hover { background: #00ffcc; color: #000; box-shadow: 0 0 15px #00ffcc; }
         
-        /* Visual Placeholder */
+        /* Interactive Visual Evidence Grid */
+        .visual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
         .visual-evidence {
             width: 100%;
-            height: 250px;
-            background: url('../Gemini_Generated_Image_qtafkqqtafkqqtaf.png') center/cover no-repeat;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
             border: 1px solid #333;
-            margin-bottom: 20px;
             position: relative;
-            filter: grayscale(80%) sepia(20%) hue-rotate(80deg);
+            filter: grayscale(80%) sepia(20%) hue-rotate(80deg); /* Classified OSINT Filter */
+            transition: all 0.4s ease;
+            cursor: crosshair;
+        }
+        .visual-evidence:hover {
+            filter: grayscale(0%) sepia(0%) hue-rotate(0deg); /* Clears filter on hover */
+            border-color: #ffaa00;
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.4);
+            transform: scale(1.02);
+            z-index: 10;
         }
         .visual-overlay {
             position: absolute;
@@ -96,6 +111,7 @@
             padding: 5px 10px;
             font-size: 0.8rem;
             border-left: 2px solid #ffaa00;
+            color: #00ffcc;
         }
         .series-footer {
             margin-top: 40px;
@@ -122,8 +138,20 @@
             <p><strong>COMPILED BY:</strong> H.U.N.T.R.E.S.S. Intelligence (Tier-1 Administrative Standards)</p>
         </div>
 
-        <div class="visual-evidence">
-            <div class="visual-overlay">AESTHETIC REFERENCE: MEGACITY SECTOR // SYSTEM AUDIT</div>
+        <div class="intel-panel">
+            <div class="panel-header">VISUAL INTELLIGENCE: CAMPUS REPORT</div>
+            <div class="data-point" style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">[ Hover/Tap to clear security filters and view raw visual data ]</div>
+            <div class="visual-grid">
+                <div class="visual-evidence" style="background-image: url('../image_c7d747.jpg');">
+                    <div class="visual-overlay">REF 01 // PERIMETER SEC A</div>
+                </div>
+                <div class="visual-evidence" style="background-image: url('../image_c7d7c3.png');">
+                    <div class="visual-overlay">REF 02 // COURTYARD VECTOR</div>
+                </div>
+                <div class="visual-evidence" style="background-image: url('../image_c7dece.png');">
+                    <div class="visual-overlay">REF 03 // HALLWAY OVERWATCH</div>
+                </div>
+            </div>
         </div>
 
         <div class="intel-panel">
