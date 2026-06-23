@@ -1,9 +1,9 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLASSIFIED: AGEMC Anomaly | H.U.N.T.R.E.S.S.</title>
+    <title>OSINT-001: AGEMC Report | H.U.N.T.R.E.S.S.</title>
     <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
@@ -15,17 +15,28 @@
             font-family: 'Share Tech Mono', monospace;
             color: #00ffcc;
         }
+        .serial-tag {
+            display: inline-block;
+            background: rgba(255, 170, 0, 0.2);
+            color: #ffaa00;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            border: 1px solid #ffaa00;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
         .dossier-header {
-            border-bottom: 2px solid #ff003c;
+            border-bottom: 2px solid #ffaa00;
             padding-bottom: 10px;
             margin-bottom: 30px;
         }
         .dossier-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 2rem;
-            color: #ff003c;
-            text-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
+            color: #ffaa00;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
             text-transform: uppercase;
+            margin-top: 0;
         }
         .intel-panel {
             background: rgba(0, 0, 0, 0.72);
@@ -36,10 +47,10 @@
             border-left: 5px solid #00ff88;
             box-shadow: inset 0 0 20px rgba(0, 255, 136, 0.05);
         }
-        .intel-panel.critical {
-            border-color: #ff003c;
-            border-left: 5px solid #ff003c;
-            box-shadow: inset 0 0 20px rgba(255, 0, 60, 0.05);
+        .intel-panel.investigative {
+            border-color: #ffaa00;
+            border-left: 5px solid #ffaa00;
+            box-shadow: inset 0 0 20px rgba(255, 170, 0, 0.05);
         }
         .panel-header {
             font-family: 'Orbitron', sans-serif;
@@ -49,10 +60,10 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-        .critical .panel-header { color: #ff003c; }
+        .investigative .panel-header { color: #ffaa00; }
         .data-point { margin-bottom: 10px; line-height: 1.6; }
         .highlight { color: #ffffff; background: rgba(0, 255, 136, 0.2); padding: 2px 5px; }
-        .red-highlight { color: #ffffff; background: rgba(255, 0, 60, 0.3); padding: 2px 5px; }
+        .warning-highlight { color: #ffffff; background: rgba(255, 170, 0, 0.3); padding: 2px 5px; }
         .return-btn {
             display: inline-block;
             margin-bottom: 20px;
@@ -84,7 +95,14 @@
             background: rgba(0,0,0,0.8);
             padding: 5px 10px;
             font-size: 0.8rem;
-            border-left: 2px solid #ff003c;
+            border-left: 2px solid #ffaa00;
+        }
+        .series-footer {
+            margin-top: 40px;
+            padding: 15px;
+            border: 1px dashed #333;
+            background: rgba(0,0,0,0.5);
+            text-align: center;
         }
     </style>
 </head>
@@ -97,45 +115,53 @@
     <div class="dossier-container">
         
         <div class="dossier-header">
-            <h1 class="dossier-title">FILE: AGEMC SYSTEMIC COLLAPSE</h1>
-            <p><strong>TARGET:</strong> Administrative Leadership & Principal</p>
-            <p><strong>STATUS:</strong> <span style="color:#ff003c; font-weight:bold;">ACTIVE REBELLION / NEGLECT</span></p>
+            <div class="serial-tag">DOCUMENT SEQUENCE: 001</div>
+            <h1 class="dossier-title">FILE: AGEMC INFRASTRUCTURE REPORT</h1>
+            <p><strong>TARGET:</strong> Administrative Operations & Resource Allocation</p>
+            <p><strong>STATUS:</strong> <span style="color:#ffaa00; font-weight:bold;">ONGOING OSINT ANALYSIS (PART 1)</span></p>
             <p><strong>COMPILED BY:</strong> H.U.N.T.R.E.S.S. Core Intelligence</p>
         </div>
 
         <div class="visual-evidence">
-            <div class="visual-overlay">AESTHETIC REFERENCE: MEGACITY DECAY // SECTOR 4</div>
+            <div class="visual-overlay">AESTHETIC REFERENCE: MEGACITY SECTOR // OBSERVATION</div>
         </div>
 
         <div class="intel-panel">
-            <div class="panel-header">I. The Catalyst: Bureaucratic Smokescreen</div>
+            <div class="panel-header">I. Intercepted Communications: Administrative Friction</div>
             <div class="data-point"><strong>TIMESTAMP:</strong> May 2024</div>
-            <div class="data-point"><strong>EVENT:</strong> Principal issues a formal ultimatum to the student body following zero attendance at a newly arranged, external Physics Lab session. Students were threatened with <span class="red-highlight">"proper action"</span> if a written clarification was not submitted by 28.05.2024.</div>
-            <div class="data-point"><strong>ANALYST NOTE:</strong> This communication is assessed as a defensive maneuver. The administration is actively fabricating a paper trail to shift the blame for academic failure onto the students, masking a much deeper infrastructural void.</div>
+            <div class="data-point"><strong>EVENT:</strong> Principal issued an official email requiring written clarification from the student body by 28.05.2024, following 0% attendance at an unannounced external Physics Lab session. Warnings of <span class="warning-highlight">"proper action"</span> were formally logged.</div>
+            <div class="data-point"><strong>OSINT ASSESSMENT:</strong> This data point indicates a breakdown in communication and operational alignment between the student body and administrative scheduling, potentially highlighting friction regarding faculty availability.</div>
         </div>
 
-        <div class="intel-panel critical">
-            <div class="panel-header">II. Core Systemic Neglect</div>
-            <div class="data-point">Intelligence gathered from internal union grievances confirms severe operational degradation across the AGEMC campus:</div>
+        <div class="intel-panel investigative">
+            <div class="panel-header">II. Infrastructure & Personnel Assessment</div>
+            <div class="data-point">Internal data streams and localized intelligence indicate compounding infrastructural deficits at the campus level:</div>
             <ul style="line-height: 1.8; margin-top: 10px;">
-                <li><strong>Sanitation Failure:</strong> Classrooms and hallways remain in unhygienic conditions, directly contradicting the institution's mandate.</li>
-                <li><strong>Personnel Deficits:</strong> A critical shortage of permanent, reliable core faculty members, coupled with a severe lack of Group C and Group D support/maintenance staff.</li>
-                <li><strong>Welfare Void:</strong> Complete absence of basic developmental infrastructure, notably a gymnasium.</li>
+                <li><strong>Sanitation Discrepancies:</strong> Reports of unhygienic conditions in core learning environments (hallways/classrooms).</li>
+                <li><strong>Personnel Deficits:</strong> Verified shortages of reliable core faculty, compounded by a noted lack of Group C and Group D operational/maintenance staff.</li>
+                <li><strong>Facility Voids:</strong> Absence of developmental infrastructure, notably a gymnasium or athletic complex.</li>
             </ul>
         </div>
 
         <div class="intel-panel">
-            <div class="panel-header">III. Targeted Remediation & Pushback</div>
-            <div class="data-point">The student body has moved beyond complaints into active, organized demands for systemic overhaul. The friction point is characterized by highly informed demands regarding modern educational rights:</div>
+            <div class="panel-header">III. Stakeholder Demands & Proposed Remediation</div>
+            <div class="data-point">Monitoring of student channels reveals organized advocacy for systemic upgrades aligned with modern academic frameworks:</div>
             <ul style="line-height: 1.8; margin-top: 10px;">
-                <li><span class="highlight">Command Structure Overhaul:</span> Immediate requirement for responsible, disciplined teaching staff and leadership.</li>
-                <li><span class="highlight">Curriculum Modernization:</span> Eradication of the "ancient" syllabus in favor of a modern, skill-based matrix.</li>
-                <li><span class="highlight">Meritocratic Acceleration:</span> Implementation of a framework granting extra points, credit mobility, or grade upgrades for students possessing industry-ready skills exceeding their current semester. (Validated against modern UGC/AICTE NCrF guidelines).</li>
+                <li><span class="highlight">Leadership Accountability:</span> Requests for more disciplined and responsible core faculty and principal oversight.</li>
+                <li><span class="highlight">Syllabus Modernization:</span> Advocacy to phase out outdated coursework in favor of skill-based learning matrices.</li>
+                <li><span class="highlight">Credit Mobility Integration:</span> Demands for accelerated learning pathways (extra points, grade upgrades, or degree credits) for students demonstrating advanced, industry-ready skills. (Analyst Note: This aligns with established UGC/AICTE NCrF guidelines).</li>
             </ul>
+        </div>
+
+        <div class="series-footer">
+            <span style="color: #666;">[ LINKED FILES IN THIS SERIES ]</span><br><br>
+            <span style="color: #00ffcc;">► REPORT 001: INITIAL INFRASTRUCTURE ASSESSMENT (CURRENT)</span><br>
+            <span style="color: #ffaa00; opacity: 0.6;">► REPORT 002: [ PENDING DATA UPLINK ]</span><br>
+            <span style="color: #ffaa00; opacity: 0.6;">► REPORT 003: [ PENDING DATA UPLINK ]</span>
         </div>
 
         <div style="text-align: center; margin-top: 50px; font-size: 0.8rem; opacity: 0.5;">
-            [ END OF REPORT ]<br>
+            [ END OF REPORT 001 ]<br>
             ENCRYPTION KEY: VALIDATED // H.U.N.T.R.E.S.S. SECURE TERMINAL
         </div>
 
