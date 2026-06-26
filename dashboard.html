@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="./style.css?v=2.0">
 </head>
 <body>
+    <script>
+        // Auth-Guard Sentinel: Multi-Level Clearance Verification
+        // Restricts access to ADMIN clearance level only
+        const clearance = localStorage.getItem('huntress_clearance');
+        if (clearance !== 'ADMIN') {
+            alert("ACCESS DENIED: INSUFFICIENT CLEARANCE. REDIRECTING...");
+            window.location.href = 'main.html';
+        }
+    </script>
     <canvas id="matrixCanvas" class="matrix-bg"></canvas>
 
     <div class="dashboard-wrapper">

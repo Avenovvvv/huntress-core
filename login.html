@@ -89,22 +89,22 @@
 
         // Authentication Logic
         function checkAccess() {
-            const alias = document.getElementById('hunterAlias').value.toUpperCase();
-            const passcode = document.getElementById('clearanceCode').value;
-            const errorMsg = document.getElementById('authError');
+            // Dual-Level Clearance Gateway
+const aliasInput = document.getElementById('alias').value;
+const codeInput = document.getElementById('clearanceCode').value;
 
-            if(alias === "HUNTER_000" && passcode === "REZNOV") {
-                localStorage.setItem('huntress_clearance', 'GRANTED');
-                window.location.href = 'main.html';
-            } 
-            else if (passcode === "MASTER_DESIGNER_KEY") { 
-                document.getElementById('login-container').style.display = 'none';
-                document.getElementById('sovereign-ui').style.display = 'block';
-            }
-            else {
-                errorMsg.style.display = 'block';
-                document.getElementById('clearanceCode').value = "";
-            }
+if (codeInput === "REZNOV") {
+    // Admin / Commander Level
+    localStorage.setItem('huntress_clearance', 'ADMIN');
+    window.location.href = 'dashboard.html'; 
+} else if (codeInput === "AGENT") {
+    // Normal / Standard Agent Level
+    localStorage.setItem('huntress_clearance', 'NORMAL');
+    window.location.href = 'main.html';
+} else {
+    // Access Denied
+    alert("INVALID CLEARANCE CODE");
+}
         }
         document.getElementById('authBtn').addEventListener('click', checkAccess);
 
