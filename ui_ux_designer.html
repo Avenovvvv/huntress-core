@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX DESIGNER | Advanced Cyber-Canvas</title>
+    <style>
+        /* SOVEREIGN CORE STYLES */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Courier+Prime&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #030303;
+            color: #00ff88;
+            font-family: 'Courier Prime', monospace;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* COMMAND HEADER */
+        .command-header {
+            background: rgba(0, 255, 136, 0.05);
+            border-bottom: 1px solid #00ff88;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .command-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin: 0;
+            text-shadow: 0 0 5px #00ff88;
+        }
+
+        .auth-bar {
+            display: flex;
+            gap: 10px;
+        }
+
+        .auth-bar input {
+            background: #000;
+            border: 1px solid #ff003c;
+            color: #ff003c;
+            padding: 8px;
+            font-family: 'Courier Prime', monospace;
+            width: 220px;
+            outline: none;
+        }
+        
+        .auth-bar input::placeholder {
+            color: rgba(255, 0, 60, 0.5);
+        }
+
+        .deploy-btn {
+            background: #00ff88;
+            color: #000;
+            border: none;
+            padding: 8px 15px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .deploy-btn:hover {
+            box-shadow: 0 0 15px #00ff88;
+        }
+
+        /* WORKSPACE LAYOUT */
+        .workspace {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* TOOLBOX (LEFT PANEL) */
+        .toolbox {
+            width: 240px;
+            border-right: 1px solid #00ff88;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            overflow-y: auto;
+        }
+
+        .toolbox-category {
+            color: #00ffcc; 
+            margin-top: 10px; 
+            margin-bottom: 5px; 
+            border-bottom: 1px solid #00ffcc;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .drag-item {
+            background: rgba(0, 255, 136, 0.05);
+            border: 1px dashed rgba(0, 255, 136, 0.5);
+            padding: 10px;
+            text-align: left;
+            cursor: grab;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.85rem;
+            transition: background 0.2s, border 0.2s;
+        }
+        
+        .drag-item:hover {
+            background: rgba(0, 255, 136, 0.15);
+            border: 1px solid #00ff88;
+        }
+
+        .drag-item:active {
+            cursor: grabbing;
+        }
+
+        /* CANVAS (CENTER CONSOLE) */
+        .canvas-container {
+            flex: 1;
+            padding: 20px;
+            /* Enhanced background to show off glassmorphism */
+            background: 
+                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-color: #050505;
+            overflow-y: auto;
+        }
+
+        .canvas {
+            min-height: 80vh;
+            border: 2px solid rgba(0, 255, 136, 0.2);
+            padding: 20px;
+            color: #fff;
+            position: relative;
+        }
+
+        .canvas .sov-element {
+            margin-bottom: 15px;
+            border: 1px dashed transparent;
+            position: relative;
+        }
+        
+        .canvas .sov-element:hover {
+            border: 1px dashed rgba(0, 255, 204, 0.5);
+        }
+
+        /* LIVE CODE TERMINAL (RIGHT PANEL) */
+        .code-terminal {
+            width: 350px;
+            border-left: 1px solid #00ff88;
+            background: #020202;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .code-header {
+            background: #00ff88;
+            color: #000;
+            padding: 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        #code-editor {
+            flex: 1;
+            background: transparent;
+            color: #00ffcc;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.85rem;
+            padding: 15px;
+            border: none;
+            outline: none;
+            resize: none;
+            line-height: 1.4;
+        }
+
+        .sync-btn {
+            background: #ff003c;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .sync-btn:hover {
+            background: #cc0030;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="command-header">
+        <h1>UI/UX HYBRID ENGINE // ADVANCED ASSETS</h1>
+        <div class="auth-bar">
+            <input type="text" id="file-name" placeholder="Target File (e.g. index.html)">
+            <input type="password" id="github-token" placeholder="Deployment Key (PAT)">
+            <button class="deploy-btn" id="deploy-btn">INITIATE UPLINK</button>
+        </div>
+    </div>
+
+    <div class="workspace">
+        
+        <div class="toolbox">
+            <div class="toolbox-category">STANDARD INTEL</div>
+            <div class="drag-item" draggable="true" data-type="header">[+] Header Block</div>
+            <div class="drag-item" draggable="true" data-type="paragraph">[+] Text Payload</div>
+            <div class="drag-item" draggable="true" data-type="image">[+] Visual Asset</div>
+            
+            <div class="toolbox-category">H.U.N.T.R.E.S.S. NATIVE</div>
+            <div class="drag-item" draggable="true" data-type="glass-panel" style="border-color: #00ffcc;">[+] Glassmorphic Panel</div>
+            <div class="drag-item" draggable="true" data-type="dossier-card" style="border-color: #00ffcc;">[+] Dossier Entry Card</div>
+            <div class="drag-item" draggable="true" data-type="cyber-button" style="border-color: #00ff88;">[+] Cyber-Button</div>
+            <div class="drag-item" draggable="true" data-type="warning-banner" style="border-color: #ff003c;">[+] Threat Alert Banner</div>
+        </div>
+
+        <div class="canvas-container">
+            <div class="canvas" id="drop-canvas"></div>
+        </div>
+
+        <div class="code-terminal">
+            <div class="code-header">RAW HTML/CSS OVERRIDE</div>
+            <textarea id="code-editor" spellcheck="false" placeholder=""></textarea>
+            <button class="sync-btn" id="sync-btn">SYNC TERMINAL TO CANVAS</button>
+        </div>
+
+    </div>
+
+    <script>
+        // SOVEREIGN ENGINE v1.5 // ADVANCED ASSET INJECTION
+        
+        const draggables = document.querySelectorAll('.drag-item');
+        const canvas = document.getElementById('drop-canvas');
+        const codeEditor = document.getElementById('code-editor');
+        const deployBtn = document.getElementById('deploy-btn');
+        const syncBtn = document.getElementById('sync-btn');
+
+        function updateTerminal() {
+            let rawHTML = canvas.innerHTML.trim();
+            rawHTML = rawHTML.replace(/^\s*$(?:\r\n?|\n)/gm, "");
+            codeEditor.value = rawHTML;
+        }
+
+        draggables.forEach(item => {
+            item.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('element-type', e.target.getAttribute('data-type'));
+            });
+        });
+
+        canvas.addEventListener('dragover', (e) => {
+            e.preventDefault(); 
+            canvas.style.borderColor = '#00ff88'; 
+            canvas.style.boxShadow = 'inset 0 0 20px rgba(0,255,136,0.1)';
+        });
+
+        canvas.addEventListener('dragleave', () => {
+            canvas.style.borderColor = 'rgba(0, 255, 136, 0.2)';
+            canvas.style.boxShadow = 'none';
+        });
+
+        canvas.addEventListener('drop', (e) => {
+            e.preventDefault();
+            canvas.style.borderColor = 'rgba(0, 255, 136, 0.2)';
+            canvas.style.boxShadow = 'none';
+            
+            const elementType = e.dataTransfer.getData('element-type');
+            if (!elementType) return;
+
+            let newElement = document.createElement('div');
+            newElement.classList.add('sov-element');
+            
+            // ASSET GENERATION LOGIC
+            switch(elementType) {
+                case 'header':
+                    newElement.innerHTML = '<h2 contenteditable="true" style="color: #00ff88; font-family: \'Orbitron\', sans-serif; text-shadow: 0 0 5px rgba(0,255,136,0.5);">[EDIT] DOSSIER HEADING</h2>';
+                    break;
+                case 'paragraph':
+                    newElement.innerHTML = '<p contenteditable="true" style="color: #ccc; font-family: \'Courier Prime\', monospace; line-height: 1.6;">[EDIT] Enter intelligence payload here. Click to type.</p>';
+                    break;
+                case 'image':
+                    newElement.innerHTML = '<img src="https://via.placeholder.com/800x400/0a0a0a/00ff88?text=VISUAL+EVIDENCE+PENDING" style="width: 100%; border: 1px solid rgba(0,255,136,0.3);">';
+                    break;
+                case 'glass-panel':
+                    newElement.innerHTML = `
+                        <div style="background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(10px); border: 1px solid rgba(0, 255, 204, 0.3); border-left: 3px solid #00ffcc; padding: 25px; margin: 15px 0;">
+                            <h3 contenteditable="true" style="margin-top: 0; color: #00ffcc; font-family: 'Orbitron', sans-serif;">[EDIT] INTEL WINDOW</h3>
+                            <p contenteditable="true" style="color: #ddd; font-family: 'Courier Prime', monospace; font-size: 0.95rem;">[EDIT] Enter classified information. This panel utilizes native H.U.N.T.R.E.S.S. glassmorphism.</p>
+                        </div>`;
+                    break;
+                case 'dossier-card':
+                    newElement.innerHTML = `
+                        <div style="background: #080808; border: 1px solid #1a1a1a; padding: 15px; width: 100%; max-width: 320px; display: inline-block; cursor: pointer; transition: transform 0.2s;">
+                            <img src="https://via.placeholder.com/320x180/111/00ff88?text=DOSSIER+ASSET" style="width: 100%; border-bottom: 1px solid #333; margin-bottom: 15px;">
+                            <h4 contenteditable="true" style="color: #00ff88; font-family: 'Orbitron', sans-serif; margin: 0 0 8px 0;">[EDIT] SUBJECT: ANOMALY</h4>
+                            <p contenteditable="true" style="color: #777; font-size: 0.8rem; font-family: 'Courier Prime', monospace; margin: 0;">[EDIT] Status: Active Investigation</p>
+                        </div>`;
+                    break;
+                case 'cyber-button':
+                    newElement.innerHTML = `<button contenteditable="true" style="background: rgba(0,255,136,0.05); border: 1px solid #00ff88; color: #00ff88; padding: 12px 25px; font-family: 'Orbitron', sans-serif; font-weight: bold; cursor: pointer; text-shadow: 0 0 5px #00ff88; box-shadow: inset 0 0 10px rgba(0,255,136,0.1); display: inline-block; margin: 10px 0;">[EDIT] INITIATE SEQUENCE</button>`;
+                    break;
+                case 'warning-banner':
+                    newElement.innerHTML = `
+                        <div style="background: rgba(255, 0, 60, 0.05); border: 1px solid rgba(255,0,60,0.2); border-left: 4px solid #ff003c; padding: 15px 20px; color: #ff003c; font-family: 'Courier Prime', monospace; margin: 15px 0; display: flex; align-items: center; gap: 15px;">
+                            <span style="font-size: 1.2rem;">⚠️</span>
+                            <span contenteditable="true" style="flex: 1; font-weight: bold;">[EDIT] CRITICAL WARNING: Unauthorized protocol detected.</span>
+                        </div>`;
+                    break;
+            }
+
+            canvas.appendChild(newElement);
+            updateTerminal();
+        });
+
+        const observer = new MutationObserver(updateTerminal);
+        observer.observe(canvas, { childList: true, characterData: true, subtree: true });
+
+        syncBtn.addEventListener('click', () => {
+            canvas.innerHTML = codeEditor.value;
+            canvas.style.backgroundColor = 'rgba(0, 255, 136, 0.1)';
+            setTimeout(() => canvas.style.backgroundColor = '#050505', 300);
+        });
+
+        // GITHUB DEPLOYMENT PROTOCOL
+        deployBtn.addEventListener('click', async () => {
+            const token = document.getElementById('github-token').value;
+            let targetFile = document.getElementById('file-name').value.trim();
+            const finalCodePayload = codeEditor.value;
+
+            if (!targetFile) return alert('CRITICAL ERROR: Target File Name Missing.');
+            if (!token) return alert('CRITICAL ERROR: Deployment Key (PAT) Missing.');
+            if (!finalCodePayload) return alert('CRITICAL ERROR: Canvas is empty.');
+
+            if (!targetFile.endsWith('.html')) targetFile += '.html';
+
+            deployBtn.innerText = 'UPLINKING...';
+            deployBtn.style.boxShadow = '0 0 20px #ff003c';
+            deployBtn.style.color = '#ff003c';
+
+            const fullHtmlPayload = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.U.N.T.R.E.S.S. | Deployed Operations</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body style="background-color: #030303; color: #00ff88; padding: 40px; margin: 0; font-family: 'Courier Prime', monospace;">
+    <div class="ui-ux-container" style="max-width: 900px; margin: 0 auto;">
+${finalCodePayload}
+    </div>
+</body>
+</html>`;
+
+            const encodedContent = btoa(unescape(encodeURIComponent(fullHtmlPayload)));
+            const repoOwner = 'Avenovvvv';
+            const repoName = 'huntress-core';
+            const filePath = targetFile;
+            const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`;
+
+            try {
+                let fileSha = null;
+                const getRes = await fetch(apiUrl, { headers: { 'Authorization': `token ${token}` } });
+                if (getRes.ok) {
+                    const data = await getRes.json();
+                    fileSha = data.sha;
+                }
+
+                const bodyPayload = {
+                    message: `UI/UX Automated Deployment of ${filePath}`,
+                    content: encodedContent
+                };
+                if (fileSha) bodyPayload.sha = fileSha;
+
+                const putRes = await fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify(bodyPayload)
+                });
+
+                if (putRes.ok) {
+                    alert(`UPLINK SUCCESSFUL: ${filePath} injected into GitHub. Netlify is building the live site.`);
+                    deployBtn.innerText = 'INITIATE UPLINK';
+                    deployBtn.style.boxShadow = 'none';
+                    deployBtn.style.color = '#000';
+                } else {
+                    const errData = await putRes.json();
+                    alert('UPLINK FAILED: ' + errData.message);
+                    deployBtn.innerText = 'INITIATE UPLINK';
+                }
+            } catch (error) {
+                alert('SYSTEM FAILURE: ' + error.message);
+                deployBtn.innerText = 'INITIATE UPLINK';
+            }
+        });
+    </script>
+</body>
+</html>
