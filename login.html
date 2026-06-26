@@ -5,13 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H.U.N.T.R.E.S.S | CLEARANCE REQUIRED</title>
     <link rel="stylesheet" href="style.css?v=1.1">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Courier+Prime&display=swap" rel="stylesheet">
+    <style>
+        /* Stealth CSS Integration */
+        #login-container {
+            opacity: 0; 
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        #trigger-zone {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            cursor: crosshair;
+            z-index: 10000;
+        }
+    </style>
 </head>
 <body style="display:flex; justify-content:center; align-items:center; height:100vh; overflow:hidden; background:#030303;">
 
     <canvas id="matrix"></canvas>
 
-    <div class="auth-terminal reveal active">
+    <div id="login-container" class="auth-terminal reveal active">
         <div class="comms-header" style="text-align:center; border-bottom: 1px solid var(--danger); padding-bottom:15px; margin-bottom:20px;">
             <h2 style="color:var(--danger); letter-spacing:4px; font-size:24px;">RESTRICTED AREA</h2>
             <p style="color:#888; font-size:12px; margin-top:10px; font-family:monospace;">AUTHORIZATION REQUIRED TO BREACH PLATFORM</p>
@@ -26,32 +43,99 @@
         </div>
     </div>
 
-   <script>
-    document.getElementById('authBtn').addEventListener('click', function() {
-        const alias = document.getElementById('hunterAlias').value.toUpperCase();
-        const passcode = document.getElementById('clearanceCode').value;
-        const errorMsg = document.getElementById('authError');
+    <div id="sovereign-ui" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#030303; z-index:9999; overflow:hidden;">
+        <div style="height:100vh; display:flex; flex-direction:column;">
+            <div style="background: rgba(0, 255, 136, 0.05); border-bottom: 1px solid #00ff88; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
+                <h1 style="font-family: 'Orbitron', sans-serif; font-size: 1.2rem; margin: 0; color: #00ff88;">UI/UX DESIGNER // HYBRID ENGINE</h1>
+                <div style="display:flex; gap:10px;">
+                    <input type="text" id="file-name" placeholder="Target File (e.g. index.html)" style="background:#000; border:1px solid #ff003c; color:#ff003c; padding:8px; width:220px;">
+                    <input type="password" id="github-token" placeholder="Deployment Key (PAT)" style="background:#000; border:1px solid #ff003c; color:#ff003c; padding:8px; width:220px;">
+                    <button id="deploy-btn" style="background:#00ff88; color:#000; border:none; padding:8px 15px; font-family: 'Orbitron', sans-serif; font-weight:bold; cursor:pointer;">INITIATE UPLINK</button>
+                </div>
+            </div>
+            
+            <div style="display:flex; flex:1; overflow:hidden;">
+                <div style="width:240px; border-right:1px solid #00ff88; background:rgba(0,0,0,0.8); padding:20px; display:flex; flex-direction:column; gap:12px;">
+                    <div style="color:#00ffcc; border-bottom:1px solid #00ffcc; font-family:'Orbitron'; font-size:0.85rem;">ASSET INVENTORY</div>
+                    <div class="drag-item" draggable="true" data-type="header" style="background:rgba(0,255,136,0.05); border:1px dashed #00ff88; padding:10px; cursor:grab; font-family:'Courier Prime'; color:#00ff88;">[+] Header Block</div>
+                    <div class="drag-item" draggable="true" data-type="paragraph" style="background:rgba(0,255,136,0.05); border:1px dashed #00ff88; padding:10px; cursor:grab; font-family:'Courier Prime'; color:#00ff88;">[+] Text Payload</div>
+                    <div class="drag-item" draggable="true" data-type="glass-panel" style="background:rgba(0,255,136,0.05); border:1px dashed #00ffcc; padding:10px; cursor:grab; font-family:'Courier Prime'; color:#00ffcc;">[+] Glass Panel</div>
+                    <div class="drag-item" draggable="true" data-type="warning-banner" style="background:rgba(0,255,136,0.05); border:1px dashed #ff003c; padding:10px; cursor:grab; font-family:'Courier Prime'; color:#ff003c;">[+] Threat Banner</div>
+                </div>
+                
+                <div style="flex:1; padding:20px; overflow-y:auto; background: #050505;">
+                    <div class="canvas" id="drop-canvas" style="min-height:80vh; border:2px solid rgba(0,255,136,0.2); padding:20px; color:#fff;"></div>
+                </div>
+
+                <div style="width:350px; border-left:1px solid #00ff88; display:flex; flex-direction:column;">
+                    <div style="background:#00ff88; color:#000; padding:10px; text-align:center; font-family:'Orbitron'; font-weight:bold;">RAW HTML/CSS OVERRIDE</div>
+                    <textarea id="code-editor" style="flex:1; background:transparent; color:#00ffcc; font-family:'Courier Prime'; padding:15px; border:none; outline:none; resize:none;"></textarea>
+                    <button id="sync-btn" style="background:#ff003c; color:#fff; border:none; padding:10px; font-family:'Orbitron'; cursor:pointer;">SYNC TERMINAL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="trigger-zone" onclick="revealLogin()"></div>
+
+    <script>
+        // Reveal Function
+        function revealLogin() {
+            const container = document.getElementById('login-container');
+            container.style.opacity = '1';
+            container.style.pointerEvents = 'all';
+            console.log("Gateway Manifested.");
+        }
 
         // Authentication Logic
-        if(alias !== "" && passcode === "REZNOV") {
-            errorMsg.style.display = 'none';
-            this.innerText = "ACCESS GRANTED. DECRYPTING...";
-            this.style.color = "var(--primary)";
-            this.style.borderColor = "var(--primary)";
-            this.style.boxShadow = "0 0 15px rgba(0,255,136,0.4)";
-            
-            setTimeout(() => {
-                // Set clearance token for the firewall
+        function checkAccess() {
+            const alias = document.getElementById('hunterAlias').value.toUpperCase();
+            const passcode = document.getElementById('clearanceCode').value;
+            const errorMsg = document.getElementById('authError');
+
+            if(alias === "HUNTER_000" && passcode === "REZNOV") {
                 localStorage.setItem('huntress_clearance', 'GRANTED');
-                // Route to the Dashboard Playground
-                window.location.href = 'dashboard.html'; 
-            }, 1500);
-        } else {
-            errorMsg.style.display = 'block';
-            this.innerText = "RE-ATTEMPT CODES";
-            document.getElementById('clearanceCode').value = "";
+                window.location.href = 'main.html';
+            } 
+            else if (passcode === "MASTER_DESIGNER_KEY") { 
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('sovereign-ui').style.display = 'block';
+            }
+            else {
+                errorMsg.style.display = 'block';
+                document.getElementById('clearanceCode').value = "";
+            }
         }
-    });
-</script> 
+        document.getElementById('authBtn').addEventListener('click', checkAccess);
+
+        // Sovereign UI Hybrid Engine
+        const canvas = document.getElementById('drop-canvas');
+        const codeEditor = document.getElementById('code-editor');
+        const deployBtn = document.getElementById('deploy-btn');
+        const syncBtn = document.getElementById('sync-btn');
+
+        function updateTerminal() {
+            codeEditor.value = canvas.innerHTML.trim().replace(/^\s*$(?:\r\n?|\n)/gm, "");
+        }
+
+        document.querySelectorAll('.drag-item').forEach(item => {
+            item.addEventListener('dragstart', (e) => e.dataTransfer.setData('type', e.target.getAttribute('data-type')));
+        });
+
+        canvas.addEventListener('dragover', (e) => e.preventDefault());
+        canvas.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const type = e.dataTransfer.getData('type');
+            let el = document.createElement('div');
+            el.classList.add('sov-element');
+            if(type === 'header') el.innerHTML = '<h2 contenteditable="true" style="color:#00ff88;">[EDIT] HEADING</h2>';
+            if(type === 'glass-panel') el.innerHTML = '<div style="background:rgba(0,0,0,0.7); padding:20px; border:1px solid #00ffcc;">[EDIT] INTEL PANEL</div>';
+            if(type === 'warning-banner') el.innerHTML = '<div style="border:1px solid #ff003c; color:#ff003c; padding:10px;">[!] WARNING</div>';
+            canvas.appendChild(el);
+            updateTerminal();
+        });
+
+        syncBtn.addEventListener('click', () => { canvas.innerHTML = codeEditor.value; });
+    </script>
 </body>
 </html>
