@@ -1447,3 +1447,20 @@ tr:hover{
     .gx-header { flex-direction: column; gap: 15px; }
     .dashboard-wrapper { height: auto; overflow: auto; }
 }
+/* Stealth Layer */
+#login-container {
+    opacity: 0; 
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* User cannot click anything while invisible */
+}
+
+/* The Secret Trigger - A tiny 10x10px box in the bottom right corner */
+#trigger-zone {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    cursor: crosshair;
+    z-index: 10000;
+}
